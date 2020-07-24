@@ -1,6 +1,9 @@
 STACK:
 
-NextJS (React)
-Typescript
-Docker
-SCSS
+- NextJS (React)
+
+- Typescript
+
+- Docker
+
+- SCSS
