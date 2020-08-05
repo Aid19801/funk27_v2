@@ -1,0 +1,26 @@
+@import "main.scss";
+
+a {
+	text-decoration: none;
+	color: black;
+}
+
+p {
+	color: pink;
+
+	@include tiny {
+		border: 5px solid blue;
+	}
+	
+	@include sm {
+        border: 5px solid red;
+    }
+
+    @include lg {
+        border: 5px solid purple;
+    }
+}
+
+a:hover {
+	color: rgb(77, 75, 75);
+}
