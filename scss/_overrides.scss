@@ -1,0 +1,9 @@
+// name: _overrides.scss
+// contains: overrides for library (bulma) styling, removes unnecessary margin
+// or incorrect alignment from lib files by overriding them.
+// imports: n/a
+// goes to: _main.scss
+
+.navbar-brand, .navbar-tabs {
+    align-items: center;
+}

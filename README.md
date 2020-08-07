@@ -15,6 +15,7 @@ STACK:
 - 🚀 SCSS, GSAP, Bulma, FontAwesome
 
   - SCSS (css modules, variables and nested style rules)
+    App.tsx imports global.scss, imports main.scss, imports all other rules.
 
   - GSAP (animations)
 
@@ -51,3 +52,12 @@ Each Page Layout / Setup:
 
 </div>
 ```
+
+Known Bugs / Issues To Circle Back And Fix:
+
+- NextJS issue with SCSS modules. If you attempt to `@use` & access variables that way, eg `background-color: colors.$my_color` you will get "invalid expression" errors. This is also def true of @use'ing mixins.
+
+- SCSS files not being imported into Jest unit tests. Behaviour is that media queries responsive behav is not happening in Unit Test env.
+
+
+

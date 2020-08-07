@@ -1,3 +1,26 @@
+@import './variables.scss';
+@import './overrides.scss';
+
+// name: main.scss
+// contains: responsive mixins, FX mixins
+// imports: variables, scss overrides for library stylings
+// goes to: global.scss => App.tsx
+
+// tiny tiny mobile screen
+$screen-tiny-min: 300px;
+
+// Small tablets and large smartphones (landscape view)
+$screen-sm-min: 576px;
+
+// Small tablets (portrait view)
+$screen-md-min: 768px;
+
+// Tablets and small desktops
+$screen-lg-min: 992px;
+
+// Large tablets and desktops
+$screen-xl-min: 1200px;
+
 
 // MIXINS (that use breakpoints^^)
 @mixin tiny {
@@ -33,3 +56,38 @@
         @content;
     }
 }
+
+@mixin bounce($property) {
+//     -webkit-transform: $property;
+//   -ms-transform: $property;
+//   transform: $property;
+  animation: bounce 1.3s;
+  @keyframes bounce {
+    0%,
+    25%,
+    50%,
+    75%,
+    100% {
+      transform: translateY(0);
+    }
+    40% {
+      transform: translateY(-20px);
+    }
+    60% {
+      transform: translateY(-12px);
+    }
+  }
+}
+
+// @mixin nameOfMixin($argtoPassIn) {
+    //   -webkit-transform: $property;
+    //   -ms-transform: $property;
+    //   transform: $property;
+    // rule: $argToPassIn
+    // animation-name: foo;
+    // keyframes foo {
+        // from {}
+        // to {}
+    // }
+// }
+

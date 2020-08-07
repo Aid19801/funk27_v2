@@ -1,3 +1,8 @@
+// name: _variables.scss
+// contains: reuseable variables for theming across app
+// imports: n/a
+// goes to: _main.scss => global.scss => App.tsx
+
 $base-color: #d4d0d2;
 $text-colour: #a09d9e;
 
@@ -6,3 +11,21 @@ $font-slave: monserrat, Times;
 $font-regular: Arial;
 
 $border-dark: rgba($base-color, 0.88);
+
+// SASS-MAP obj
+// $colors: (
+//     primary: #00De,
+//     accent: #a09d9e
+// );
+
+// .foo {
+//     background-color: map-get($colors, primary);
+// }
+
+// corporate theme Sass-Map
+$theme_map: (
+    light: #d4d0d2,
+    medium: #a09d9e,
+    bold: orange,
+    dark: black
+)

@@ -79,10 +79,10 @@ function Navbar({}: Props): ReactElement {
 					<div className="navbar-end">
 						<div className="navbar-item">
 							<div className="buttons">
-								<a className="button is-primary">
+								<a className="button is-warning">
 									<strong>Sign up</strong>
 								</a>
-								<a className="button is-light">Log in</a>
+								<a className="button is-warning is-light">Log in</a>
 							</div>
 						</div>
 					</div>

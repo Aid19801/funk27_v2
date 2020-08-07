@@ -1,4 +1,5 @@
-@import '../../scss/variables.scss';
+
+@import "../../scss/main";
 
 .footer {
 	background-color: #d4d0d2;
@@ -11,11 +12,18 @@
 	border-width: 60%;
 	border: 4px solid black;
 	height: auto;
+	transition: .2s;
+	opacity: 1;
+	@include bounce(rotate(-1deg));
 
-	.p {
+	p {
 		color: $text-colour;
 		border: 1px solid $border-dark;
 		font-size: 9px;
+		display: none;
+		@include sm {
+			display: inline;
+		}
 	}
 	.footerSocialsContainer {
 		width: 100%;
@@ -29,6 +37,7 @@
 			max-width: 30px;
 			min-height: 30px;
 			max-height: 30px;
+
 		}
 	}
 }

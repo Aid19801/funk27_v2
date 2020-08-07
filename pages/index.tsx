@@ -15,20 +15,6 @@ function Home({}: Props): ReactElement {
 
 			<main>
 				<h1>Main bit here</h1>
-				<p>Click to get to</p>
-				<Link href="/about">
-					<a>About Page</a>
-				</Link>
-				<Button color="danger" size="small" rounded outlined>
-					Wowza!
-				</Button>
-
-				<div className="columns">
-					<div className="column">First column</div>
-					<div className="column">Second column</div>
-					<div className="column">Third column</div>
-					<div className="column">Fourth column</div>
-				</div>
 				
 			</main>
 		</div>

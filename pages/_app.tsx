@@ -12,8 +12,10 @@ function App({ Component, pageProps } : Props) : ReactElement {
   return (
     <React.Fragment>
       <Navbar />
-      <Component {...pageProps} />
-      <Footer />
+      <div id="bg" />
+        <Component {...pageProps} />
+      
+        <Footer />
     </React.Fragment>
   )
 }

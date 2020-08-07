@@ -1,16 +1,28 @@
 import React from 'react';
-import { mount } from 'enzyme';
-import Footer from '../components/footer';
+import { mount, shallow } from 'enzyme';
+import Footer from './index';
 
 describe('<Footer />', (): void => {
-	let shallowWrapper: any;
+	let wrapper: any;
 
 	beforeAll((): void => {
-		shallowWrapper = mount(<Footer />);
+		wrapper = mount(<Footer />);
+	});
+
+	it('should match snapshot', () => {
+		expect(wrapper).toMatchSnapshot();
 	});
 
 	it('should render footer without exploding', (): void => {
-		expect(shallowWrapper.find('footer').exists()).toBe(true);
+		expect(wrapper.find('footer').exists()).toBe(true);
+	});
+
+	it('should show copyright information', () => {
+		const renderedText: string = wrapper.find('p').text();
+
+		const expectedText: string =
+			'Funk-27 by Aid Thompson. The source code is licensedMIT. The website content is licensed CC BY NC SA 4.0.';
+		expect(renderedText).toBe(expectedText);
 	});
 
 	describe('Social Icons', (): void => {
@@ -73,12 +85,4 @@ describe('<Footer />', (): void => {
 			);
 		});
 	});
-	describe('Responsiveness', (): void => {
-		it('should show all icons if width > 1024', () => {
-			
-		})
-	})
 });
-
-// let someValue: any = "this is a string";
-// let strLength: number = (someValue as string).length;
