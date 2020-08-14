@@ -44,6 +44,14 @@ main {
 	// border: 1px solid red;
 }
 
+section {
+	height: 90vh;
+	// border: 1px solid red;
+}
+
+section:nth-child(1) {
+	// border: 1px solid blue;
+}
 p {
 	color: black;
 	font-size: 37px;

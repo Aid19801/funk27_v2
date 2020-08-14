@@ -1,62 +1,63 @@
-@import "../../scss/main";
+@import '../../scss/main';
 
 .hero__image {
-    height: auto;
-    position: relative;
+	height: auto;
+	position: relative;
 
-    div {
-        position: absolute;
-        width: 100%;
-        justify-content: center;
-        display: flex;
-        align-items: center;
-        align-content: center;
+	div {
+		position: absolute;
+		width: 100%;
+		justify-content: center;
+		display: flex;
+		align-items: center;
+		align-content: center;
 
-        h1 {
-            background-color: black;
-            // position: absolute;
-            font-size: 3rem;
+		h1 {
+            background-image: url(brush_strokes.png);
+            background-size: 500px;
+            background-position-x: center;
+            padding: 5px;
             text-align: center;
-            padding: 10px;
             border-radius: 12px;
             bottom: 1px;
-            transform: skewY(-1deg);
-            color: orange;
-            @include tiny {
+            transform: skewY(-2deg);
+            background-position-y: center;
+            color: grey;
+            font-family: monospace;
+            font-weight: bolder;
+            font-size: 6vh;
+			@include tiny {
                 font-size: 1.3rem;
-                // left: 50%;
-                // margin-left: calc(-100% / 3);
-            }
-            @include sm {
-                font-size: 1.9rem;
-                // left: 50%;
-                // margin-left: calc(-100% / 3);
-            }
-            
-        }
-        
-    }
+                color: orange;
+                background-position-y: 300px;
+			}
+			@include sm {
+                font-size: 6vh;
+                background-position-y: 320px;
+			}
+		}
+	}
 }
 
 /* Desktop */
 .hero__image img {
-    width: 480px;
-    max-width: 480px;
+	width: 480px;
+	max-width: 480px;
 }
 
 /* Tablet */
 @media screen and (max-width: 900px) {
-    .hero__image img {
-        width: 480px;
-        max-width: 480px;
-    }
+	.hero__image img {
+		width: 480px;
+		max-width: 480px;
+	}
 }
 
 /* Mobile */
 @media screen and (max-width: 500px) {
-    .hero__image img {
-        width: 450px;
-        max-width: 450px;
-        max-width: 100%;
-    }
+	.hero__image img {
+		width: 450px;
+		max-width: 450px;
+		max-width: 100%;
+	}
 }
