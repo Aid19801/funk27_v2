@@ -16,14 +16,22 @@ function Home({ ssrContent }: Props): ReactElement {
 	// @ts-ignore
 	const { data, isLoading } = useQuery('content', fetchPageByUID, { initialData: ssrContent, enabled: 'home-page' });
 
-	let sectionRef = useRef(null);
+	// let firstSectionRef = useRef(null);
+	let secondSectionRef = useRef(null);
 
-	const intersection = useIntersection(sectionRef, {
+	// const intersection = useIntersection(firstSectionRef, {
+	// 	root: null,
+	// 	// rootMargin: '', // controls where the animation starts. 400px half way, 0px the end of the section.
+	// 	threshold: 0, // when we reach entire div, 1 = 100%, calls div to run.
+	// 	// threshold should be the same as intersectionRatio vv
+	// });
+
+	const intersectionTwo = useIntersection(secondSectionRef, {
 		root: null,
-		rootMargin: '0px', // controls where the animation starts. 400px half way, 0px the end of the section.
-		threshold: 1, // when we reach entire div, 1 = 100%, calls div to run.
-		// threshold should be the same as intersectionRatio vv
+		rootMargin: '0px',
+		threshold: .9,
 	});
+
 	const fadeIn = (element) => {
 		if (process.browser) {
 			gsap.to(element, 1, {
@@ -52,7 +60,8 @@ function Home({ ssrContent }: Props): ReactElement {
 	}
 
 	if (ssrContent) {
-		intersection && intersection.intersectionRatio < 0.5 ? fadeOut('.fadeIn') : fadeIn('.fadeIn');
+		// intersection && intersection.intersectionRatio < 0.5 ? fadeOut('.fadeIn') : fadeIn('.fadeIn');
+		intersectionTwo && intersectionTwo.intersectionRatio < .9 ? fadeOut('.fadeIn') : fadeIn('.fadeIn');
 
 		return (
 			<div className="container">
@@ -73,16 +82,19 @@ function Home({ ssrContent }: Props): ReactElement {
 
 				<main>
 					<section>
-						<Hero
-							// @ts-ignore
-							img={data.data.hero_image}
-							// @ts-ignore
-							heroText={data.data.title}
-						/>
+						<div>
+							<Hero
+								// @ts-ignore
+								img={data.data.hero_image}
+								// @ts-ignore
+								heroText={data.data.title}
+							/>
+						</div>
 					</section>
 
-					<section ref={sectionRef}>
-						<div className="fadeIn">
+
+					<section ref={secondSectionRef} className="fadeIn">
+						<div >
 							<RichText
 								// @ts-ignore
 								render={data.data.first_section}
