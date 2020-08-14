@@ -34,6 +34,13 @@ $screen-xl-min: 1200px;
         @content;
     }
 }
+
+// @mixin sm {
+//     @media screen and (min-width: #{$screen-sm-min}) {
+//         @content;
+//     }
+// }
+
 @mixin md {
     @media screen and (min-width: #{$screen-md-min}) {
         @content;

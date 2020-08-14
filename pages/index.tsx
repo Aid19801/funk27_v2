@@ -1,11 +1,23 @@
-import React, { ReactElement } from 'react';
+import React, { ReactElement, useEffect } from 'react';
 import Head from 'next/head';
-import Link from 'next/link';
-import { Button } from 'react-bulma-components';
+import { RichText } from 'prismic-reactjs';
+import { useContent } from '../api/requests';
+import { Hero } from '../components';
+import ResponsiveImage from '../components/responsive-image';
 
 interface Props {}
 
 function Home({}: Props): ReactElement {
+	const { isLoading, data, error } = useContent('home-page');
+
+	useEffect(() => {
+		console.log('data is back: ', data);
+	}, [data]);
+
+	if (isLoading) return <p>Loading...</p>;
+
+	if (error) return <p>An error has occurred</p>;
+
 	return (
 		<div className="container">
 			<Head>
@@ -14,8 +26,12 @@ function Home({}: Props): ReactElement {
 			</Head>
 
 			<main>
-				<h1>Main bit here</h1>
-				
+				<Hero
+					// @ts-ignore
+					img={data.data.hero_image}
+					// @ts-ignore
+					heroText={data.data.title}
+				/>
 			</main>
 		</div>
 	);

@@ -1,0 +1,62 @@
+@import "../../scss/main";
+
+.hero__image {
+    height: auto;
+    position: relative;
+
+    div {
+        position: absolute;
+        width: 100%;
+        justify-content: center;
+        display: flex;
+        align-items: center;
+        align-content: center;
+
+        h1 {
+            background-color: black;
+            // position: absolute;
+            font-size: 3rem;
+            text-align: center;
+            padding: 10px;
+            border-radius: 12px;
+            bottom: 1px;
+            transform: skewY(-1deg);
+            color: orange;
+            @include tiny {
+                font-size: 1.3rem;
+                // left: 50%;
+                // margin-left: calc(-100% / 3);
+            }
+            @include sm {
+                font-size: 1.9rem;
+                // left: 50%;
+                // margin-left: calc(-100% / 3);
+            }
+            
+        }
+        
+    }
+}
+
+/* Desktop */
+.hero__image img {
+    width: 480px;
+    max-width: 480px;
+}
+
+/* Tablet */
+@media screen and (max-width: 900px) {
+    .hero__image img {
+        width: 480px;
+        max-width: 480px;
+    }
+}
+
+/* Mobile */
+@media screen and (max-width: 500px) {
+    .hero__image img {
+        width: 450px;
+        max-width: 450px;
+        max-width: 100%;
+    }
+}

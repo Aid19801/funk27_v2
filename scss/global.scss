@@ -5,6 +5,9 @@
 // imports: main.scss [and all other module stylings]
 // goes to: App.tsx
 
+* {
+	// border: 1px solid red;
+}
 body {
 	height: 100vh;
 }
@@ -25,20 +28,36 @@ a {
 	text-decoration: none;
 	color: black;
 }
+ h1 {
+	 font-size: 9vh;
+	 text-align: center;
+ }
+main {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: start;
+	align-content: center;
+	height: auto;
+	margin-top: 50px;
+	margin-bottom: 50px;
+	// border: 1px solid red;
+}
 
 p {
-	color: pink;
+	color: black;
+	font-size: 37px;
 
 	@include tiny {
-		border: 5px solid blue;
+		// border: 5px solid blue;
 	}
 	
 	@include sm {
-        border: 5px solid red;
-    }
+		// border: 10px solid red;
+	}
 
     @include lg {
-        border: 5px solid purple;
+        // border: 5px solid purple;
     }
 }
 

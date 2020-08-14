@@ -59,5 +59,6 @@ Known Bugs / Issues To Circle Back And Fix:
 
 - SCSS files not being imported into Jest unit tests. Behaviour is that media queries responsive behav is not happening in Unit Test env.
 
-
+- React Query, change the name of the API/url to an error version
+and it breaks but error not coming through to isError boolean value.
 

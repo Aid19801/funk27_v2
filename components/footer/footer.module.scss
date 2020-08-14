@@ -21,9 +21,9 @@
 		border: 1px solid $border-dark;
 		font-size: 9px;
 		display: none;
-		@include sm {
-			display: inline;
-		}
+		// @include sm {
+		// 	display: inline;
+		// }
 	}
 	.footerSocialsContainer {
 		width: 100%;
