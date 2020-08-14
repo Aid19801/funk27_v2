@@ -6,14 +6,15 @@ async function fetchPageByUID(key, uid) {
 		.then((api) => api.query(
             Prismic.Predicates.at('document.type', 'page'),
         ))
-		.then((response) => response.results.filter(each => each.uid === uid)[0])
+		.then((response) => response.results.filter(each => each.uid === "home-page")[0])
 		.catch((err) => console.log('AT | err :', err));
 }
 
 const useContent = (uid) => {
 	return useQuery(['content', uid], fetchPageByUID, {
 		enabled: uid,
+		initialData: props.ssrContent
 	});
 };
 
-export { useContent };
+export { useContent, fetchPageByUID };
