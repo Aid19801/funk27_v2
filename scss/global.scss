@@ -39,18 +39,18 @@ main {
 	justify-content: start;
 	align-content: center;
 	height: auto;
-	margin-top: 50px;
+	// margin-top: 50px;
 	margin-bottom: 50px;
 	// border: 1px solid red;
 }
 
 section {
 	height: 90vh;
-	// border: 1px solid red;
+	background-color: blue;
 }
 
 section:nth-child(1) {
-	// border: 1px solid blue;
+	background-color: orangered;
 }
 p {
 	color: black;
