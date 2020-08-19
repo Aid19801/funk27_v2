@@ -1,11 +1,9 @@
-import React, { ReactElement, useEffect, useState, useRef } from 'react';
+import React, { ReactElement, useRef } from 'react';
 import Head from 'next/head';
-import { RichText } from 'prismic-reactjs';
 import { useIntersection } from 'react-use';
 import { useQuery } from 'react-query';
 import { fetchPageByUID } from '../api/requests';
 import { Hero } from '../components';
-import ResponsiveImage from '../components/responsive-image';
 import gsap from 'gsap';
 
 interface Props {
