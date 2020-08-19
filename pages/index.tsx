@@ -15,21 +15,13 @@ interface Props {
 function Home({ ssrContent }: Props): ReactElement {
 	// @ts-ignore
 	const { data, isLoading } = useQuery('content', fetchPageByUID, { initialData: ssrContent, enabled: 'home-page' });
-
-	// let firstSectionRef = useRef(null);
+	 
 	let secondSectionRef = useRef(null);
-
-	// const intersection = useIntersection(firstSectionRef, {
-	// 	root: null,
-	// 	// rootMargin: '', // controls where the animation starts. 400px half way, 0px the end of the section.
-	// 	threshold: 0, // when we reach entire div, 1 = 100%, calls div to run.
-	// 	// threshold should be the same as intersectionRatio vv
-	// });
 
 	const intersectionTwo = useIntersection(secondSectionRef, {
 		root: null,
 		rootMargin: '0px',
-		threshold: .9,
+		threshold: .3,
 	});
 
 	const fadeIn = (element) => {
@@ -55,13 +47,19 @@ function Home({ ssrContent }: Props): ReactElement {
 		}
 	};
 
+	const dynamicThreeWords = () => {
+		// @ts-ignore
+		const arr = data.data.first_section[0].text.split(' ');
+		return arr.map((each, i) => <h2 key={i}>{each}</h2>);
+	}
+
 	if (isLoading) {
 		return <p>is loading is true...</p>;
 	}
 
 	if (ssrContent) {
 		// intersection && intersection.intersectionRatio < 0.5 ? fadeOut('.fadeIn') : fadeIn('.fadeIn');
-		intersectionTwo && intersectionTwo.intersectionRatio < .9 ? fadeOut('.fadeIn') : fadeIn('.fadeIn');
+		intersectionTwo && intersectionTwo.intersectionRatio < .3 ? fadeOut('.fadeIn') : fadeIn('.fadeIn');
 
 		return (
 			<div className="container">
@@ -92,15 +90,21 @@ function Home({ ssrContent }: Props): ReactElement {
 						</div>
 					</section>
 
-
 					<section ref={secondSectionRef} className="fadeIn">
-						<div >
-							<RichText
-								// @ts-ignore
-								render={data.data.first_section}
-							/>
+						<div>
+							
+							<div className="flex-row home__three_words_container">
+								{dynamicThreeWords()}
+							</div>
 						</div>
 					</section>
+
+					<section>
+						<div>
+							<h1>This is another bit</h1>
+						</div>
+					</section>
+
 				</main>
 			</div>
 		);

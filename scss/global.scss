@@ -46,11 +46,41 @@ main {
 
 section {
 	height: 90vh;
-	background-color: blue;
+	width: 100vw;
+	background-color: orangered;
+	display: flex;
+	justify-content: center;
+	align-content: center;
+	align-items: center;
+	h2 {
+		color: white;
+		text-align: center;
+	}
 }
 
 section:nth-child(1) {
-	background-color: orangered;
+	background-color: white;
+	align-items: start;
+}
+
+section:nth-child(3) {
+	background-color: grey;
+	height: 100vh;
+}
+
+.home__three_words_container {
+	h2:nth-child(1) {
+		font-size: 5rem;
+		color: white;
+	}
+	h2:nth-child(2) {
+		font-size: 5rem;
+		color: grey;
+	}
+	h2:nth-child(3) {
+		font-size: 5rem;
+		color: white;
+	}
 }
 p {
 	color: black;
