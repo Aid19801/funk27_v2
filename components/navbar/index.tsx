@@ -32,13 +32,13 @@ function Navbar({}: Props): ReactElement {
 		//@ts-ignore
 		arr.map(each => {
 			//@ts-ignore
-			each.style.display = 'flex';
+			each.style.opacity = 1;
 		});
 
 
 		const brand = document.querySelector('.slamIn');
 		//@ts-ignore
-		brand.style.display = "flex";
+		brand.style.opacity = 1;
 
 		var navItemsTimeline = new TimelineMax();
 
@@ -48,7 +48,7 @@ function Navbar({}: Props): ReactElement {
 			// .to(brand, 0.3, { autoAlpha: 1 }, '+=0.2')
 			.fromTo(brand, 0.5,
 				{ y: '-=15', scale: 0.2, autoAlpha: 0, transformOrigin: 'center center' }, // <-- scaling from the centre
-				{ y: 0, scale: 1, autoAlpha: 1, transformOrigin: 'center center', ease: Elastic.easeOut }, '+=0.4' // <--start it 0.1 earlier than it should do
+				{ y: 0, scale: 1, autoAlpha: 1, transformOrigin: 'center center', ease: Elastic.easeOut }, '+=0.3' // <--start it 0.1 earlier than it should do
 			)
 	}
 
