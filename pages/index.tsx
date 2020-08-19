@@ -45,18 +45,11 @@ function Home({ ssrContent }: Props): ReactElement {
 		}
 	};
 
-	const dynamicThreeWords = () => {
-		// @ts-ignore
-		const arr = data.data.first_section[0].text.split(' ');
-		return arr.map((each, i) => <h2 key={i}>{each}</h2>);
-	}
-
 	if (isLoading) {
 		return <p>is loading is true...</p>;
 	}
 
 	if (ssrContent) {
-		// intersection && intersection.intersectionRatio < 0.5 ? fadeOut('.fadeIn') : fadeIn('.fadeIn');
 		intersectionTwo && intersectionTwo.intersectionRatio < .3 ? fadeOut('.fadeIn') : fadeIn('.fadeIn');
 
 		return (
@@ -85,21 +78,6 @@ function Home({ ssrContent }: Props): ReactElement {
 								// @ts-ignore
 								heroText={data.data.title}
 							/>
-						</div>
-					</section>
-
-					<section ref={secondSectionRef} className="fadeIn">
-						<div>
-							
-							<div className="flex-row home__three_words_container">
-								{dynamicThreeWords()}
-							</div>
-						</div>
-					</section>
-
-					<section>
-						<div>
-							<h1>This is another bit</h1>
 						</div>
 					</section>
 
