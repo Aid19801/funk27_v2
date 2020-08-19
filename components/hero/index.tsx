@@ -43,13 +43,6 @@ function Hero({ img, heroText }: Props): ReactElement {
 					src={img.url}
 					alt={img.alt}
 				/>
-
-				<div>
-					<RichText
-						// @ts-ignore
-						render={heroText}
-					/>
-				</div>
 			</picture>
 		</React.Fragment>
 	);

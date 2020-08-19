@@ -5,7 +5,8 @@ import { useQuery } from 'react-query';
 import { fetchPageByUID } from '../api/requests';
 import { Hero } from '../components';
 import gsap from 'gsap';
-
+//@ts-ignore
+import Geek from '../svgs/geek.svg';
 interface Props {
 	ssrContent: object;
 }
@@ -31,7 +32,7 @@ function Home({ ssrContent }: Props): ReactElement {
 				stagger: {
 					amount: 0.3,
 				},
-			});
+			}, '-=0.5');
 		}
 	};
 
@@ -71,13 +72,18 @@ function Home({ ssrContent }: Props): ReactElement {
 
 				<main>
 					<section>
-						<div>
+						<div className="homePageSVGContainer">
 							<Hero
 								// @ts-ignore
 								img={data.data.hero_image}
 								// @ts-ignore
 								heroText={data.data.title}
 							/>
+						</div>
+					</section>
+					<section>
+						<div className="fadeIn" ref={secondSectionRef}>
+							<Geek />
 						</div>
 					</section>
 
