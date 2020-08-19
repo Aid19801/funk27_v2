@@ -47,12 +47,11 @@ main {
 section {
 	height: 90vh;
 	width: 100vw;
-	background-color: orange;
 	display: flex;
 	justify-content: center;
 	align-content: center;
 	align-items: center;
-	margin-bottom: 58px;
+	// margin-bottom: 58px;
 	h2 {
 		color: white;
 		text-align: center;
@@ -64,13 +63,8 @@ section:nth-child(1) {
 	align-items: start;
 }
 
-section:nth-child(3) {
-	background-color: grey;
-	height: 100vh;
-}
-
-.homePageSVGContainer {
-	margin-top: 50px;
+.orange_section {
+	background-color: orange;
 }
 
 p {

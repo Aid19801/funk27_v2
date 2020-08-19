@@ -1,5 +1,4 @@
 import React, { ReactElement } from 'react';
-import { RichText } from 'prismic-reactjs';
 import styles from './hero.module.scss';
 
 interface Props {

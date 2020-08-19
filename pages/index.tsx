@@ -7,6 +7,7 @@ import { Hero } from '../components';
 import gsap from 'gsap';
 //@ts-ignore
 import Geek from '../svgs/geek.svg';
+import HeroSection from '../components/hero-section';
 interface Props {
 	ssrContent: object;
 }
@@ -15,9 +16,11 @@ function Home({ ssrContent }: Props): ReactElement {
 	// @ts-ignore
 	const { data, isLoading } = useQuery('content', fetchPageByUID, { initialData: ssrContent, enabled: 'home-page' });
 	 
+	let svgRef = useRef(null);
 	let secondSectionRef = useRef(null);
+	let thirdSectionRef = useRef(null);
 
-	const intersectionTwo = useIntersection(secondSectionRef, {
+	const intersectionTwo = useIntersection(svgRef, {
 		root: null,
 		rootMargin: '0px',
 		threshold: .3,
@@ -32,7 +35,7 @@ function Home({ ssrContent }: Props): ReactElement {
 				stagger: {
 					amount: 0.3,
 				},
-			}, '-=0.5');
+			});
 		}
 	};
 
@@ -71,20 +74,19 @@ function Home({ ssrContent }: Props): ReactElement {
 				</Head>
 
 				<main>
-					<section>
-						<div className="homePageSVGContainer">
-							<Hero
-								// @ts-ignore
-								img={data.data.hero_image}
-								// @ts-ignore
-								heroText={data.data.title}
-							/>
-						</div>
-					</section>
-					<section>
-						<div className="fadeIn" ref={secondSectionRef}>
+					<HeroSection
+						// @ts-ignore
+						heroImage={data.data.hero_image}
+						// @ts-ignore
+						heroTitle={data.data.title}
+					/>
+					<section className="orange_section" ref={secondSectionRef}>
+						<div className="fadeIn svg_container" ref={svgRef}>
 							<Geek />
 						</div>
+					</section>
+					<section className="orange_section" ref={thirdSectionRef}>
+						<p>3rd section</p>
 					</section>
 
 				</main>
