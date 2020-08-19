@@ -1,15 +1,57 @@
-import React, { ReactElement, useState } from 'react';
+import React, { ReactElement, useState, useEffect } from 'react';
 import Link from 'next/link';
-interface Props {}
+import { TimelineMax, Elastic } from 'gsap';
+import styles from './navbar.module.scss';
 
-interface IshowMobNav {
-	showMobNav: Boolean,
-}
+interface Props {}
 
 function Navbar({}: Props): ReactElement {
 
 	const [ showMobNav, toggleshowMobNav ] = useState(false);
-  
+
+	useEffect(() => {
+
+		const navItems = document.querySelectorAll('.bounceIn');
+		const brand = document.querySelector('.slamIn');
+		
+		// clear the timeline / ensure nav items are not there at the beginning, avoid flicker.
+		var clearTl = new TimelineMax();
+
+		clearTl
+			.set(brand, { autoAlpha: 0 })
+			.set(navItems, { y: '+=20', autoAlpha: 0, onComplete: beginAnimations })
+
+	}, []);
+
+	const beginAnimations = () => {
+
+		//@ts-ignore
+		const allNavItems = document.querySelectorAll('.bounceIn');
+		const arr = Array.from(allNavItems);
+
+		//@ts-ignore
+		arr.map(each => {
+			//@ts-ignore
+			each.style.display = 'flex';
+		});
+
+
+		const brand = document.querySelector('.slamIn');
+		//@ts-ignore
+		brand.style.display = "flex";
+
+		var navItemsTimeline = new TimelineMax();
+
+		navItemsTimeline
+		//@ts-ignore
+			.staggerTo(allNavItems, 0.4, { y: 0, autoAlpha: 1 }, 0.04)
+			// .to(brand, 0.3, { autoAlpha: 1 }, '+=0.2')
+			.fromTo(brand, 0.5,
+				{ y: '-=15', scale: 0.2, autoAlpha: 0, transformOrigin: 'center center' }, // <-- scaling from the centre
+				{ y: 0, scale: 1, autoAlpha: 1, transformOrigin: 'center center', ease: Elastic.easeOut }, '+=0.4' // <--start it 0.1 earlier than it should do
+			)
+	}
+
 	const toggleMenu = () => {
 	  toggleshowMobNav(!showMobNav);
 	}
@@ -17,8 +59,8 @@ function Navbar({}: Props): ReactElement {
 	return (
 		<React.Fragment>
 			<nav className="navbar" role="navigation" aria-label="main navigation">
-				<div className="navbar-brand">
-					<a className="navbar-item" href="#">
+				<div className={`navbar-brand`}>
+					<a className={`navbar-item slamIn ${styles.displayNone}`} href="#">
 						<h1 style={{ fontSize: '5vh', marginLeft: 20, color: 'grey' }}>Funk-</h1>
 						<h1 style={{ fontSize: '5vh', color: 'orange' }}>27</h1>
 					</a>
@@ -40,16 +82,16 @@ function Navbar({}: Props): ReactElement {
 					<div className="navbar-start">
 
 					<Link href="/">
-						<a className="navbar-item">Home</a>
+						<a className={`navbar-item bounceIn ${styles.displayNone}`}>Home</a>
 					</Link>
 					<Link href="/about">
-						<a className="navbar-item">About</a>
+						<a className={`navbar-item bounceIn ${styles.displayNone}`}>About</a>
 					</Link>
 
-						<a className="navbar-item">Contact</a>
+						<a className={`navbar-item bounceIn ${styles.displayNone}`}>Contact</a>
 
 						<div className="navbar-item has-dropdown is-hoverable">
-							<a className="navbar-link">Blogs/Tutorials</a>
+							<a className={`navbar-link bounceIn ${styles.displayNone}`}>Blogs/Tutorials</a>
 
 							<div className="navbar-dropdown">
 								<a className="navbar-item">How To Unit Test [React]</a>
@@ -61,7 +103,7 @@ function Navbar({}: Props): ReactElement {
 							</div>
 						</div>
 						<div className="navbar-item has-dropdown is-hoverable">
-							<a className="navbar-link">Podcast</a>
+							<a className={`navbar-link bounceIn ${styles.displayNone}`}>Podcast</a>
 
 							<div className="navbar-dropdown">
 								<a className="navbar-item">w/ John Smith</a>
