@@ -1,10 +1,7 @@
-import React, { ReactElement, useRef } from 'react';
+import React, { ReactElement } from 'react';
 import Head from 'next/head';
-import { useIntersection } from 'react-use';
 import { useQuery } from 'react-query';
 import { fetchPageByUID } from '../api/requests';
-import { Hero } from '../components';
-import gsap from 'gsap';
 import ScrollFadeSection from '../components/scroll-fade-section';
 import HeroSection from '../components/hero-section';
 
@@ -15,44 +12,12 @@ interface Props {
 function Home({ ssrContent }: Props): ReactElement {
 	// @ts-ignore
 	const { data, isLoading } = useQuery('content', fetchPageByUID, { initialData: ssrContent, enabled: 'home-page' });
-	 
-	let secondSectionRef = useRef(null);
-
-	const intersectionTwo = useIntersection(secondSectionRef, {
-		root: null,
-		rootMargin: '0px',
-		threshold: .3,
-	});
-
-	const fadeIn = (element) => {
-		if (process.browser) {
-			gsap.to(element, 1, {
-				opacity: 1,
-				y: -60,
-				ease: 'Power4.out',
-				stagger: {
-					amount: 0.3,
-				},
-			});
-		}
-	};
-
-	const fadeOut = (element) => {
-		if (process.browser) {
-			gsap.to(element, 1, {
-				opacity: 0,
-				y: -20,
-				ease: 'Power4.out',
-			});
-		}
-	};
 
 	if (isLoading) {
-		return <p>is loading is true...</p>;
+		return <p>react query isLoading value is true...</p>
 	}
 
 	if (ssrContent) {
-		intersectionTwo && intersectionTwo.intersectionRatio < .3 ? fadeOut('.fadeIn') : fadeIn('.fadeIn');
 
 		return (
 			<div className="container">
@@ -95,7 +60,7 @@ function Home({ ssrContent }: Props): ReactElement {
 			</div>
 		);
 	} else {
-		return <p>LoadingSpinner</p>;
+		return <p>Loading Spinner Will Go Here</p>;
 	}
 }
 

@@ -1,6 +1,6 @@
 import React, { ReactElement, useState, useEffect, useRef } from 'react';
 import Link from 'next/link';
-import { TimelineMax, Elastic, Power3 } from 'gsap';
+import gsap, { TimelineMax, Elastic, Power3 } from 'gsap';
 import styles from './navbar.module.scss';
 
 interface Props {}
@@ -19,7 +19,6 @@ function Navbar({}: Props): ReactElement {
 
 	useEffect(() => {
 		var clearTl = new TimelineMax();
-
 		clearTl
 			.set(homeRef.current, { autoAlpha: 0 })
 			.set(aboutRef.current, { autoAlpha: 0 })
@@ -31,7 +30,6 @@ function Navbar({}: Props): ReactElement {
 
 	const beginAnimations = () => {
 		var navItemsTimeline = new TimelineMax();
-
 		navItemsTimeline
 			//@ts-ignore
 			.staggerTo([homeRef.current, aboutRef.current, contactRef.current, blogsRef.current, podsRef.current], .5, { autoAlpha: 1, ease: Power3.easeIn }, .1)

@@ -6,7 +6,6 @@ import { TimelineMax, Power3 } from 'gsap';
 import styles from './scroll-fade.module.scss';
 
 function ScrollFadeSection() {
-
 	let secondSectionRef = useRef(null);
 	let svgRef = useRef(null);
 	let svgTitleRef = useRef(null);
@@ -18,13 +17,11 @@ function ScrollFadeSection() {
 	});
 
 	const fromFigure = '-100%';
-	const toFigure = '0%'
-
+	const toFigure = '0%';
 
 	useEffect(() => {
 		var clearTl = new TimelineMax();
-		clearTl
-			.set(svgTitleRef.current, { opacity: 0 });
+		clearTl.set(svgTitleRef.current, { opacity: 0 });
 	}, []);
 
 	const slideInSVG = () => {
@@ -43,17 +40,23 @@ function ScrollFadeSection() {
 						opacity: 1,
 					}
 				)
-				.fromTo(svgTitleRef.current, .4, {
-					y: 100,
-					autoAlpha: 0,
-				}, {
-					y: 0,
-					// opacity: 1,
-					autoAlpha: 1,
-				}, 'svg-has-slide-in-=0.3')
-				.to(secondSectionRef.current, .7, {
+				.fromTo(
+					svgTitleRef.current,
+					0.4,
+					{
+						y: 100,
+						autoAlpha: 0,
+					},
+					{
+						y: 0,
+						// opacity: 1,
+						autoAlpha: 1,
+					},
+					'svg-has-slide-in-=0.3'
+				)
+				.to(secondSectionRef.current, 0.7, {
 					backgroundColor: 'orange',
-					ease: Power3.easeOut
+					ease: Power3.easeOut,
 				})
 				.add('svg-has-slid-in');
 		}
@@ -75,16 +78,21 @@ function ScrollFadeSection() {
 						opacity: 0,
 					}
 				)
-				.fromTo(svgTitleRef.current, .4, {
-					y: 0,
-					autoAlpha: 1,
-				}, {
-					y: 100,
-					autoAlpha: 0,
-				})
-				.to(secondSectionRef.current, .7, {
+				.fromTo(
+					svgTitleRef.current,
+					0.4,
+					{
+						y: 0,
+						autoAlpha: 1,
+					},
+					{
+						y: 100,
+						autoAlpha: 0,
+					}
+				)
+				.to(secondSectionRef.current, 0.7, {
 					backgroundColor: 'white',
-					ease: Power3.easeOut
+					ease: Power3.easeOut,
 				})
 				.add('svg-has-slid-out');
 		}
@@ -103,17 +111,7 @@ function ScrollFadeSection() {
 				</div>
 			</div>
 			<div className={styles.secondCol}>
-				<ul>
-					<li>
-						<h2>Simple</h2>
-					</li>
-					<li>
-						<h2>Elegant</h2>
-					</li>
-					<li>
-						<h2>Solutions</h2>
-					</li>
-				</ul>
+				second col
 			</div>
 		</section>
 	);

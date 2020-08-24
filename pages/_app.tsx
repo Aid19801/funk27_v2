@@ -1,7 +1,10 @@
 import React, { ReactElement, Component } from 'react';
+import { Navbar, Footer } from '../components';
+import gsap from 'gsap';
 import 'react-bulma-components/dist/react-bulma-components.min.css';
 import '../scss/global.scss';
-import { Navbar, Footer } from '../components';
+
+gsap.registerPlugin()
 
 interface Props {
 	Component: any;
