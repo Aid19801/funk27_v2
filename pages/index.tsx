@@ -5,6 +5,8 @@ import { useQuery } from 'react-query';
 import { fetchPageByUID } from '../api/requests';
 import { Hero } from '../components';
 import gsap from 'gsap';
+import ScrollFadeSection from '../components/scroll-fade-section';
+import HeroSection from '../components/hero-section';
 
 interface Props {
 	ssrContent: object;
@@ -60,27 +62,35 @@ function Home({ ssrContent }: Props): ReactElement {
 
 					<meta name="twitter:card" content="summary_large_image" />
 
-					<meta name="twitter:image" content={data.data['twitter_image'].url} />
+
+					<meta name="twitter:image" //@ts-ignore
+					content={data.data['twitter_image'].url} />
 					<meta name="twitter:creator" content="@aidThompsin" />
 					<meta name="twitter:site" content="@funkTwentySeven" />
 
-					<meta property="og:title" content={`Funk-27 | ${data.data.title[0].text}`} key="title" />
-					<meta property="og:description" content={data.data.first_section[0].text} key="description" />
-					<meta property="og:image" content={data.data.twitter_image.url} key="seo share image" />
+					<meta property="og:title"
+					//@ts-ignore
+					content={`Funk-27 | ${data.data.title[0].text}`} key="title" />
+
+					<meta property="og:description"
+					//@ts-ignore
+					content={data.data.first_section[0].text} key="description" />
+
+					<meta property="og:image"
+					//@ts-ignore
+					content={data.data.twitter_image.url} key="seo share image" />
 				</Head>
 
 				<main>
-					<section>
-						<div>
-							<Hero
-								// @ts-ignore
-								img={data.data.hero_image}
-								// @ts-ignore
-								heroText={data.data.title}
-							/>
-						</div>
-					</section>
-
+					
+					<HeroSection
+						//@ts-ignore
+						heroImage={data.data.hero_image}
+						//@ts-ignore
+						heroTitle={data.data.title}
+					/>
+					
+					<ScrollFadeSection />
 				</main>
 			</div>
 		);

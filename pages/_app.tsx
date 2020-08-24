@@ -11,7 +11,6 @@ function App({ Component, pageProps }: Props): ReactElement {
 	return (
 		<React.Fragment>
 			<Navbar />
-			{/* <div id="bg" /> */}
 			<Component {...pageProps} />
 			<Footer />
 		</React.Fragment>

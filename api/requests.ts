@@ -13,7 +13,7 @@ async function fetchPageByUID(key, uid) {
 const useContent = (uid) => {
 	return useQuery(['content', uid], fetchPageByUID, {
 		enabled: uid,
-		initialData: props.ssrContent
+		// initialData: props.ssrContent
 	});
 };
 

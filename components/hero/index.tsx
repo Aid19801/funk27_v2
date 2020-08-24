@@ -1,5 +1,4 @@
 import React, { ReactElement } from 'react';
-import { RichText } from 'prismic-reactjs';
 import styles from './hero.module.scss';
 
 interface Props {
@@ -43,13 +42,6 @@ function Hero({ img, heroText }: Props): ReactElement {
 					src={img.url}
 					alt={img.alt}
 				/>
-
-				<div>
-					<RichText
-						// @ts-ignore
-						render={heroText}
-					/>
-				</div>
 			</picture>
 		</React.Fragment>
 	);
