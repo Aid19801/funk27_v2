@@ -1,0 +1,43 @@
+@import "../../scss/main";
+
+.container {
+    // border: 1px solid purple;
+    display: flex;
+    flex-direction: column;
+    height: auto;
+    width: 90%;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    .row {
+        display: flex;
+        margin-bottom: 30px;
+        height: auto;
+        padding-top: 10px;
+        padding-bottom: 10px;
+        flex-direction: column;
+        @include md {
+            flex-direction: row;
+        }
+        .innerColumn {
+            display: flex;
+            flex-direction: column;
+            margin-left: 10px;
+            h4 {
+                font-size: 3vh;
+                font-weight: bold;
+                color: white;
+            }
+            p {
+                font-size: 20px;
+                font-weight: 300;
+                color: slategray;
+            }
+        }
+    }
+    img {
+        height: 100px;
+        width: 100px;
+        border-radius: 100%;
+        border: 3px solid grey;
+    }
+}

@@ -2,6 +2,7 @@ import React, { useRef, useEffect } from 'react';
 import { useIntersection } from 'react-use';
 //@ts-ignore
 import Geek from '../../svgs/geek.svg';
+import ImagesAndActionPoints from '../images-actions-points';
 import { TimelineMax, Power3 } from 'gsap';
 import styles from './scroll-fade.module.scss';
 
@@ -111,7 +112,7 @@ function ScrollFadeSection() {
 				</div>
 			</div>
 			<div className={styles.secondCol}>
-				second col
+				<ImagesAndActionPoints pic1={'/pic1.png'} pic2={'/pic2.png'} pic3={'/pic3.png'} />
 			</div>
 		</section>
 	);
