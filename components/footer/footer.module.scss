@@ -41,3 +41,20 @@
 		}
 	}
 }
+
+.flexFooterRow {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-evenly;
+}
+
+.flexFooterCol {
+	display: flex;
+	flex-direction: column;
+	h4 {
+		font-size: 23px;
+	}
+	p {
+		font-size: 15px;
+	}
+}

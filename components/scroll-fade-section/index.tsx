@@ -2,13 +2,21 @@ import React, { useRef, useEffect, useState } from 'react';
 import { useIntersection } from 'react-use';
 //@ts-ignore
 import Geek from '../../svgs/geek.svg';
+//@ts-ignore
 import NextJSLogo from '../../svgs/nextjs.svg';
+//@ts-ignore
 import ReactLogo from '../../svgs/react_logo.svg';
+//@ts-ignore
 import ReduxLogo from '../../svgs/redux.svg';
+//@ts-ignore
 import SassLogo from '../../svgs/sass.svg';
+//@ts-ignore
 import NodeLogo from '../../svgs/node.svg';
+//@ts-ignore
 import GraphQLlogo from '../../svgs/GQL.svg';
+//@ts-ignore
 import CSSLogo from '../../svgs/css.svg';
+//@ts-ignore
 import FirebaseLogo from '../../svgs/firebase.svg';
 // import ImagesAndActionPoints from '../images-actions-points';
 import { TimelineMax, Power3 } from 'gsap';
