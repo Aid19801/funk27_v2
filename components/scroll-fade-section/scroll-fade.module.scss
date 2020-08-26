@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Russo+One&family=Source+Sans+Pro:wght@200&display=swap');
 @import "../../scss/main";
 
 .orange_section {
@@ -7,6 +8,10 @@
     // border: 1px solid red;
     display: flex;
     flex-direction: column;
+    @include tiny {
+        height: auto;
+        padding-bottom: 60px;
+    }
     @include sm {
         flex-direction: row;
         // border: 3px solid purple
@@ -31,16 +36,86 @@
     width: 50%;
 
     display: flex;
-    justify-content: center;
+    justify-content: flex-start;
     align-items: center;
+    flex-direction: column;
+    // border: 1px solid purple;
+
+    @include tiny {
+        width: 100vw;
+        margin-top: 40px;
+    }
+
+    .clientBox {
+        height: auto;
+        // border: 1px solid red;
+        background: linear-gradient(45deg, white, rgb(206, 204, 204));
+        padding: 20px 30px;
+        margin-bottom: 30px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-content: center;
+        align-items: center;
+        text-align: start;
+
+        @include tiny {
+            width: 95vw;
+        }
+        @include sm {
+            width: 80vw;
+        }
+        img {
+            filter: grayscale(100%);
+            height: 70px;
+            width: 210px;
+            transition: .3s;
+            border: 3px solid black;
+            border-radius: 22px;
+        }
+        h4 {
+            color: lightgrey;
+            // margin-top: 20px;
+            font-family: 'Russo One', sans-serif;
+        }
+        p {
+            color: black;
+            margin-top: 20px;
+            line-height: 0.9;
+            font-size: 17px;
+            font-family: 'Source Sans Pro', sans-serif;
+        }
+        .builtWith {
+            margin-top: 20px;
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            p {
+                font-family: monospace, Arial;
+                font-size: 12px;
+            }
+            svg {
+                height: 50px;
+                width: 50px;
+                background: gainsboro;
+                transform: skewY(-1deg);
+                margin-left: 10px;
+            }
+        }
+    }
 }
 
 .svgWrapper {
     opacity: 0;
+    position: relative;
 }
 
 .svgTitleWrapper {
     opacity: 0;
+    @include tiny {
+        position: absolute;
+        margin-top: 238px;
+    }
     @include sm {
         margin-bottom: 70px;
     }
@@ -54,4 +129,8 @@
     background: gainsboro;
     padding: 20px;
     transform: skewY(-2deg);
+}
+
+.smaller_logo {
+    width: 174px !important;
 }

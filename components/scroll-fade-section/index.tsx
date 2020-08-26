@@ -1,8 +1,14 @@
-import React, { useRef, useEffect } from 'react';
+import React, { useRef, useEffect, useState } from 'react';
 import { useIntersection } from 'react-use';
 //@ts-ignore
 import Geek from '../../svgs/geek.svg';
-import ImagesAndActionPoints from '../images-actions-points';
+import ReactLogo from '../../svgs/react_logo.svg';
+import ReduxLogo from '../../svgs/redux.svg';
+import SassLogo from '../../svgs/sass.svg';
+import NodeLogo from '../../svgs/node.svg';
+import GraphQLlogo from '../../svgs/GQL.svg';
+import CSSLogo from '../../svgs/css.svg';
+// import ImagesAndActionPoints from '../images-actions-points';
 import { TimelineMax, Power3 } from 'gsap';
 import styles from './scroll-fade.module.scss';
 
@@ -14,7 +20,7 @@ function ScrollFadeSection() {
 	const intersectionTwo = useIntersection(secondSectionRef, {
 		root: null,
 		rootMargin: '0px',
-		threshold: 0.65,
+		threshold: 0.3,
 	});
 
 	const fromFigure = '-100%';
@@ -99,7 +105,7 @@ function ScrollFadeSection() {
 		}
 	};
 
-	intersectionTwo && intersectionTwo.intersectionRatio < 0.65 ? slideOutSVG() : slideInSVG();
+	intersectionTwo && intersectionTwo.intersectionRatio < 0.3 ? slideOutSVG() : slideInSVG();
 
 	return (
 		<section className={styles.orange_section} ref={secondSectionRef}>
@@ -108,11 +114,57 @@ function ScrollFadeSection() {
 					<Geek />
 				</div>
 				<div ref={svgTitleRef} className={styles.svgTitleWrapper}>
-					<h2 className={styles.svgTitle}>Modern Design</h2>
+					<h2 className={styles.svgTitle}>My Work</h2>
 				</div>
 			</div>
 			<div className={styles.secondCol}>
-				<ImagesAndActionPoints pic1={'/pic1.png'} pic2={'/pic2.png'} pic3={'/pic3.png'} />
+				<div className={styles.clientBox}>
+					<img id="img" src="/tn.png" alt="client profile" />
+					<h4>Tradenation.com</h4>
+					<p>
+						Server-Side Rendered Forex Community web-app for the TN trade platform. Bringing simplicity and
+						a web 3.0 presence to Retail FX Trading.
+					</p>
+					<div className={styles.builtWith}>
+						<p>Built with: </p>
+						<ReactLogo />
+						<ReduxLogo />
+						<SassLogo />
+						<NodeLogo />
+					</div>
+
+				</div>
+				<div className={styles.clientBox}>
+					<img id="img" src="/sky.png" alt="client profile" className={styles.smaller_logo} />
+					<h4>Sky Go</h4>
+					<p>
+						Server Side Rendered Forex Community web-app for the TN trade platform. Bringing simplicity and
+						a web 3.0 presence to Retail FX Trading.
+					</p>
+					<div className={styles.builtWith}>
+						<p>Built with: </p>
+						<ReactLogo />
+						<ReduxLogo />
+						<CSSLogo />
+						<NodeLogo />
+					</div>
+				</div>
+				<div className={styles.clientBox}>
+					<img id="img" src="/infa.png" alt="client profile" />
+					<h4>Infabode.com</h4>
+					<p>
+						Server Side Rendered Forex Community web-app for the TN trade platform. Bringing simplicity and
+						a web 3.0 presence to Retail FX Trading.
+					</p>
+					<div className={styles.builtWith}>
+						<p>Built with: </p>
+						<ReactLogo />
+						<ReduxLogo />
+						<NodeLogo />
+						<GraphQLlogo />
+						<CSSLogo />
+					</div>
+				</div>
 			</div>
 		</section>
 	);
