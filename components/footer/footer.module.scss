@@ -55,6 +55,11 @@
 		font-size: 23px;
 	}
 	p {
-		font-size: 15px;
+		font-size: 9px;
+	}
+	@include md {
+		p {
+			font-size: 15px;
+		}
 	}
 }
