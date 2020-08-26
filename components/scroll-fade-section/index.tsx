@@ -23,6 +23,7 @@ function ScrollFadeSection() {
 	useEffect(() => {
 		var clearTl = new TimelineMax();
 		clearTl.set(svgTitleRef.current, { opacity: 0 });
+
 	}, []);
 
 	const slideInSVG = () => {

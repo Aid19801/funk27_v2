@@ -7,9 +7,14 @@
     // border: 1px solid red;
     display: flex;
     flex-direction: column;
+    justify-content: flex-start;
+    @include tiny {
+        height: auto;
+    }
     @include sm {
         flex-direction: row;
-        // border: 3px solid purple
+        justify-content: center;
+        height: 100vh;
     }
 
 }
@@ -28,11 +33,20 @@
 
 .secondCol {
     height: 100%;
-    width: 50%;
+    width: 90%;
 
     display: flex;
-    justify-content: center;
+    justify-content: flex-start;
     align-items: center;
+    flex-direction: column;
+    @include sm {
+        flex-direction: column;
+        justify-content: center;
+    }
+    @include md {
+        justify-content: center;
+        width: 50%;
+    }
 }
 
 .svgWrapper {

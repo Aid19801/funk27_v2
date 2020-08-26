@@ -1,33 +1,76 @@
 @import "../../scss/main";
 
 .container {
-    // border: 1px solid purple;
+    border: 1px solid purple;
     display: flex;
     flex-direction: column;
     height: auto;
     width: 90%;
     padding-top: 20px;
     padding-bottom: 20px;
+    margin-bottom: 50px;
+    max-height: 90vh;
+    @include lg {
+        margin-left: 170px;
+    }
     .row {
+        position: relative;
         display: flex;
         margin-bottom: 30px;
         height: auto;
         padding-top: 10px;
         padding-bottom: 10px;
         flex-direction: column;
-        @include md {
-            flex-direction: row;
+        align-items: center;
+        // background: black;
+        transform: skewY(0deg);
+        padding: 10px;
+
+        .clip_path_bg {
+            clip-path: polygon(25% 0%, 100% 0%, 75% 100%, 0% 100%);
+            background-color: hotpink;
+            position: absolute;
+            z-index: -2;
+            height: 150px;
+            width: 550px;
+            max-width: 100%;
         }
+        .clip_path_bg:nth-child(2) {
+            clip-path: polygon(25% 0%, 100% 0%, 75% 100%, 0% 100%);
+            background-color: hotpink;
+            position: absolute;
+            z-index: -2;
+            height: 150px;
+            width: 550px;
+        }
+
+        @include sm {
+            flex-direction: row;
+            align-items: center;
+        }
+        @include md {
+            max-width: 456px;
+        }
+       
         .innerColumn {
             display: flex;
             flex-direction: column;
             margin-left: 10px;
+            visibility: hidden;
+            border: 5px solid white;
+            background: lightgrey;
             h4 {
                 font-size: 3vh;
                 font-weight: bold;
                 color: white;
+                transform: skewY(2deg);
+                @include tiny {
+                    font-size: 20px;
+                    text-align: center;
+                }
             }
             p {
+                transform: skewY(2deg);
                 font-size: 20px;
                 font-weight: 300;
                 color: slategray;
@@ -38,6 +81,10 @@
         height: 100px;
         width: 100px;
         border-radius: 100%;
-        border: 3px solid grey;
+        // border: 3px solid yellow;
+        visibility: hidden;
+        @include md {
+            // margin-right: 20px;
+        }
     }
 }
