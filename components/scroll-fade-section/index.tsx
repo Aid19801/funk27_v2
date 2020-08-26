@@ -2,12 +2,14 @@ import React, { useRef, useEffect, useState } from 'react';
 import { useIntersection } from 'react-use';
 //@ts-ignore
 import Geek from '../../svgs/geek.svg';
+import NextJSLogo from '../../svgs/nextjs.svg';
 import ReactLogo from '../../svgs/react_logo.svg';
 import ReduxLogo from '../../svgs/redux.svg';
 import SassLogo from '../../svgs/sass.svg';
 import NodeLogo from '../../svgs/node.svg';
 import GraphQLlogo from '../../svgs/GQL.svg';
 import CSSLogo from '../../svgs/css.svg';
+import FirebaseLogo from '../../svgs/firebase.svg';
 // import ImagesAndActionPoints from '../images-actions-points';
 import { TimelineMax, Power3 } from 'gsap';
 import styles from './scroll-fade.module.scss';
@@ -119,10 +121,10 @@ function ScrollFadeSection() {
 			</div>
 			<div className={styles.secondCol}>
 				<div className={styles.clientBox}>
-					<img id="img" src="/tn.png" alt="client profile" />
+					<img id="img" src="/tn1.png" alt="client profile" />
 					<h4>Tradenation.com</h4>
 					<p>
-						Server-Side Rendered Forex Community web-app for the TN trade platform. Bringing simplicity and
+						Server-Side Rendered web-app for the TN platform. Bringing simplicity and
 						a web 3.0 presence to Retail FX Trading.
 					</p>
 					<div className={styles.builtWith}>
@@ -135,11 +137,10 @@ function ScrollFadeSection() {
 
 				</div>
 				<div className={styles.clientBox}>
-					<img id="img" src="/sky.png" alt="client profile" className={styles.smaller_logo} />
+					<img id="img" src="/skyGo.png" alt="client profile" />
 					<h4>Sky Go</h4>
 					<p>
-						Server Side Rendered Forex Community web-app for the TN trade platform. Bringing simplicity and
-						a web 3.0 presence to Retail FX Trading.
+						Desktop application offering live stream and downloaded content from Europe's biggest broadcaster.
 					</p>
 					<div className={styles.builtWith}>
 						<p>Built with: </p>
@@ -150,18 +151,30 @@ function ScrollFadeSection() {
 					</div>
 				</div>
 				<div className={styles.clientBox}>
-					<img id="img" src="/infa.png" alt="client profile" />
+					<img id="img" src="/infabode.png" alt="client profile" />
 					<h4>Infabode.com</h4>
 					<p>
-						Server Side Rendered Forex Community web-app for the TN trade platform. Bringing simplicity and
-						a web 3.0 presence to Retail FX Trading.
+						NextJS app providing news feeds and Social Media elements to professionals specifically in the Prop-Tech industry.
 					</p>
 					<div className={styles.builtWith}>
 						<p>Built with: </p>
-						<ReactLogo />
+						<NextJSLogo />
 						<ReduxLogo />
 						<NodeLogo />
 						<GraphQLlogo />
+					</div>
+				</div>
+				<div className={styles.clientBox}>
+					<img id="img" src="/tpr.png" alt="client profile" />
+					<h4>The Panda Riot</h4>
+					<p>
+						NextJS app for comedians in London. Includes news, video, voting and a useful map of gigs.
+					</p>
+					<div className={styles.builtWith}>
+						<p>Built with: </p>
+						<NextJSLogo />
+						<ReduxLogo />
+						<FirebaseLogo />
 						<CSSLogo />
 					</div>
 				</div>
