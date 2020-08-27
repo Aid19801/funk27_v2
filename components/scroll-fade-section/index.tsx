@@ -2,27 +2,41 @@ import React, { useRef, useEffect, useState } from 'react';
 import { useIntersection } from 'react-use';
 //@ts-ignore
 import Geek from '../../svgs/geek.svg';
-//@ts-ignore
-import NextJSLogo from '../../svgs/nextjs.svg';
-//@ts-ignore
-import ReactLogo from '../../svgs/react_logo.svg';
-//@ts-ignore
-import ReduxLogo from '../../svgs/redux.svg';
-//@ts-ignore
-import SassLogo from '../../svgs/sass.svg';
-//@ts-ignore
-import NodeLogo from '../../svgs/node.svg';
-//@ts-ignore
-import GraphQLlogo from '../../svgs/GQL.svg';
-//@ts-ignore
-import CSSLogo from '../../svgs/css.svg';
-//@ts-ignore
-import FirebaseLogo from '../../svgs/firebase.svg';
-// import ImagesAndActionPoints from '../images-actions-points';
+import Card from '../card';
+
 import { TimelineMax, Power3 } from 'gsap';
 import styles from './scroll-fade.module.scss';
 
+const projects = [
+	{
+		title: 'Tradenation.com',
+		text:
+			'Server-Side Rendered web-app for the TN platform. Bringing simplicity and a web 3.0 presence to Retail FX Trading.',
+		techs: ['react', 'redux', 'node', 'scss'],
+		img: '/tn1.png',
+	},
+	{
+		title: 'Sky Go',
+		text: "Desktop application offering live stream and downloaded content from Europe's biggest broadcaster.",
+		techs: ['react', 'redux', 'node', 'css'],
+		img: '/skyGo.png',
+	},
+	{
+		title: 'Infabode.com',
+		text:
+			'NextJS app providing news feeds and Social Media elements to professionals specifically in the Prop-Tech industry.',
+		techs: ['next', 'redux', 'css', 'gql'],
+		img: '/infabode.png',
+	},
+	{
+		title: 'The Panda Riot',
+		text: 'NextJS app for comedians in London. Includes news, video, voting and a useful map of gigs.',
+		techs: ['next', 'redux', 'firebase', 'css'],
+		img: '/tpr.png',
+	},
+];
 function ScrollFadeSection() {
+
 	let secondSectionRef = useRef(null);
 	let svgRef = useRef(null);
 	let svgTitleRef = useRef(null);
@@ -127,65 +141,20 @@ function ScrollFadeSection() {
 					<h2 className={styles.svgTitle}>My Work</h2>
 				</div>
 			</div>
-			<div className={styles.secondCol}>
-				<div className={styles.clientBox}>
-					<img id="img" src="/tn1.png" alt="client profile" />
-					<h4>Tradenation.com</h4>
-					<p>
-						Server-Side Rendered web-app for the TN platform. Bringing simplicity and
-						a web 3.0 presence to Retail FX Trading.
-					</p>
-					<div className={styles.builtWith}>
-						<p>Built with: </p>
-						<ReactLogo />
-						<ReduxLogo />
-						<SassLogo />
-						<NodeLogo />
-					</div>
 
-				</div>
-				<div className={styles.clientBox}>
-					<img id="img" src="/skyGo.png" alt="client profile" />
-					<h4>Sky Go</h4>
-					<p>
-						Desktop application offering live stream and downloaded content from Europe's biggest broadcaster.
-					</p>
-					<div className={styles.builtWith}>
-						<p>Built with: </p>
-						<ReactLogo />
-						<ReduxLogo />
-						<CSSLogo />
-						<NodeLogo />
-					</div>
-				</div>
-				<div className={styles.clientBox}>
-					<img id="img" src="/infabode.png" alt="client profile" />
-					<h4>Infabode.com</h4>
-					<p>
-						NextJS app providing news feeds and Social Media elements to professionals specifically in the Prop-Tech industry.
-					</p>
-					<div className={styles.builtWith}>
-						<p>Built with: </p>
-						<NextJSLogo />
-						<ReduxLogo />
-						<NodeLogo />
-						<GraphQLlogo />
-					</div>
-				</div>
-				<div className={styles.clientBox}>
-					<img id="img" src="/tpr.png" alt="client profile" />
-					<h4>The Panda Riot</h4>
-					<p>
-						NextJS app for comedians in London. Includes news, video, voting and a useful map of gigs.
-					</p>
-					<div className={styles.builtWith}>
-						<p>Built with: </p>
-						<NextJSLogo />
-						<ReduxLogo />
-						<FirebaseLogo />
-						<CSSLogo />
-					</div>
-				</div>
+			<div className={styles.secondCol}>
+				{projects.map(({ title, text, techs, img }, i) => {
+					return (
+						<Card
+							key={i}
+							title={title}
+							text={text}
+							techs={techs}
+							img={img}
+							someRef={secondSectionRef}
+						/>
+					);
+				})}
 			</div>
 		</section>
 	);

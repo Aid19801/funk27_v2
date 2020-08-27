@@ -1,3 +1,4 @@
+import Card from './card';
 import Hero from './hero';
 import HeroSection from './hero-section';
 import Image from './image';
@@ -7,6 +8,7 @@ import Navbar from './navbar';
 import ScrollFadeSection from './scroll-fade-section';
 
 export {
+    Card,
     Hero,
     HeroSection,
     Image,
