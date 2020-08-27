@@ -6,6 +6,7 @@ import gsap, { TimelineMax, Power4, Back } from 'gsap';
 function About() {
 
     let photoRef = useRef(null);
+    let polygonRef = useRef(null);
 
     useEffect(() => {
         beginAnimation()
@@ -14,7 +15,8 @@ function About() {
     const beginAnimation = () => {
         let photoTl = new TimelineMax();
         photoTl
-            .fromTo(photoRef.current, .5, { autoAlpha: 0, y: 100 }, { autoAlpha: 1, y: 0, ease: Power4.easeIn }, '+=2')
+            .fromTo(photoRef.current, .5, { autoAlpha: 0, y: 100 }, { autoAlpha: 1, y: 0, ease: Back.easeIn }, '+=2')
+            .fromTo(polygonRef.current, .5, { opacity: 0, x: -100 }, { opacity: 1, x: 0, ease: Back.easeIn }, '-=.4')
 
 
     }
@@ -28,15 +30,20 @@ function About() {
 
 			<main>
 				<section>
+ 
 					<div className="about__content columns">
 						<div className="about__title_and_picture column">
 							<h1>About</h1>
-                            <picture >
-                                <source media="(min-width:700px)" srcSet="/me_large.jpg" />
-                                <source media="(min-width:465px)" srcSet="/me_mob.png" />
-                                <source media="(min-width:0px)" srcSet="/me_mob.png" />
-                                <img ref={photoRef} src="/me_large.jpg" alt="Adrian Thompson Developer" />
-                            </picture>
+
+                            <div className="img__poly_container">
+                                <picture >
+                                    <source media="(min-width:700px)" srcSet="/me_large.jpg" />
+                                    <source media="(min-width:465px)" srcSet="/me_mob.png" />
+                                    <source media="(min-width:0px)" srcSet="/me_mob.png" />
+                                    <img ref={photoRef} src="/me_large.jpg" alt="Adrian Thompson Developer" />
+                                </picture>
+                                <div ref={polygonRef} className="about__polygon_mob" />
+                            </div>
 						</div>
 						<div className="column is-two-thirds">
 							    <p><strong>Funk-27</strong> was the brainchild of London-based Software Engineer, Adrian

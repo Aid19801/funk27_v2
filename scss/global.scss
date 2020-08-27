@@ -106,12 +106,12 @@ a:hover {
 
 .about__page {
 	section:nth-child(1) {
-		// border: 1px solid red;
 		height: auto;
 	}
 }
 .about__content {
 	margin-top: 0px;
+	z-index: 1;
 	.about__title_and_picture {
 		display: flex;
 		flex-direction: column;
@@ -133,23 +133,49 @@ a:hover {
 	@include md {
 		margin-top: 50px;
 	}
-	img {
-		// border: 2px solid red;
-		// width: 50%;
-		max-width: 100%;
-		@include tiny {
+	.img__poly_container {
+		position: relative;
+		.about__polygon_mob {
+			height: 18%;
+			@include tiny {
+				opacity: 0;
+				z-index: -1;
+				position: absolute;
+				height: 107%;
+				top: -22px;
+				left: -22px;
+				width: 117%;
+				-webkit-clip-path: polygon(25% 0%, 100% 0%, 75% 100%, 0% 100%);
+				clip-path: polygon(25% 0%, 100% 0%, 75% 100%, 0% 100%);
+				background: #f8a203;
+			}
+			@include md {
+				display: none;
+			}
+		}
+		img {
 			max-width: 100%;
-		}
-		@include sm {
-			max-width: 386px;
-		}
-		@include md {
-			border-radius: 25px;
+			@include tiny {
+				max-width: 100%;
+			}
+			@include sm {
+				max-width: 386px;
+			}
+			@include md {
+				border-radius: 25px;
+			}
 		}
 	}
 	h1 {
 		font-family: 'Dancing Script', cursive;
 		color: orange;
+		@include tiny {
+			margin-top: 30px;
+		}
+		@include sm {
+			margin-top: 0;
+			margin-bottom: 30px;
+		}
 	}
 	p {
 		font-size: 24px;
