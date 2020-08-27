@@ -108,6 +108,9 @@ a:hover {
 	section:nth-child(1) {
 		height: auto;
 	}
+	@include md {
+		margin-bottom: 56px;
+	}
 }
 .about__content {
 	margin-top: 0px;
