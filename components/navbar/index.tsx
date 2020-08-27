@@ -1,7 +1,6 @@
 import React, { ReactElement, useState, useEffect, useRef } from 'react';
 import Link from 'next/link';
 import gsap, { TimelineMax, Elastic, Power3 } from 'gsap';
-import styles from './navbar.module.scss';
 
 interface Props {}
 
@@ -25,7 +24,7 @@ function Navbar({}: Props): ReactElement {
 			.set(contactRef.current, { autoAlpha: 0 })
 			.set(podsRef.current, { autoAlpha: 0 })
 			.set(blogsRef.current, { autoAlpha: 0 })
-			.set(slamIn.current, { autoAlpha: 0, onComplete: beginAnimations });
+			.set(slamIn.current, { autoAlpha: 0, onComplete: beginAnimations })
 	}, []);
 
 	const beginAnimations = () => {
@@ -39,7 +38,8 @@ function Navbar({}: Props): ReactElement {
 				{ y: '-=15', scale: 0.2, autoAlpha: 0, transformOrigin: 'center center' }, // <-- scaling from the centre
 				{ y: 0, scale: 1, autoAlpha: 1, transformOrigin: 'center center', ease: Elastic.easeOut },
 				'+=0.3' // <--start it 0.3 earlier than it should do
-			);
+			)
+			.add('nav-slammed-in')
 	};
 
 	const toggleMenu = () => {
@@ -50,10 +50,12 @@ function Navbar({}: Props): ReactElement {
 		<React.Fragment>
 			<nav className="navbar" role="navigation" aria-label="main navigation">
 				<div className={`navbar-brand`}>
-					<a ref={slamIn} className={`navbar-item`} href="#">
-						<h1 style={{ fontSize: '5vh', marginLeft: 20, color: 'grey' }}>Funk-</h1>
-						<h1 style={{ fontSize: '5vh', color: 'orange' }}>27</h1>
-					</a>
+					<Link href="/">
+						<a ref={slamIn} className={`navbar-item`}>
+							<h1 style={{ fontSize: '5vh', marginLeft: 20, color: 'grey' }}>Funk-</h1>
+							<h1 style={{ fontSize: '5vh', color: 'orange' }}>27</h1>
+						</a>
+					</Link>
 
 					<div
 						onClick={toggleMenu}

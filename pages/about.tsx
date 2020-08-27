@@ -1,8 +1,23 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import Head from 'next/head';
 import Link from 'next/link';
+import gsap, { TimelineMax, Power4, Back } from 'gsap';
 
 function About() {
+
+    let photoRef = useRef(null);
+
+    useEffect(() => {
+        beginAnimation()
+    }, []);
+
+    const beginAnimation = () => {
+        let photoTl = new TimelineMax();
+        photoTl
+            .fromTo(photoRef.current, .5, { autoAlpha: 0, y: 100 }, { autoAlpha: 1, y: 0, ease: Power4.easeIn }, '+=2')
+
+
+    }
 	return (
 		<div className="about__page container">
 			<Head>
@@ -16,11 +31,11 @@ function About() {
 					<div className="about__content columns">
 						<div className="about__title_and_picture column">
 							<h1>About</h1>
-                            <picture>
+                            <picture >
                                 <source media="(min-width:700px)" srcSet="/me_large.jpg" />
                                 <source media="(min-width:465px)" srcSet="/me_mob.png" />
                                 <source media="(min-width:0px)" srcSet="/me_mob.png" />
-                                <img src="/me_large.jpg" alt="Adrian Thompson Developer" />
+                                <img ref={photoRef} src="/me_large.jpg" alt="Adrian Thompson Developer" />
                             </picture>
 						</div>
 						<div className="column is-two-thirds">
