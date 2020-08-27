@@ -1,4 +1,4 @@
-@import "main.scss";
+@import 'main.scss';
 
 // name: global.scss
 // contains: top level all app styling eg. no margin on <ul> or <p> tags.
@@ -6,7 +6,7 @@
 // goes to: App.tsx
 
 // * {
-	// border: 1px solid red;
+// border: 1px solid red;
 // }
 
 body {
@@ -21,18 +21,18 @@ body {
 	background-color: map-get($map: $theme_map, $key: bold);
 	height: 100%;
 	width: 100%;
-    position: absolute;
-    z-index: -1;
+	position: absolute;
+	z-index: -1;
 }
 
 a {
 	text-decoration: none;
 	color: black;
 }
- h1 {
-	 font-size: 9vh;
-	 text-align: center;
- }
+h1 {
+	font-size: 9vh;
+	text-align: center;
+}
 main {
 	display: flex;
 	flex-direction: column;
@@ -42,7 +42,6 @@ main {
 	height: auto;
 	// margin-top: 50px;
 	// margin-bottom: 50px;
-	// border: 1px solid red;
 }
 
 section {
@@ -83,6 +82,7 @@ section:nth-child(3) {
 		color: white;
 	}
 }
+
 p {
 	color: black;
 	font-size: 37px;
@@ -90,16 +90,80 @@ p {
 	@include tiny {
 		// border: 5px solid blue;
 	}
-	
+
 	@include sm {
 		// border: 10px solid red;
 	}
 
-    @include lg {
-        // border: 5px solid purple;
-    }
+	@include lg {
+		// border: 5px solid purple;
+	}
 }
 
 a:hover {
 	color: rgb(77, 75, 75);
+}
+
+.about__page {
+	section:nth-child(1) {
+		// border: 1px solid red;
+		height: auto;
+	}
+}
+.about__content {
+	margin-top: 0px;
+	.about__title_and_picture {
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+		@include tiny {
+			flex-direction: column-reverse;
+		}
+		@include sm {
+			flex-direction: column;
+		}
+		@include md {
+			justify-content: flex-start;
+		}
+	}
+	@include sm {
+		margin-top: 0px;
+	}
+	@include md {
+		margin-top: 50px;
+	}
+	img {
+		// border: 2px solid red;
+		// width: 50%;
+		max-width: 100%;
+		@include tiny {
+			max-width: 100%;
+		}
+		@include sm {
+			max-width: 386px;
+		}
+		@include md {
+			border-radius: 25px;
+		}
+	}
+	h1 {
+		font-family: 'Dancing Script', cursive;
+		color: orange;
+	}
+	p {
+		font-size: 24px;
+		line-height: 1.6;
+		color: dimgrey;
+	}
+	p:nth-child(5) {
+		background: orange;
+		color: white;
+		padding: 20px;
+		transform: skewY(-2deg);
+		strong {
+			color: lightgrey;
+		}
+
+	}
 }

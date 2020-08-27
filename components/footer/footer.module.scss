@@ -2,7 +2,7 @@
 @import "../../scss/main";
 
 .footer {
-	background-color: #ffdd57;
+	background-color: white;
 	bottom: 0;
 	position: fixed;
 	left: 0;
@@ -10,7 +10,7 @@
 	padding: 10px 30px;
 	border-top: 0.2px solid lightgrey;
 	border-width: 60%;
-	border: 4px solid black;
+	// border: 4px solid black;
 	height: auto;
 	transition: .2s;
 	opacity: 1;
