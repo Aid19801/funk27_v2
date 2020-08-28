@@ -40,7 +40,7 @@ interface Props {
     link: string;
 }
 
-function Card({ title, text, techs, img, someRef }: Props) {
+function Card({ title, link, techs, img, someRef }: Props) {
 	let clientBoxRef = useRef(null);
 
 	const cardIntersection = useIntersection(someRef, {
@@ -90,6 +90,8 @@ function Card({ title, text, techs, img, someRef }: Props) {
 
 	return (
 		<div className={styles.clientBox} ref={clientBoxRef}>
+            <a href={link}>
+
 			<img id="img" src={img} alt="client profile" />
 			
             <div className={styles.clientBoxInfo}>
@@ -106,6 +108,8 @@ function Card({ title, text, techs, img, someRef }: Props) {
 				</div>
 			</div>
             </div>
+
+            </a>
 		</div>
 	);
 }
