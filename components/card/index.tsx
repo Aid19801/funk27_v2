@@ -90,7 +90,7 @@ function Card({ title, link, techs, img, someRef }: Props) {
 
 	return (
 		<div className={styles.clientBox} ref={clientBoxRef}>
-            <a href={link}>
+
 
 			<img id="img" src={img} alt="client profile" />
 			
@@ -109,7 +109,7 @@ function Card({ title, link, techs, img, someRef }: Props) {
 			</div>
             </div>
 
-            </a>
+
 		</div>
 	);
 }
