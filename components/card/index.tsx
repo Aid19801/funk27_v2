@@ -36,7 +36,8 @@ interface Props {
 	text: string;
 	techs: string[];
 	img: string;
-	someRef: any;
+    someRef: any;
+    link: string;
 }
 
 function Card({ title, text, techs, img, someRef }: Props) {

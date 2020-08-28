@@ -14,12 +14,14 @@ const projects = [
 			'Server-Side Rendered web-app for the TN platform. Bringing simplicity and a web 3.0 presence to Retail FX Trading.',
 		techs: ['react', 'redux', 'node', 'scss'],
 		img: '/cash.jpg',
+		link: 'https://tradenation.com',
 	},
 	{
 		title: 'Sky Go',
 		text: "Desktop application offering live stream and downloaded content from Europe's biggest broadcaster.",
 		techs: ['react', 'redux', 'node', 'css'],
 		img: '/tablet.jpg',
+		link: 'https://www.sky.com/watch/sky-go/windows',
 	},
 	{
 		title: 'Infabode',
@@ -27,12 +29,14 @@ const projects = [
 			'NextJS app providing news feeds and Social Media elements to professionals specifically in the Prop-Tech industry.',
 		techs: ['next', 'redux', 'css', 'gql'],
 		img: '/house.jpg',
+		link: 'https://infabode.com',
 	},
 	{
 		title: 'The Panda Riot',
 		text: 'NextJS desktop app for comedians in London. Includes news, video, voting and a useful map of gigs.',
 		techs: ['next', 'redux', 'firebase', 'css'],
 		img: '/comedy.jpg',
+		link: 'https://www.thepandariot.com/downloads',
 	},
 ];
 function ScrollFadeSection() {
@@ -143,7 +147,7 @@ function ScrollFadeSection() {
 			</div>
 
 			<div className={styles.secondCol}>
-				{projects.map(({ title, text, techs, img }, i) => {
+				{projects.map(({ title, text, techs, img, link }, i) => {
 					return (
 						<Card
 							key={i}
@@ -152,6 +156,7 @@ function ScrollFadeSection() {
 							techs={techs}
 							img={img}
 							someRef={secondSectionRef}
+							link={link}
 						/>
 					);
 				})}
