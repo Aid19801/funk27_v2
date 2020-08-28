@@ -9,30 +9,30 @@ import styles from './scroll-fade.module.scss';
 
 const projects = [
 	{
-		title: 'Tradenation.com',
+		title: 'Tradenation',
 		text:
 			'Server-Side Rendered web-app for the TN platform. Bringing simplicity and a web 3.0 presence to Retail FX Trading.',
 		techs: ['react', 'redux', 'node', 'scss'],
-		img: '/tn1.png',
+		img: '/cash.jpg',
 	},
 	{
 		title: 'Sky Go',
 		text: "Desktop application offering live stream and downloaded content from Europe's biggest broadcaster.",
 		techs: ['react', 'redux', 'node', 'css'],
-		img: '/skyGo.png',
+		img: '/tablet.jpg',
 	},
 	{
-		title: 'Infabode.com',
+		title: 'Infabode',
 		text:
 			'NextJS app providing news feeds and Social Media elements to professionals specifically in the Prop-Tech industry.',
 		techs: ['next', 'redux', 'css', 'gql'],
-		img: '/infabode.png',
+		img: '/house.jpg',
 	},
 	{
 		title: 'The Panda Riot',
-		text: 'NextJS app for comedians in London. Includes news, video, voting and a useful map of gigs.',
+		text: 'NextJS desktop app for comedians in London. Includes news, video, voting and a useful map of gigs.',
 		techs: ['next', 'redux', 'firebase', 'css'],
-		img: '/tpr.png',
+		img: '/comedy.jpg',
 	},
 ];
 function ScrollFadeSection() {

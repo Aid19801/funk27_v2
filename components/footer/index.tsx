@@ -4,6 +4,7 @@ import { faMailBulk } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 import styles from './footer.module.scss';
+import Link from 'next/link';
 
 interface Props {}
 
@@ -40,9 +41,10 @@ function Footer({}: Props): ReactElement {
 					<div className={styles.flexFooterRow}>
 						<div className={styles.flexFooterCol}>
 							<h4>Github</h4>
-							<p>Funk-27</p>
-							<p>The Panda Riot</p>
-							<p>#ThatDadsApp</p>
+
+							<a href="https://github.com/Aid19801/funk27_v2">Funk-27</a>
+							<a href="https://github.com/Aid19801/the-panda-riot-v2">The Panda Riot</a>
+							<a href="https://github.com/Aid19801/that-dads-app">#ThatDadsApp</a>
 						</div>
 						<div className={styles.flexFooterCol}>
 							<h4>Skills</h4>

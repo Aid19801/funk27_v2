@@ -2,70 +2,110 @@
 @import '../../scss/main';
 
 .clientBox {
-    // opacity: 0;
-	height: auto;
-	// border: 1px solid red;
-	background: linear-gradient(45deg, white, rgb(206, 204, 204));
-	padding-bottom: 20px;
-	// padding-top: 20px;
+	position: relative;
+	width: 95vw;
+	max-width: 365px;
+	height: 200px;
+
 	margin-bottom: 30px;
 	display: flex;
 	flex-direction: column;
-	justify-content: center;
+	justify-content: flex-start;
 	align-content: center;
 	align-items: center;
 	text-align: start;
 	box-shadow: 0 14px 72px -2px lightgrey;
-	max-width: 445px;
+
 	@include tiny {
 		width: 95vw;
+		height: 95vw;
+		max-width: 365px;
+		height: 288px;
+		h4 {
+			margin-top: 4px !important;
+		}
 	}
 	@include sm {
 		// width: 80vw;
-		max-width: 425px;
+		max-width: 350px;
 		margin-left: 20px;
 	}
 	@include md {
-		max-width: 425px;
-		height: 388px;
+		max-width: 365px;
+		height: 288px;
 		contain: content;
 		display: flex;
 		justify-content: flex-start;
+		h4 {
+			margin-top: 0px !important;
+		}
 	}
 	img {
+		position: absolute;
 		width: 100%;
 		transition: 0.3s;
 	}
-	h4 {
-		color: dimgrey;
-		margin-top: 20px;
-		font-family: 'Russo One', sans-serif;
-	}
-	p {
-		color: black;
-		margin-top: 20px;
-		padding-right: 5px;
-		padding-left: 5px;
-		line-height: 0.9;
-		font-size: 17px;
-		font-family: 'Source Sans Pro', sans-serif;
-	}
-	.builtWith {
-		margin-top: 20px;
+
+	.clientBoxInfo {
+		position: absolute;
+		background: white;
+		height: 50%;
+		width: 100%;
+		bottom: 0;
 		display: flex;
-		flex-direction: row;
+		flex-direction: column;
+		justify-content: space-evenly;
+		align-content: center;
 		align-items: center;
-		flex-wrap: wrap;
-		p {
-			font-family: 'Source Sans Pro', sans-serif;
-			font-size: 12px;
+
+		h4 {
+			font-size: 22px;
+			color: dimgrey;
+			margin-top: -1px;
+			font-family: 'Russo One', sans-serif;
+
+			@include tiny {
+				font-size: 34px;
+				margin-top: 27px;
+			}
 		}
-		svg {
-			height: 50px;
-			width: 50px;
-			background: gainsboro;
-			transform: skewY(-1deg);
-			margin-left: 10px;
+		p {
+			color: black;
+			margin-bottom: 5px;
+			padding-right: 5px;
+			padding-left: 5px;
+			line-height: 0.9;
+			font-size: 17px;
+			font-family: 'Source Sans Pro', sans-serif;
+		}
+		.builtWith {
+			// margin-top: 20px;
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			flex-wrap: wrap;
+			p {
+				font-family: 'Source Sans Pro', sans-serif;
+				font-size: 12px;
+				margin-top: 5px;
+			}
+			.flexRow {
+				display: flex;
+				flex-direction: row;
+				svg {
+					height: 35px;
+					width: 35px;
+					background: gainsboro;
+					transform: skewY(-1deg);
+					margin-left: 10px;
+					border-radius: 50%;
+					padding: 5px;
+					@include tiny {
+						height: 55px;
+						width: 55px;
+					}
+				}
+			}
 		}
 	}
 }
