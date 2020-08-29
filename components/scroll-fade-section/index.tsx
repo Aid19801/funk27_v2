@@ -138,11 +138,16 @@ function ScrollFadeSection() {
 	return (
 		<section className={styles.orange_section} ref={secondSectionRef}>
 			<div className={styles.firstCol}>
-				<div ref={svgRef} className={styles.svgWrapper}>
-					<Geek />
-				</div>
-				<div ref={svgTitleRef} className={styles.svgTitleWrapper}>
-					<h2 className={styles.svgTitle}>My Work</h2>
+
+				<div className={styles.svgAndTitleContainer}>
+
+					<div ref={svgRef} className={styles.svgWrapper}>
+						<Geek />
+					</div>
+					<div ref={svgTitleRef} className={styles.svgTitleWrapper}>
+						<h2 className={styles.svgTitle}>My Work</h2>
+					</div>
+
 				</div>
 			</div>
 
