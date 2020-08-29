@@ -50,22 +50,30 @@
 }
 
 .flexFooterCol {
+	// border-top: 1px solid black;
+	// margin-top: 20px;
 	display: flex;
 	flex-direction: column;
 	h4 {
 		font-size: 23px;
 	}
 	p {
+		color: grey;
 		font-size: 9px;
 		margin-bottom: 6px !important;
 	}
 	a {
+		color: grey;
 		font-size: 9px;
 		margin-bottom: 6px !important;
 	}
 	@include md {
 		p {
 			font-size: 15px;
+		}
+		a {
+			font-size: 15px;
+			// margin-bottom: 6px !important;
 		}
 	}
 }

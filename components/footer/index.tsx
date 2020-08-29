@@ -38,6 +38,18 @@ function Footer({}: Props): ReactElement {
 		<React.Fragment>
 			<div className="footer">
 				<div className="content has-text-centered">
+					<div className="navbar-brand">
+						<Link href="/">
+							<a className="navbar-item">
+								<h1 style={{ fontSize: '5vh', marginLeft: 0, marginBottom: 0, color: 'grey', fontWeight: 400 }}>F</h1>
+								<h1 style={{ fontSize: '5vh', marginTop: 0, marginBottom: 0, color: 'orange', fontWeight: 400 }}>27</h1>
+							</a>
+						</Link>
+					</div>
+				</div>
+				<hr className="divider" data-content="OR" />
+
+				<div className="content has-text-centered">
 					<div className={styles.flexFooterRow}>
 						<div className={styles.flexFooterCol}>
 							<h4>Github</h4>
