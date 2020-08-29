@@ -16,6 +16,10 @@
 	text-align: start;
 	box-shadow: 0 14px 72px -2px lightgrey;
 
+	a {
+		width: 100%;
+	}
+
 	@include tiny {
 		width: 95vw;
 		height: 95vw;
