@@ -35,62 +35,16 @@ interface Props {
 	title: string;
 	text: string;
 	techs: string[];
-	img: string;
+	imageOne: string;
+	imageTwo: string;
 	link: string;
 }
 
-function Card({ title, link, techs, img }: Props) {
-	let clientBoxRef = useRef(null);
-
-	const cardIntersection = useIntersection(clientBoxRef, {
-		root: null,
-		rootMargin: '0px',
-		threshold: 0.3,
-	});
-
-	const slideIn = () => {
-		console.log('slide in again');
-		// let slideInTl = new TimelineMax();
-		// slideInTl.fromTo(
-		// 	clientBoxRef.current,
-		// 	1,
-		// 	{
-		// 		opacity: 0,
-		// 		y: 100,
-		// 	},
-		// 	{
-		// 		opacity: 1,
-		// 		y: 0,
-		// 		ease: Power3.easeIn,
-		// 	},
-		// 	`-=${Math.random()}`
-		// );
-	};
-
-	const slideOut = () => {
-		console.log('slide out again');
-		// let slideOutTl = new TimelineMax();
-		// slideOutTl.fromTo(
-		// 	clientBoxRef.current,
-		// 	1,
-		// 	{
-		// 		opacity: 1,
-		// 		y: 0,
-		// 	},
-		// 	{
-		// 		opacity: 0,
-		// 		y: 100,
-		// 		ease: Power3.easeIn,
-		// 	}
-		// );
-	};
-
-	cardIntersection && cardIntersection.intersectionRatio < 0.3 ? slideOut() : slideIn();
-
+function Card({ title, link, techs, imageOne, imageTwo, text }: Props) {
 	return (
-		<div className={styles.clientBox} ref={clientBoxRef}>
-			<a href={link}>
-				<img id="img" src={img} alt="client profile" />
+		<div className={styles.clientBox}>
+			<div className={styles.firstSide}>
+				<img id="img" src={imageOne} alt="client profile" />
 
 				<div className={styles.clientBoxInfo}>
 					<h4>{title}</h4>
@@ -105,7 +59,17 @@ function Card({ title, link, techs, img }: Props) {
 						</div>
 					</div>
 				</div>
-			</a>
+			</div>
+
+			<div className={styles.secondSide}>
+
+				<img id="img" src={imageTwo} alt="client profile" />
+
+				<div className={styles.moreInfo}>
+					<p>{text}</p>
+					<a href={link}>Take a look =></a>
+				</div>
+			</div>
 		</div>
 	);
 }

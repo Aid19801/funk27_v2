@@ -1,147 +1,191 @@
 @import url('https://fonts.googleapis.com/css2?family=Russo+One&family=Source+Sans+Pro:wght@200&display=swap');
 @import '../../scss/main';
 
-
 .clientBox {
-	position: relative;
-	width: 95vw;
-	max-width: 365px;
-	height: 200px;
+	text-align: center;
+	margin: 20px;
+	height: 250px;
+	width: 350px;
 
-	margin-bottom: 30px;
-	display: flex;
-	flex-direction: column;
-	justify-content: flex-start;
-	align-content: center;
-	align-items: center;
-	text-align: start;
-	box-shadow: 0 14px 72px -2px lightgrey;
-	a {
-		width: 100%;
-	}
+	-webkit-transition: -webkit-transform 0.3s;
+	transition: transform 0.3s; /* Animate the transform properties */
 
-	@include tiny {
-		width: 95vw;
-		height: 95vw;
-		max-width: 365px;
-		height: 288px;
-		h4 {
-			margin-top: 4px !important;
-		}
-	}
-	@include sm {
-		// width: 80vw;
-		max-width: 350px;
-		margin-left: 20px;
-	}
-	@include md {
-		max-width: 365px;
-		height: 288px;
-		contain: content;
-		display: flex;
-		justify-content: flex-start;
-		h4 {
-			margin-top: 0px !important;
-		}
-	}
-	img {
-		position: absolute;
-		width: 100%;
-		// opacity: 0.8;
-		transition: 0.7s;
-		// filter: grayscale(100%);
-	}
-	// img:hover {
-		// opacity: 1;
-		// filter: grayscale(0%);
+	-webkit-transform-style: preserve-3d;
+	transform-style: preserve-3d; /* <-NB */
+
+	// @include tiny {
+
+	// }
+	// @include sm {
+
+	// }
+	// @include md {
+
+	// }
+	// @include lg {
+
+	// }
+	// @include xl {
+
 	// }
 
-	.clientBoxInfo {
-		position: absolute;
-		background: white;
-		height: 50%;
-		width: 100%;
-		bottom: 0;
+	.firstSide,
+	.secondSide {
+		background: rgb(247, 247, 247);
+		border: 1px solid rgba(147, 184, 189, 0.8);
+
+		-webkit-border-radius: 5px;
+		border-radius: 5px;
+
+		-webkit-box-shadow: 0 5px 20px rgba(105, 108, 109, 0.3), 0 0 8px 5px rgba(208, 223, 226, 0.4) inset;
+		box-shadow: 0 5px 20px rgba(105, 108, 109, 0.3), 0 0 8px 5px rgba(208, 223, 226, 0.4) inset;
+		height: 250px;
+	}
+	.firstSide {
+		-webkit-transform: translateZ(125px);
+		transform: translateZ(125px);
+		position: relative;
 		display: flex;
-		flex-direction: column;
-		justify-content: space-evenly;
-		align-content: center;
-		align-items: center;
-
-		h4 {
-			font-size: 22px;
-			color: dimgrey;
-			margin-top: -1px;
-			font-family: 'Russo One', sans-serif;
-
-			@include tiny {
-				font-size: 34px;
-				margin-top: 27px;
-			}
+		justify-content: flex-start;
+		overflow: hidden;
+		img {
+			position: absolute;
+			width: 100%;
+			// opacity: 0.8;
+			transition: 0.7s;
+			// filter: grayscale(100%);
 		}
-		p {
-			color: black;
-			margin-bottom: 5px;
-			padding-right: 5px;
-			padding-left: 5px;
-			line-height: 0.9;
-			font-size: 17px;
-			font-family: 'Source Sans Pro', sans-serif;
-		}
-		.builtWith {
-			// margin-top: 20px;
+
+		.clientBoxInfo {
+			position: absolute;
+			background: white;
+			height: 50%;
+			width: 100%;
+			bottom: 0;
 			display: flex;
 			flex-direction: column;
+			justify-content: space-evenly;
+			align-content: center;
 			align-items: center;
-			flex-wrap: wrap;
-			p {
-				font-family: 'Source Sans Pro', sans-serif;
-				font-size: 12px;
-				margin-top: 5px;
+
+			h4 {
+				font-size: 22px;
+				color: dimgrey;
+				margin-top: -1px;
+				font-family: 'Russo One', sans-serif;
+
+				@include tiny {
+					font-size: 30px;
+					// margin-top: 27px;
+				}
 			}
-			.flexRow {
+			p {
+				color: black;
+				margin-bottom: 5px;
+				padding-right: 5px;
+				padding-left: 5px;
+				line-height: 0.9;
+				font-size: 17px;
+				font-family: 'Source Sans Pro', sans-serif;
+			}
+			.builtWith {
+				// margin-top: 20px;
 				display: flex;
-				flex-direction: row;
-				svg {
-					height: 35px;
-					width: 35px;
-					background: gainsboro;
-					transform: skewY(-1deg);
-					margin-left: 10px;
-					border-radius: 50%;
-					padding: 5px;
-					@include tiny {
-						height: 55px;
-						width: 55px;
+				flex-direction: column;
+				align-items: center;
+				flex-wrap: wrap;
+				p {
+					font-family: 'Source Sans Pro', sans-serif;
+					font-size: 12px;
+					margin-top: 5px;
+				}
+				.flexRow {
+					display: flex;
+					flex-direction: row;
+					svg {
+						height: 35px;
+						width: 35px;
+						background: gainsboro;
+						transform: skewY(-1deg);
+						margin-left: 10px;
+						border-radius: 50%;
+						padding: 5px;
+						@include tiny {
+							height: 55px;
+							width: 55px;
+						}
 					}
 				}
 			}
 		}
 	}
-}
+	.secondSide {
+		-webkit-transform: rotateX(-90deg) translateZ(-125px);
+		transform: rotateX(-90deg) translateZ(-125px);
+		position: relative;
+		display: flex;
+		overflow: hidden;
+		.moreInfo {
+			position: absolute;
+			background: white;
+			height: 50%;
+			width: 100%;
+			top: 0;
+			display: flex;
+			flex-direction: column;
+			justify-content: space-evenly;
+			align-content: center;
+			align-items: center;
+			box-shadow: 4px -3px 21px 25px white;
 
-.svgWrapper {
-	opacity: 0;
-	position: relative;
-}
-
-.svgTitleWrapper {
-	opacity: 0;
-	@include tiny {
-		position: absolute;
-		margin-top: 238px;
+			p {
+				color: black;
+				margin-bottom: 5px;
+				padding-right: 5px;
+				padding-left: 5px;
+				line-height: 0.9;
+				font-size: 17px;
+				font-family: 'Source Sans Pro', sans-serif;
+			}
+		}
+		img {
+			position: absolute;
+			width: 100%;
+			transition: 0.7s;
+			bottom: -42px;
+			box-shadow: 4px -3px 21px 25px white;
+		}
 	}
-	@include sm {
-		margin-bottom: 70px;
-	}
 }
 
-.svgTitle {
-	font-size: 8vh;
-	color: grey;
-	font-weight: bold;
-	line-height: 0.6;
-	background: gainsboro;
-	padding: 20px;
-	transform: skewY(-2deg);
+.clientBox:hover {
+	-webkit-transform: rotateX(90deg);
+	transform: rotateX(90deg); /* Text bleed at 90º */
 }
+
+// .svgWrapper {
+// 	opacity: 0;
+// 	position: relative;
+// 	border: 3px solid red;
+// }
+
+// .svgTitleWrapper {
+// 	opacity: 0;
+// 	@include tiny {
+// 		position: absolute;
+// 		margin-top: 238px;
+// 	}
+// 	@include sm {
+// 		margin-bottom: 70px;
+// 	}
+// }
+
+// .svgTitle {
+// 	font-size: 8vh;
+// 	color: grey;
+// 	font-weight: bold;
+// 	line-height: 0.6;
+// 	background: gainsboro;
+// 	padding: 20px;
+// 	transform: skewY(-2deg);
+// }

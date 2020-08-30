@@ -13,14 +13,16 @@ const projects = [
 		text:
 			'Server-Side Rendered web-app for the TN platform. Bringing simplicity and a web 3.0 presence to Retail FX Trading.',
 		techs: ['react', 'redux', 'node', 'scss'],
-		img: '/cash.jpg',
+		imageOne: '/tn.jpg',
+		imageTwo: '/tn2.jpg',
 		link: 'https://tradenation.com',
 	},
 	{
 		title: 'Sky Go',
 		text: "Desktop application offering live stream and downloaded content from Europe's biggest broadcaster.",
 		techs: ['react', 'redux', 'node', 'css'],
-		img: '/tablet.jpg',
+		imageOne: '/sky.jpg',
+		imageTwo: '/sky2.jpg',
 		link: 'https://www.sky.com/watch/sky-go/windows',
 	},
 	{
@@ -28,14 +30,16 @@ const projects = [
 		text:
 			'NextJS app providing news feeds and Social Media elements to professionals specifically in the Prop-Tech industry.',
 		techs: ['next', 'redux', 'css', 'gql'],
-		img: '/house.jpg',
+		imageOne: '/infabode.jpg',
+		imageTwo: '/infabode2.jpg',
 		link: 'https://infabode.com',
 	},
 	{
 		title: 'The Panda Riot',
 		text: 'NextJS desktop app for comedians in London. Includes news, video, voting and a useful map of gigs.',
 		techs: ['next', 'redux', 'firebase', 'css'],
-		img: '/comedy.jpg',
+		imageOne: '/tpr.jpg',
+		imageTwo: '/tpr2.png',
 		link: 'https://www.thepandariot.com/downloads',
 	},
 ];
@@ -152,14 +156,15 @@ function ScrollFadeSection() {
 			</div>
 
 			<div className={styles.secondCol}>
-				{projects.map(({ title, text, techs, img, link }, i) => {
+				{projects.map(({ title, text, techs, imageOne, imageTwo, link }, i) => {
 					return (
 						<Card
 							key={i}
 							title={title}
 							text={text}
 							techs={techs}
-							img={img}
+							imageOne={imageOne}
+							imageTwo={imageTwo}
 							link={link}
 						/>
 					);
