@@ -1,6 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Russo+One&family=Source+Sans+Pro:wght@200&display=swap');
 @import '../../scss/main';
 
+
 .clientBox {
 	position: relative;
 	width: 95vw;
@@ -15,7 +16,6 @@
 	align-items: center;
 	text-align: start;
 	box-shadow: 0 14px 72px -2px lightgrey;
-
 	a {
 		width: 100%;
 	}
@@ -47,8 +47,14 @@
 	img {
 		position: absolute;
 		width: 100%;
-		transition: 0.3s;
+		// opacity: 0.8;
+		transition: 0.7s;
+		// filter: grayscale(100%);
 	}
+	// img:hover {
+		// opacity: 1;
+		// filter: grayscale(0%);
+	// }
 
 	.clientBoxInfo {
 		position: absolute;

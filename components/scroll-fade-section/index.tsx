@@ -160,7 +160,6 @@ function ScrollFadeSection() {
 							text={text}
 							techs={techs}
 							img={img}
-							someRef={secondSectionRef}
 							link={link}
 						/>
 					);
