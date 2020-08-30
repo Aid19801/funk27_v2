@@ -67,7 +67,7 @@ function Card({ title, link, techs, imageOne, imageTwo, text }: Props) {
 
 				<div className={styles.moreInfo}>
 					<p>{text}</p>
-					<a href={link}>Take a look =></a>
+					<a href={link}>Take a look ▶️</a>
 				</div>
 			</div>
 		</div>
