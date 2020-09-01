@@ -24,14 +24,19 @@ function Navbar({}: Props): ReactElement {
 			.set(contactRef.current, { autoAlpha: 0 })
 			.set(podsRef.current, { autoAlpha: 0 })
 			.set(blogsRef.current, { autoAlpha: 0 })
-			.set(slamIn.current, { autoAlpha: 0, onComplete: beginAnimations })
+			.set(slamIn.current, { autoAlpha: 0, onComplete: beginAnimations });
 	}, []);
 
 	const beginAnimations = () => {
 		var navItemsTimeline = new TimelineMax();
 		navItemsTimeline
 			//@ts-ignore
-			.staggerTo([homeRef.current, aboutRef.current, contactRef.current, blogsRef.current, podsRef.current], .5, { autoAlpha: 1, ease: Power3.easeIn }, .1)
+			.staggerTo(
+				[homeRef.current, aboutRef.current, contactRef.current, blogsRef.current, podsRef.current],
+				0.5,
+				{ autoAlpha: 1, ease: Power3.easeIn },
+				0.1
+			)
 			.fromTo(
 				slamIn.current,
 				0.5,
@@ -39,7 +44,7 @@ function Navbar({}: Props): ReactElement {
 				{ y: 0, scale: 1, autoAlpha: 1, transformOrigin: 'center center', ease: Elastic.easeOut },
 				'+=0.3' // <--start it 0.3 earlier than it should do
 			)
-			.add('nav-slammed-in')
+			.add('nav-slammed-in');
 	};
 
 	const toggleMenu = () => {
@@ -73,28 +78,61 @@ function Navbar({}: Props): ReactElement {
 				<div id="navbarBasicExample" className={showMobNav ? 'navbar-menu is-active' : 'navbar-menu'}>
 					<div className="navbar-start">
 						<Link href="/">
-							<a ref={homeRef} className={`navbar-item`}>Home</a>
+							<a ref={homeRef} className={`navbar-item`}>
+								Home
+							</a>
 						</Link>
 						<Link href="/about">
-							<a ref={aboutRef} className={`navbar-item`}>About</a>
+							<a ref={aboutRef} className={`navbar-item`}>
+								About
+							</a>
+						</Link>
+						<Link href="/contact">
+							<a ref={contactRef} className={`navbar-item`}>
+								Contact
+							</a>
 						</Link>
 
-						<a ref={contactRef} className={`navbar-item`}>Contact</a>
-
 						<div className="navbar-item has-dropdown is-hoverable">
-							<a ref={blogsRef} className={`navbar-link`}>Blogs/Tutorials</a>
+							<a ref={blogsRef} className={`navbar-link`}>
+								Blogs/Tutorials
+							</a>
 
 							<div className="navbar-dropdown">
-								<a href="https://medium.com/@AidThompsin/heres-how-you-unit-test-textinput-with-react-native-63e1f7692b17" className="navbar-item">Unit Testing in React Native</a>
-								<a href="https://medium.com/@AidThompsin/how-to-npm-link-to-a-local-version-of-your-dependency-84e82126667a" className="navbar-item">NPM-Link a Local Dependency!</a>
-								<a href="https://medium.com/@AidThompsin/heres-how-you-map-local-on-charles-proxy-14cac3d78705" className="navbar-item">Charles-Proxy - How To Map Local</a>
-								<a href="https://medium.com/@AidThompsin/heres-how-you-set-up-a-prismic-io-cms-with-react-4c930c4610f4" className="navbar-item">Build a Prismic CMS setup for React</a>
+								<a
+									href="https://medium.com/@AidThompsin/heres-how-you-unit-test-textinput-with-react-native-63e1f7692b17"
+									className="navbar-item"
+								>
+									Unit Testing in React Native
+								</a>
+								<a
+									href="https://medium.com/@AidThompsin/how-to-npm-link-to-a-local-version-of-your-dependency-84e82126667a"
+									className="navbar-item"
+								>
+									NPM-Link a Local Dependency!
+								</a>
+								<a
+									href="https://medium.com/@AidThompsin/heres-how-you-map-local-on-charles-proxy-14cac3d78705"
+									className="navbar-item"
+								>
+									Charles-Proxy - How To Map Local
+								</a>
+								<a
+									href="https://medium.com/@AidThompsin/heres-how-you-set-up-a-prismic-io-cms-with-react-4c930c4610f4"
+									className="navbar-item"
+								>
+									Build a Prismic CMS setup for React
+								</a>
 								<hr className="navbar-divider" />
-								<a href="https://twitter.com/funkTwentySeven" className="navbar-item">Request a blog</a>
+								<a href="https://twitter.com/funkTwentySeven" className="navbar-item">
+									Request a blog
+								</a>
 							</div>
 						</div>
 						<div className="navbar-item has-dropdown is-hoverable">
-							<a ref={podsRef} className={`navbar-link bounceIn `}>Podcast</a>
+							<a ref={podsRef} className={`navbar-link bounceIn `}>
+								Podcast
+							</a>
 
 							<div className="navbar-dropdown">
 								<a className="navbar-item">[coming soon]</a>

@@ -1,4 +1,6 @@
 import Card from './card';
+import ContactForm from './contact-form';
+import FunkSpinner from './funk-spinner';
 import Hero from './hero';
 import HeroSection from './hero-section';
 import Image from './image';
@@ -9,6 +11,8 @@ import ScrollFadeSection from './scroll-fade-section';
 
 export {
     Card,
+    ContactForm,
+    FunkSpinner,
     Hero,
     HeroSection,
     Image,

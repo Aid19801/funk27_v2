@@ -196,3 +196,27 @@ a:hover {
 
 	}
 }
+
+.contact__page {
+	height: auto;
+	width: 100%;
+	margin-bottom: 150px;
+	.contact__content {
+		// border: 1px solid red;
+		width: 100%;
+		height: auto;
+		.column {
+			// border: 1px solid green;
+			// min-height: 100%;
+			h1 {
+				font-family: 'Dancing Script', cursive;
+				color: orange;
+			}
+		}
+	}
+}
+
+
+.fadeInSpinner {
+	opacity: 0;
+}
