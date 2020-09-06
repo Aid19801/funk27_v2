@@ -33,12 +33,13 @@ section.lightGrey_section {
 			font-size: 200%;
 			@include tiny {
 				top: 42%;
+				font-size: 148%;
 			}
 			@include sm {
 				top: 49%;
 			}
 			@include md {
-
+				font-size: 200%;
 			}
 		}
 

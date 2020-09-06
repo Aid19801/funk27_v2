@@ -56,7 +56,7 @@ function Home({ ssrContent }: Props): ReactElement {
 					
 					<ScrollFadeSection />
 
-
+					<ScrollFadeSmokeBar />
 				</main>
 			</div>
 		);

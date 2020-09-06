@@ -20,8 +20,8 @@ function ScrollFadeSmokeBar() {
 		let fadeInTl = new TimelineMax();
 		fadeInTl
 			.fromTo(imgRef.current, .8,
-				{ autoAlpha: 0, x: 300 },
-				{ autoAlpha: 1, x: 0, ease: Back.easeInOut }
+				{ autoAlpha: 0, y: 300 },
+				{ autoAlpha: 1, y: 0, ease: Back.easeInOut }
 			)
 			.add('polygon-faded-in')
 			.fromTo(textRef.current, .8, { opacity: 0 }, { opacity: 1, ease: Power3.easeOut }, 'polygon-faded-in+=0.2')
@@ -35,8 +35,8 @@ function ScrollFadeSmokeBar() {
 		let fadeOutTl = new TimelineMax();
 		fadeOutTl
 			.fromTo(imgRef.current, .6,
-				{ autoAlpha: 1, x: 0 },
-				{ autoAlpha: 0, x: 300, ease: Back.easeIn }
+				{ autoAlpha: 1, y: 0 },
+				{ autoAlpha: 0, y: 300, ease: Back.easeIn }
 			)
 			.add('polygon-faded-out')
 			.fromTo(lineOne.current, .5, { opacity: 1, width: 150 }, { opacity: 0, width: 0, ease: Back.easeInOut }, 'polygon-faded-out-=0.2')
