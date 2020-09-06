@@ -8,6 +8,7 @@ import ImagesAndActionPoints from './images-actions-points';
 import Footer from './footer';
 import Navbar from './navbar';
 import ScrollFadeSection from './scroll-fade-section';
+import ScrollFadeSmokeBar from './scroll-fade-bar';
 
 export {
     Card,
@@ -19,5 +20,6 @@ export {
     ImagesAndActionPoints,
     Footer,
     Navbar,
-    ScrollFadeSection
+    ScrollFadeSection,
+    ScrollFadeSmokeBar,
 }

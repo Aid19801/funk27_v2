@@ -4,6 +4,7 @@ import Head from 'next/head';
 import gsap from 'gsap';
 import 'react-bulma-components/dist/react-bulma-components.min.css';
 import '../scss/global.scss';
+// import "flickity/css/flickity.css";
 
 gsap.registerPlugin();
 

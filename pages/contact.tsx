@@ -11,7 +11,6 @@ function Contact() {
 	const [sendSuccess, setSendSuccess] = useState('');
 
 	const toggleSending = (bool) => {
-		// console.log('toggleSending fired, setting: ', bool);
 		setSending(bool);
 	};
 

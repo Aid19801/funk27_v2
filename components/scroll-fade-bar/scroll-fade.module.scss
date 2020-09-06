@@ -1,0 +1,96 @@
+@import url('https://fonts.googleapis.com/css2?family=Russo+One&family=Source+Sans+Pro:wght@200&display=swap');
+@import '../../scss/main';
+
+section.lightGrey_section {
+	background-color: rgba(0, 0, 0, 0) !important;
+	opacity: 1;
+	height: auto;
+	width: 100vw;
+	min-width: 100vw;
+	contain: content;
+	display: flex;
+	flex-direction: column;
+	justify-content: flex-start;
+	align-items: center;
+
+	
+	.containPicture {
+		position: relative;
+		overflow: hidden;
+		clip-path: polygon(10% 0%, 100% 50%, 50% 100%, 0% 50%);
+		contain: content;
+		width: 100%;
+
+		.smokeText {
+			opacity: 0;
+			position: absolute;
+			color: white;
+			z-index: 5;
+			font-family: 'Russo One', sans-serif;
+			width: 100%;
+			text-align: center;
+			top: 34%;
+			font-size: 200%;
+			@include tiny {
+				top: 42%;
+			}
+			@include sm {
+				top: 49%;
+			}
+			@include md {
+
+			}
+		}
+
+		picture {
+			width: 100%;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			img {
+				@include tiny {
+
+				}
+				@include md {
+					width: 50%;
+				}
+			}
+		}
+	}
+	@include tiny {
+		height: 60vh !important;
+	}
+	@include sm {
+		
+	}
+	@include md {
+
+	}
+}
+
+.flexCenter {
+	width: 80%;
+	max-width: 80%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	.lineOne {
+		height: 4px;
+		background: orange;
+		border-radius: 25px;
+	}
+}
+.flexCenter:nth-child(3) {
+	@include tiny {
+		margin-top: 30px;
+	}
+	@include sm {
+		margin-top: 70px;
+	}
+	@include lg {
+		margin-top: 85px;
+	}
+	@include xl {
+		margin-top: 85px;
+	}
+}

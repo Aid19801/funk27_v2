@@ -2,8 +2,7 @@ import React, { ReactElement } from 'react';
 import Head from 'next/head';
 import { useQuery } from 'react-query';
 import { fetchPageByUID } from '../api/requests';
-import ScrollFadeSection from '../components/scroll-fade-section';
-import HeroSection from '../components/hero-section';
+import { ScrollFadeSection, ScrollFadeBar, HeroSection } from '../components';
 
 interface Props {
 	ssrContent: object;
@@ -56,6 +55,8 @@ function Home({ ssrContent }: Props): ReactElement {
 					/>
 					
 					<ScrollFadeSection />
+
+					<ScrollFadeBar />
 				</main>
 			</div>
 		);
