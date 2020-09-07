@@ -4,7 +4,7 @@ import { useIntersection } from 'react-use';
 import Geek from '../../svgs/geek.svg';
 import Card from '../card';
 
-import { TimelineMax, Power3 } from 'gsap';
+import { TimelineMax, Power3, Elastic } from 'gsap';
 import styles from './scroll-fade.module.scss';
 
 const projects = [
@@ -48,6 +48,7 @@ function ScrollFadeSection() {
 	let secondSectionRef = useRef(null);
 	let svgRef = useRef(null);
 	let svgTitleRef = useRef(null);
+	let strikeOneRef = useRef(null);
 
 	const intersectionTwo = useIntersection(secondSectionRef, {
 		root: null,
@@ -97,7 +98,12 @@ function ScrollFadeSection() {
 					backgroundColor: 'orange',
 					ease: Power3.easeOut,
 				})
-				.add('svg-has-slid-in');
+				.add('svg-has-slid-in')
+				.fromTo(strikeOneRef.current, 0.5, {
+					y: 0, scale: 0.2, opacity: 0, transformOrigin: 'center center'
+				},{
+					y: '-=15', scale: 1, opacity: 1, transformOrigin: 'center center', ease: Elastic.easeOut,
+				}, 'svg-has-slid-in+=0.1');
 		}
 	};
 
@@ -133,7 +139,12 @@ function ScrollFadeSection() {
 					backgroundColor: 'white',
 					ease: Power3.easeOut,
 				})
-				.add('svg-has-slid-out');
+				.add('svg-has-slid-out')
+				.fromTo(strikeOneRef.current, 0.5, {
+					y: '-=15', scale: 1, opacity: 1, transformOrigin: 'center center'
+				},{
+					y: 0, scale: 0.2, opacity: 0, transformOrigin: 'center center', ease: Elastic.easeOut,
+				}, 'svg-has-slid-out+=0.1');
 		}
 	};
 
@@ -142,7 +153,7 @@ function ScrollFadeSection() {
 	return (
 		<section className={styles.orange_section} ref={secondSectionRef}>
 			<div className={styles.firstCol}>
-
+				<div ref={strikeOneRef} className={styles.strikeOne} />
 				<div className={styles.svgAndTitleContainer}>
 
 					<div ref={svgRef} className={styles.svgWrapper}>
