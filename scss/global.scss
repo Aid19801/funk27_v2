@@ -29,10 +29,13 @@ a {
 	text-decoration: none;
 	color: black;
 }
-h1 {
+main h1 {
+	font-family: 'Dancing Script', cursive;
+	color: orange;
 	font-size: 9vh;
 	text-align: center;
 }
+
 main {
 	display: flex;
 	flex-direction: column;
@@ -47,7 +50,7 @@ main {
 section {
 	height: 90vh;
 	width: 100vw;
-	background-color: orangered;
+	// background-color: orangered;
 	display: flex;
 	justify-content: center;
 	align-content: center;
@@ -216,7 +219,42 @@ a:hover {
 	}
 }
 
-
 .fadeInSpinner {
 	opacity: 0;
 }
+
+.blog__page {
+	main {
+		section {
+			align-items: center !important;
+		}
+	}
+}
+
+.blog__home {
+
+	main {
+		section {
+			display: flex;
+			justify-content: center;
+	
+			height: auto;
+	
+			.blog__home__top__banner {
+				margin-bottom: 30px;
+			}
+	
+			.blog__home__blogs__container {
+				display: flex;
+				flex-direction: row;
+				flex-wrap: wrap;
+				justify-content: space-around;
+			}
+			.columns {
+				justify-content: space-evenly;
+			}
+		}
+	}
+
+}
+

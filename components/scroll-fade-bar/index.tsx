@@ -3,7 +3,7 @@ import { useIntersection } from 'react-use';
 import { TimelineMax, Power3, Back } from 'gsap';
 import styles from './scroll-fade.module.scss';
 
-function ScrollFadeSmokeBar() {
+function ScrollFadeSmokeBar({ text }) {
 	let thirdSectionRef = useRef(null);
 	let imgRef = useRef(null);
 	let textRef = useRef(null);
@@ -53,7 +53,9 @@ function ScrollFadeSmokeBar() {
 			</div>
 
 			<div ref={imgRef} className={styles.containPicture}>
-				<h4 ref={textRef} className={styles.smokeText}>Code | Build | Create</h4>
+				
+				<h4 ref={textRef} className={styles.smokeText}>{text}</h4>
+
 				<picture>
 					<source
 						media="(max-width: 768px)"

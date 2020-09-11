@@ -94,9 +94,12 @@ function Navbar({}: Props): ReactElement {
 						</Link>
 
 						<div className="navbar-item has-dropdown is-hoverable">
-							<a ref={blogsRef} className={`navbar-link`}>
-								Blogs/Tutorials
-							</a>
+
+							<Link href="/blog">
+								<a ref={blogsRef} className={`navbar-link`}>
+									Blogs/Tutorials
+								</a>
+							</Link>
 
 							<div className="navbar-dropdown">
 								<a

@@ -1,0 +1,13 @@
+
+@import '../../scss/main';
+
+.cardContainer {
+    margin-right: 30px;
+    margin-bottom: 30px;
+    .card__title {
+        font-size: 155%;
+    }
+    @include tiny {
+        margin-right: 0;
+    }
+}

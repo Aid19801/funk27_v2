@@ -1,3 +1,4 @@
+import BlogPreviewCard from './blog-preview-card';
 import Card from './card';
 import ContactForm from './contact-form';
 import FunkSpinner from './funk-spinner';
@@ -11,6 +12,7 @@ import ScrollFadeSection from './scroll-fade-section';
 import ScrollFadeSmokeBar from './scroll-fade-bar';
 
 export {
+    BlogPreviewCard,
     Card,
     ContactForm,
     FunkSpinner,

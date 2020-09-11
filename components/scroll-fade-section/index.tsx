@@ -1,4 +1,4 @@
-import React, { useRef, useEffect, useState } from 'react';
+import React, { useRef, useEffect } from 'react';
 import { useIntersection } from 'react-use';
 //@ts-ignore
 import Geek from '../../svgs/geek.svg';
