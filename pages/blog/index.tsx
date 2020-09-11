@@ -67,7 +67,10 @@ function BlogHome({ ssrContent }: Props): ReactElement {
 					</section>
 					<section>
 						<div className="columns is-multiline">
-							{ content.data.blogs.map((each, i) => <BlogPreviewCard key={i} {...each.blog} /> )}
+							
+							{ // @ts-ignore 
+							 content.data.blogs.map((each, i) => <BlogPreviewCard key={i} {...each.blog} /> )
+							 }
 						</div>
 					</section>
 				</main>

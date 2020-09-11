@@ -8,7 +8,7 @@ function BlogArticle({}: Props): ReactElement {
 
 		return (
 			<div className="blog__home container">
-                <h1>i am a blog article</h1>
+                <h1>i am a blog article [placeholder]</h1>
 			</div>
 		);
 };
