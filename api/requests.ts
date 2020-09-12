@@ -10,13 +10,9 @@ const linkResolver = function(doc) {
 
 async function fetchPageByUID(key, uid) {
 	return Prismic.getApi('https://funk27.cdn.prismic.io/api/v2')
-		.then((api) => api.getByUID('page', uid,  { 'fetchLinks': ['blog-page.blog-title', 'blog-page.blog-body', 'blog-page.blog-image-1', 'blog-page.blog-image-2'] }),
-        )
-		.then(response => {
-			// console.log('AT | response back from prismic UID query:', response);
-			return response;
-		})
-		.catch((err) => console.log('AT | err :', err));
+		.then(api => api.getByUID('page', uid,  { 'fetchLinks': ['blog-page.blog-title', 'blog-page.blog-body', 'blog-page.blog-image-1', 'blog-page.blog-image-2'] }))
+		.then(response => response)
+		.catch(err => console.log('page fetch error: ', err));
 }
 
 
