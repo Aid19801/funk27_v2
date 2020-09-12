@@ -258,3 +258,28 @@ a:hover {
 
 }
 
+.blog__article {
+	main {
+		section {
+			height: auto;
+			h1 {
+				font-size: 6vh;
+			}
+			p {
+				font-size: 14px;
+				margin-bottom: 15px;
+			}
+			p:nth-child(8), p:nth-child(16), p:nth-child(24), p:nth-child(32) {
+				background-color: orange;
+				color: white;
+				font-weight: bold;
+				transform: skewY(-2deg);
+				padding: 10px;
+				strong {
+					color: rgb(104, 102, 102);
+				}
+			}
+		}
+	}
+}
+
