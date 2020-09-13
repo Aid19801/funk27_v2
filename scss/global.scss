@@ -269,6 +269,12 @@ a:hover {
 		p {
 			font-size: 20px;
 			margin-bottom: 30px;
+			overflow-wrap: break-word;
+		}
+		ol li {
+			@include tiny {
+				overflow-wrap: break-word;
+			}
 		}
 		.article-title:nth-child(1) {
 			// color: red;
