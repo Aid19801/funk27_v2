@@ -3,6 +3,8 @@ import Head from 'next/head';
 import { useRouter } from 'next/router';
 import { fetchBlogPageByUID, useContent } from '../../api/requests';
 import { RichText } from 'prismic-reactjs';
+//@ts-ignore
+import AidLegoSVG from '../../svgs/aid_lego.svg';
 
 interface Props {
 	ssrContent: object;
@@ -13,7 +15,6 @@ function BlogArticle({ ssrContent }: Props): ReactElement {
 	const router = useRouter();
 
 	useEffect(() => {
-		console.log(router);
 		if (!content) {
 			const { data, isLoading } = useContent('content', router.query.slug);
 			//@ts-ignore
@@ -22,10 +23,8 @@ function BlogArticle({ ssrContent }: Props): ReactElement {
 	}, [content]);
 
 	if (content) {
-		console.log('content is here: ', content);
-
 		return (
-			<div className="blog__article container">
+			<div className="blog__article">
 				<Head>
 					<title>
 						{
@@ -65,23 +64,77 @@ function BlogArticle({ ssrContent }: Props): ReactElement {
 					/>
 				</Head>
 
-				<main>
-					<section>
-						<div className="columns is-multiline">
+				<section className="hero is-warning is-medium is-bold">
+					<div className="hero-body">
+						<div className="container has-text-centered">
 							<RichText
 								//@ts-ignore
 								render={content.data['blog-title']}
 							/>
-
-							<hr className="blog-article__divider" />
-
-							<RichText
-								//@ts-ignore
-								render={content.data['blog-body']}
-							/>
 						</div>
-					</section>
-				</main>
+					</div>
+				</section>
+
+				<section className="articles">
+					<div className="column is-8 is-offset-2">
+						<div className="card article">
+							<div className="card-content">
+								<div className="media">
+								
+								<div className="media-center">
+                                	<AidLegoSVG className="author-image" />
+                            	</div>
+
+									<div className="media-content has-text-centered responsive-card-author">
+										<p className="title article-title">Aid Thompson</p>
+										<p className="title article-title"><em>Tech Lead | React Warlord | Exhausted Father</em></p>
+										<div className="tags has-addons level-item is-right">
+											<a
+												href="https://www.twitter.com/aidThompsin"
+												className="tag is-rounded is-info"
+											>
+												@aidThompsin
+											</a>
+											<span className="tag is-rounded">May 10, 2019</span>
+										</div>
+									</div>
+								</div>
+								<div className="media">
+									<div className="media-content has-text-centered blog__main-img">
+										<picture>
+											<source
+												// @ts-ignore
+												srcSet={content.data['blog-image-1'].mob.url}
+												// @ts-ignore
+												media="(max-width: 576px)"
+											/>
+
+											<source
+												// @ts-ignore
+												srcSet={content.data['blog-image-1'].twitter.url}
+												// @ts-ignore
+												media="(max-width: 900px)"
+											/>
+
+											<img
+												// @ts-ignore
+												src={content.data['blog-image-1'].url}
+												// @ts-ignore
+												alt={content.data['blog-image-1'].alt}
+											/>
+										</picture>
+									</div>
+								</div>
+								<div className="content article-body">
+									<RichText
+										//@ts-ignore
+										render={content.data['blog-body']}
+									/>
+								</div>
+							</div>
+						</div>
+					</div>
+				</section>
 			</div>
 		);
 	}

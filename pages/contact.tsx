@@ -36,7 +36,7 @@ function Contact() {
 			</Head>
 
 			<main>
-				<section>
+				<section className="contact-section">
 					<div className="contact__content columns">
 						
 

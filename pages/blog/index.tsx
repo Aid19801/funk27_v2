@@ -65,7 +65,7 @@ function BlogHome({ ssrContent }: Props): ReactElement {
 							</div>
 						</div>
 					</section>
-					<section>
+					<section className="blogs__section">
 						<div className="columns is-multiline">
 							
 							{ // @ts-ignore 

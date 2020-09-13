@@ -151,7 +151,7 @@ function ScrollFadeSection() {
 	intersectionTwo && intersectionTwo.intersectionRatio < 0.3 ? slideOutSVG() : slideInSVG();
 
 	return (
-		<section className={styles.orange_section} ref={secondSectionRef}>
+		<section className={`portfolio-section ${styles.orange_section}`} ref={secondSectionRef}>
 			<div className={styles.firstCol}>
 				<div ref={strikeOneRef} className={styles.strikeOne} />
 				<div className={styles.svgAndTitleContainer}>

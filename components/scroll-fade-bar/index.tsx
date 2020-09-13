@@ -46,7 +46,7 @@ function ScrollFadeSmokeBar({ text }) {
 	intersectionThree && intersectionThree.intersectionRatio > 0.7 ? fadeInBackground() : fadeOutBackground();
 
 	return (
-		<section className={styles.lightGrey_section} ref={thirdSectionRef}>
+		<section className={`${styles.lightGrey_section} color-smoke-section`} ref={thirdSectionRef}>
 
 			<div className={styles.flexCenter}>
 				<div className={styles.lineOne} ref={lineOne} />

@@ -102,12 +102,16 @@ function Navbar({}: Props): ReactElement {
 							</Link>
 
 							<div className="navbar-dropdown">
-								<a
-									href="https://medium.com/@AidThompsin/heres-how-you-unit-test-textinput-with-react-native-63e1f7692b17"
-									className="navbar-item"
-								>
-									Unit Testing in React Native
-								</a>
+								<Link href="/blog/unit-textinput-react-native">
+									<a className="navbar-item">
+										Unit Testing in React Native
+									</a>
+								</Link>
+								<Link href="/blog/prismic-react">
+									<a className="navbar-item">
+										Prismic CMS with React
+									</a>
+								</Link>
 								<a
 									href="https://medium.com/@AidThompsin/how-to-npm-link-to-a-local-version-of-your-dependency-84e82126667a"
 									className="navbar-item"
@@ -119,12 +123,6 @@ function Navbar({}: Props): ReactElement {
 									className="navbar-item"
 								>
 									Charles-Proxy - How To Map Local
-								</a>
-								<a
-									href="https://medium.com/@AidThompsin/heres-how-you-set-up-a-prismic-io-cms-with-react-4c930c4610f4"
-									className="navbar-item"
-								>
-									Build a Prismic CMS setup for React
 								</a>
 								<hr className="navbar-divider" />
 								<a href="https://twitter.com/funkTwentySeven" className="navbar-item">

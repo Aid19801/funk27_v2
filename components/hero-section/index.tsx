@@ -28,7 +28,7 @@ function HeroSection({ heroImage, heroTitle }: Props): ReactElement {
 				.fromTo(heroRef.current, 2, { y: 90 }, { y: isMob ? -40 : 20, ease: Elastic.easeInOut }, '+=0.3');
 	}
 	return (
-		<section>
+		<section className="rocket-section">
 			<div ref={heroRef} className={styles.homePageSVGContainer}>
 				<Hero
 					// @ts-ignore

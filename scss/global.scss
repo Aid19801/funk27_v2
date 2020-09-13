@@ -43,32 +43,6 @@ main {
 	justify-content: start;
 	align-content: center;
 	height: auto;
-	// margin-top: 50px;
-	// margin-bottom: 50px;
-}
-
-section {
-	height: 90vh;
-	width: 100vw;
-	// background-color: orangered;
-	display: flex;
-	justify-content: center;
-	align-content: center;
-	align-items: center;
-	h2 {
-		color: white;
-		text-align: center;
-	}
-}
-
-section:nth-child(1) {
-	background-color: white;
-	align-items: start;
-}
-
-section:nth-child(3) {
-	background-color: grey;
-	height: 100vh;
 }
 
 .home__three_words_container {
@@ -196,7 +170,6 @@ a:hover {
 		strong {
 			color: lightgrey;
 		}
-
 	}
 }
 
@@ -232,18 +205,17 @@ a:hover {
 }
 
 .blog__home {
-
 	main {
-		section {
+		.blogs__section {
 			display: flex;
 			justify-content: center;
-	
+			width: 100%;
 			height: auto;
-	
+
 			.blog__home__top__banner {
 				margin-bottom: 30px;
 			}
-	
+
 			.blog__home__blogs__container {
 				display: flex;
 				flex-direction: row;
@@ -255,31 +227,71 @@ a:hover {
 			}
 		}
 	}
-
 }
 
 .blog__article {
-	main {
-		section {
-			height: auto;
-			h1 {
-				font-size: 6vh;
-			}
-			p {
-				font-size: 14px;
-				margin-bottom: 15px;
-			}
-			p:nth-child(8), p:nth-child(16), p:nth-child(24), p:nth-child(32) {
-				background-color: orange;
-				color: white;
-				font-weight: bold;
-				transform: skewY(-2deg);
-				padding: 10px;
-				strong {
-					color: rgb(104, 102, 102);
+	.hero {
+		h1 {
+			font-size: 3rem;
+			font-weight: 300;
+			color: white;
+		}
+	}
+	.card {
+		max-width: 100%;
+
+		.media {
+			.blog__main-img {
+				img {
+					max-width: 527px;
 				}
 			}
+		}
+		.block-img {
+			display: flex;
+			justify-content: center;
+			img {
+				box-shadow: 5px 5px 10px;
+			}
+		}
+		.responsive-card-author {
+			@include tiny {
+				margin-top: 1rem;
+			}
+		}
+
+		.article-body {
+			@include tiny {
+				margin: 10px 20px;
+			}
+		}
+
+		p {
+			font-size: 20px;
+			margin-bottom: 30px;
+		}
+		.article-title:nth-child(1) {
+			// color: red;
+			font-size: 2rem;
+			margin-bottom: 0;
 		}
 	}
 }
 
+.rocket-section {
+	height: 100vh;
+}
+.portfolio-section {
+	height: auto;
+	padding: 50px 20px;
+	display: flex;
+	align-items: center;
+}
+.color-smoke-section {
+	height: auto;
+	padding: 50px 20px;
+}
+
+.contact-section {
+	width: 90%;
+}
