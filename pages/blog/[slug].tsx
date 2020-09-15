@@ -80,14 +80,15 @@ function BlogArticle({ ssrContent }: Props): ReactElement {
 						<div className="card article">
 							<div className="card-content">
 								<div className="media">
-								
-								<div className="media-center">
-                                	<AidLegoSVG className="author-image" />
-                            	</div>
+									<div className="media-center">
+										<AidLegoSVG className="author-image" />
+									</div>
 
 									<div className="media-content has-text-centered responsive-card-author">
 										<p className="title article-title">Aid Thompson</p>
-										<p className="title article-title"><em>Tech Lead | React Warlord | Exhausted Father</em></p>
+										<p className="title article-title">
+											<em>Tech Lead | React Warlord | Exhausted Father</em>
+										</p>
 										<div className="tags has-addons level-item is-right">
 											<a
 												href="https://www.twitter.com/aidThompsin"
@@ -130,6 +131,28 @@ function BlogArticle({ ssrContent }: Props): ReactElement {
 										//@ts-ignore
 										render={content.data['blog-body']}
 									/>
+								</div>
+
+								<div className="media">
+									<div className="media-center">
+										<AidLegoSVG className="author-image-bottom" />
+									</div>
+
+									<div className="media-content has-text-centered responsive-card-author">
+										<p className="title article-title">Aid Thompson</p>
+										<p className="title article-title">
+											<em>Tech Lead | React Warlord | Exhausted Father</em>
+										</p>
+										<div className="tags has-addons level-item is-right">
+											<a
+												href="https://www.twitter.com/aidThompsin"
+												className="tag is-rounded is-info"
+											>
+												@aidThompsin
+											</a>
+											<span className="tag is-rounded">May 10, 2019</span>
+										</div>
+									</div>
 								</div>
 							</div>
 						</div>

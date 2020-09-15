@@ -24,7 +24,9 @@ body {
 	position: absolute;
 	z-index: -1;
 }
-
+h1, h2, h3, h4, h5, p {
+	overflow-wrap: break-word;
+}
 a {
 	text-decoration: none;
 	color: black;
@@ -284,10 +286,24 @@ a:hover {
 			margin-bottom: 30px;
 			overflow-wrap: break-word;
 		}
+		p:nth-child(16), p:nth-child(25), p:nth-child(34), p:nth-child(42) {
+			background-color: orange;
+			color: white;
+			transform: skewY(-2deg);
+			padding: 15px;
+			text-align: center;
+		}
+		h2 {
+			margin-bottom: 30px;
+			color: orange;
+		}
 		ol li {
 			@include tiny {
 				overflow-wrap: break-word;
 			}
+		}
+		ul, pre, ol {
+			margin-bottom: 30px;
 		}
 		.article-title:nth-child(1) {
 			// color: red;
