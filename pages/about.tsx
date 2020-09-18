@@ -29,7 +29,7 @@ function About() {
 			</Head>
 
 			<main>
-				<section>
+				<section className="about-section">
  
 					<div className="about__content columns">
 						<div className="about__title_and_picture column">
