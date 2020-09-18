@@ -131,6 +131,10 @@ function BlogArticle({ ssrContent }: Props): ReactElement {
 										//@ts-ignore
 										render={content.data['blog-body']}
 									/>
+
+									<div className="blog__article__svg_container">
+										<AidLegoSVG className="author-image-bottom" />
+									</div>
 								</div>
 
 								<div className="media">
