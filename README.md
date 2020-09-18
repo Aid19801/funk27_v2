@@ -2,17 +2,13 @@ STACK:
 
 - 💻 NextJS (React, hooks)
 
-- 📝 CMS (Wordpress / Prismic)
+- 📝 CMS (Prismic)
 
-- 📊 API (React-Query, GraphQL, Apollo-GraphQL )
+- 📊 API (React-Query)
 
-- 🚨 Typescript
+- 🚨 Types (Typescript)
 
-- 🛳 Docker
-
-- 🧳 Kubernetes
-
-- 🚀 SCSS, GSAP, Bulma, FontAwesome
+- 🚀 Styling (SCSS, GSAP, Bulma)
 
   - SCSS (css modules, variables and nested style rules)
     App.tsx imports global.scss, imports main.scss, imports all other rules.
@@ -21,15 +17,15 @@ STACK:
 
   - Bulma (basic layout, minimal styling)
 
-  - Font Awesome (free-solid-svg-icons)
+
+- 🤡 Test (Jest / Enzyme)
+
+- 🛳 Docker (exploring soon)
+
+- 🧳 Kubernetes (exploring soon)
 
 
-- 🤡 Jest / Enzyme
-
-
-Basic Layout 
-
-Each Page Layout / Setup:
+Basic Bulma Layout:
 
 ```
 <div className="container">
