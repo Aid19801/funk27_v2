@@ -13,7 +13,7 @@ function BlogPreviewCard({ data, uid }: Props): ReactElement {
 	console.log('uid ', uid);
 	return (
 		<React.Fragment>
-			<Link href={`/blog/${uid}`}>
+			<Link href="/blog/[slug]" as={`/blog/${uid}`}>
 				<a>
 					<Card className={styles.cardContainer}>
 						<Card.Image size="4by3" src={data['blog-image-1'].url} />

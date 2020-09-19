@@ -102,12 +102,17 @@ function Navbar({}: Props): ReactElement {
 							</Link>
 
 							<div className="navbar-dropdown">
-								<Link href="/blog/unit-textinput-react-native">
+								<Link
+									href={'/blog/[slug]'}
+									as="/blog/unit-textinput-react-native">
+
 									<a className="navbar-item">
 										Unit Testing in React Native
 									</a>
 								</Link>
-								<Link href="/blog/prismic-react">
+								<Link
+									href={'/blog/[slug]'}
+									as="/blog/prismic-react">
 									<a className="navbar-item">
 										Prismic CMS with React
 									</a>

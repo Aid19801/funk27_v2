@@ -4,16 +4,19 @@ import { fetchPageByUID, useContent } from '../api/requests';
 import { ScrollFadeSection, ScrollFadeSmokeBar, HeroSection } from '../components';
 
 interface Props {
-	ssrContent: object
+	ssrContent: {
+		data: {
+			hero_image: object
+			title: object
+		}
+	}
 }
 
 function Home({ ssrContent }: Props): ReactElement {
 
-	const [ content, setContent ] = useState(ssrContent)
+	const [ content, setContent ] = useState(ssrContent);
 
 	useEffect(() => {
-		console.log('ssrContent: ', ssrContent);
-		console.log('content: ', content);
 		if (!content) {
 			const { data, isLoading } = useContent('content', 'home-page');
 			//@ts-ignore
@@ -22,7 +25,6 @@ function Home({ ssrContent }: Props): ReactElement {
 	}, [content]);
 
 	if (content) {
-
 		return (
 			<div className="container">
 				<Head>
@@ -53,9 +55,7 @@ function Home({ ssrContent }: Props): ReactElement {
 				<main>
 					
 					<HeroSection
-						//@ts-ignore
 						heroImage={content.data.hero_image}
-						//@ts-ignore
 						heroTitle={content.data.title}
 					/>
 					

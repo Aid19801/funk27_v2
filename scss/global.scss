@@ -5,12 +5,31 @@
 // imports: main.scss [and all other module stylings]
 // goes to: App.tsx
 
-// * {
-// border: 1px solid red;
-// }
+.cursor {
+	width: 30px;
+	height: 30px;
+	border-radius: 100%;
+	background-color: orange;
+	pointer-events: none;
+	position: absolute;
+	
+	transform: translate(-50%, -50%);
+	transition: all .2 ease;
+	transition-property: background, border, transform;
+	transform-origin: 150% 150%;
+	z-index: 999;
+}
 
 body {
 	height: 100vh;
+	cursor: none !important;
+}
+
+a {
+	cursor: none !important;
+}
+a:hover {
+	cursor: none !important;
 }
 
 #__next {
