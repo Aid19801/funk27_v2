@@ -1,6 +1,7 @@
 import React, { ReactElement, useEffect, useState } from 'react';
 import Head from 'next/head';
 import { useRouter } from 'next/router';
+import NProgress from 'nprogress';
 import { fetchBlogPageByUID, useContent } from '../../api/requests';
 import { RichText } from 'prismic-reactjs';
 //@ts-ignore
@@ -13,6 +14,10 @@ interface Props {
 function BlogArticle({ ssrContent }: Props): ReactElement {
 	const [content, setContent] = useState(ssrContent);
 	const router = useRouter();
+
+	useEffect(() => {
+		NProgress.done();
+	}, [])
 
 	useEffect(() => {
 		if (!content) {

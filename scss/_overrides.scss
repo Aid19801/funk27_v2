@@ -11,13 +11,7 @@
 .columns {
 	width: 80%;
 	margin-top: 50px;
-	.column {
-		// border: 1px solid red;
-	}
 }
-// .navbar-item {
-//     display: none;
-// }
 
 .flickity-enabled {
 	width: 100%;
@@ -99,3 +93,10 @@ div.column.is-8:first-child {
 	margin: 1rem 5rem;
 }
 /* ^^ blog.css styles from bulma blog template */
+
+
+@media screen and (max-width: 600px) {
+	.columns {
+		margin-left: 0;
+	}
+}

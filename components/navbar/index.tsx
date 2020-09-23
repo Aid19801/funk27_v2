@@ -1,10 +1,13 @@
 import React, { ReactElement, useState, useEffect, useRef } from 'react';
 import Link from 'next/link';
+import { useRouter } from 'next/router';
 import gsap, { TimelineMax, Elastic, Power3 } from 'gsap';
+import NProgress from 'nprogress';
 
-interface Props {}
+interface Props { }
 
-function Navbar({}: Props): ReactElement {
+function Navbar({ }: Props): ReactElement {
+	const router = useRouter();
 	const [showMobNav, toggleshowMobNav] = useState(false);
 
 	let slamIn = useRef(null);
@@ -51,6 +54,11 @@ function Navbar({}: Props): ReactElement {
 		toggleshowMobNav(!showMobNav);
 	};
 
+	const handleNavClick = (loc) => {
+		NProgress.start();
+		return router.push(loc);
+	}
+
 	return (
 		<React.Fragment>
 			<nav className="navbar" role="navigation" aria-label="main navigation">
@@ -77,30 +85,19 @@ function Navbar({}: Props): ReactElement {
 
 				<div id="navbarBasicExample" className={showMobNav ? 'navbar-menu is-active' : 'navbar-menu'}>
 					<div className="navbar-start">
-						<Link href="/">
-							<a ref={homeRef} className={`navbar-item`}>
-								Home
-							</a>
-						</Link>
-						<Link href="/about">
-							<a ref={aboutRef} className={`navbar-item`}>
-								About
-							</a>
-						</Link>
-						<Link href="/contact">
-							<a ref={contactRef} className={`navbar-item`}>
-								Contact
-							</a>
-						</Link>
-
+						<div ref={homeRef} className="navbar-item" onClick={() => handleNavClick('/')}>
+							Home
+						</div>
+						<div ref={aboutRef} className="navbar-item" onClick={() => handleNavClick('/about')}>
+							About
+						</div>
+						<div ref={contactRef} className="navbar-item" onClick={() => handleNavClick('/contact')}>
+							Contact
+						</div>
 						<div className="navbar-item has-dropdown is-hoverable">
-
-							<Link href="/blog">
-								<a ref={blogsRef} className={`navbar-link`}>
-									Blogs/Tutorials
-								</a>
-							</Link>
-
+							<div ref={blogsRef} className="navbar-item" onClick={() => handleNavClick('/blog')}>
+								Blogs/Tutorials
+							</div>
 							<div className="navbar-dropdown">
 								<Link
 									href={'/blog/[slug]'}

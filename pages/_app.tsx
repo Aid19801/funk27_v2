@@ -2,6 +2,8 @@ import React, { ReactElement } from 'react';
 import { Navbar, Footer } from '../components';
 import Head from 'next/head';
 import gsap from 'gsap';
+import 'nprogress/nprogress.js';
+import 'nprogress/nprogress.css';
 import 'react-bulma-components/dist/react-bulma-components.min.css';
 import '../scss/global.scss';
 
@@ -14,10 +16,8 @@ interface Props {
 
 function App({ Component, pageProps }: Props): ReactElement {
 	const mouseMove = (e) => {
-		const cursor = document.querySelector('.cursor');
-		//@ts-ignore;
+		const cursor: any = document.querySelector('.cursor');
 		cursor.style.top = `${ e.pageY - 10 }px`;
-		//@ts-ignore;
 		cursor.style.left = `${ e.pageX - 0 }px`;
 	}
 	return (
@@ -27,6 +27,10 @@ function App({ Component, pageProps }: Props): ReactElement {
 				<div className="cursor" />
 				<Head>
 					<link rel="shortcut icon" href="/vercel.ico" />
+
+					<script src="../"></script>
+					<link rel='stylesheet' href='nprogress.css' />
+
 				</Head>
 				<Navbar />
 				<Component {...pageProps} />

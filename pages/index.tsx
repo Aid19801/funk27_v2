@@ -1,5 +1,6 @@
 import React, { ReactElement, useEffect, useState } from 'react';
 import Head from 'next/head';
+import NProgress from 'nprogress';
 import { fetchPageByUID, useContent } from '../api/requests';
 import { ScrollFadeSection, ScrollFadeSmokeBar, HeroSection } from '../components';
 
@@ -17,6 +18,7 @@ function Home({ ssrContent }: Props): ReactElement {
 	const [ content, setContent ] = useState(ssrContent);
 
 	useEffect(() => {
+		NProgress.done();
 		if (!content) {
 			const { data, isLoading } = useContent('content', 'home-page');
 			//@ts-ignore

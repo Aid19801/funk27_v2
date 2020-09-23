@@ -1,5 +1,6 @@
 import React, { ReactElement, useEffect, useState } from 'react';
 import Head from 'next/head';
+import NProgress from 'nprogress';
 import { fetchPageByUID, useContent } from '../../api/requests';
 import { BlogPreviewCard } from '../../components';
 
@@ -9,6 +10,10 @@ interface Props {
 
 function BlogHome({ ssrContent }: Props): ReactElement {
 	const [content, setContent] = useState(ssrContent);
+
+	useEffect(() => {
+		NProgress.done();
+	}, [])
 
 	useEffect(() => {
 		if (!content) {

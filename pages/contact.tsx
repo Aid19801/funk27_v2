@@ -2,10 +2,14 @@ import React, { useState, useEffect, useRef } from 'react';
 import Head from 'next/head';
 import Link from 'next/link';
 import gsap, { TimelineMax, Power4, Back } from 'gsap';
+import NProgress from 'nprogress';
 import { ContactForm, FunkSpinner } from '../components';
+//@ts-ignore
+import EmailSVG from '../svgs/email.svg';
 
 function Contact() {
 	let spinnerRef = useRef(null);
+	let svgRef = useRef(null);
 	const [sending, setSending] = useState(false);
 	const [sendError, setSendError] = useState('');
 	const [sendSuccess, setSendSuccess] = useState('');
@@ -13,6 +17,13 @@ function Contact() {
 	const toggleSending = (bool) => {
 		setSending(bool);
 	};
+
+	useEffect(() => {
+		NProgress.done();
+		let svgTimeline = new TimelineMax();
+		svgTimeline
+			.to(svgRef.current, .6, { width: 100, ease: Power4.easeIn })
+	}, [])
 
 	useEffect(() => {
 		if (sending) {
@@ -38,12 +49,13 @@ function Contact() {
 			<main>
 				<section className="contact-section">
 					<div className="contact__content columns">
-						
 
 						{!sending && sendSuccess === '' && sendError === '' && (
 							<React.Fragment>
-								<div className="column is-half">
+								<div className="column is-half contact__svg_container">
 									<h1>Get in touch...</h1>
+									<EmailSVG />
+									<span ref={svgRef} className="svg__line" />
 								</div>
 								<div className="column is-half">
 									<ContactForm
@@ -54,11 +66,13 @@ function Contact() {
 								</div>
 							</React.Fragment>
 						)}
+
 						{sending && (
 							<div className="fadeInSpinner" style={{ width: '100%' }} ref={spinnerRef}>
 								<FunkSpinner />
 							</div>
 						)}
+
 						{!sending && sendSuccess !== '' && (
 							<React.Fragment>
 								<div className="column is-half">
@@ -68,6 +82,7 @@ function Contact() {
 								<p style={{ color: 'orange', fontSize: '2vh', textAlign: 'center' }}>{sendSuccess}</p>
 							</React.Fragment>
 						)}
+						
 						{!sending && sendSuccess === '' && sendError !== '' && (
 							<React.Fragment>
 								<div className="column is-half">

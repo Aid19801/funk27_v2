@@ -203,15 +203,27 @@ a:hover {
 	width: 100%;
 	margin-bottom: 150px;
 	.contact__content {
-		// border: 1px solid red;
 		width: 100%;
 		height: auto;
 		.column {
-			// border: 1px solid green;
-			// min-height: 100%;
 			h1 {
 				font-family: 'Dancing Script', cursive;
 				color: orange;
+			}
+		}
+		.contact__svg_container {
+			align-items: center;
+			flex-direction: column;
+			display: flex;
+			justify-content: flex-start;
+			svg {
+				margin-top: 40px;
+			}
+			.svg__line {
+				height: 5px;
+				width: 0;
+				background-color: grey;
+				margin-top: 30px;
 			}
 		}
 	}
