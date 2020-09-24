@@ -94,6 +94,19 @@ div.column.is-8:first-child {
 }
 /* ^^ blog.css styles from bulma blog template */
 
+.columns {
+	width: 100%;
+    // align-content: center;
+    // display: flex;
+}
+
+@media screen and (max-width: 800px) {
+	.columns {
+		width: 100%;
+		align-content: center;
+		display: flex;
+	}
+}
 
 @media screen and (max-width: 600px) {
 	.columns {

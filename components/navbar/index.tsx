@@ -114,12 +114,13 @@ function Navbar({ }: Props): ReactElement {
 										Prismic CMS with React
 									</a>
 								</Link>
-								<a
-									href="https://medium.com/@AidThompsin/how-to-npm-link-to-a-local-version-of-your-dependency-84e82126667a"
-									className="navbar-item"
-								>
-									NPM-Link a Local Dependency!
-								</a>
+								<Link
+									href={'/blog/[slug]'}
+									as="/blog/npm-link-a-local-version-of-a-dependency">
+									<a className="navbar-item">
+										NPM Link a local dependency
+									</a>
+								</Link>
 								<a
 									href="https://medium.com/@AidThompsin/heres-how-you-map-local-on-charles-proxy-14cac3d78705"
 									className="navbar-item"
