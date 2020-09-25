@@ -1,4 +1,3 @@
-// const withTypescript = require('@zeit/next-typescript');
 const withReactSvg = require('next-react-svg');
 const path = require('path');
 
