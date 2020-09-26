@@ -1,4 +1,4 @@
-@import 'main.scss';
+@import "main.scss";
 
 // name: global.scss
 // contains: top level all app styling eg. no margin on <ul> or <p> tags.
@@ -6,378 +6,387 @@
 // goes to: App.tsx
 
 .cursor {
-	display: none;
-	width: 30px;
-	height: 30px;
-	border-radius: 100%;
-	background-color: orange;
-	pointer-events: none;
-	position: absolute;
-	
-	transform: translate(-50%, -50%);
-	transition: all .2 ease;
-	transition-property: background, border, transform;
-	transform-origin: 150% 150%;
-	z-index: 999;
-	@include sm {
-		display: inherit;
-	}
+  display: none;
+  width: 30px;
+  height: 30px;
+  border-radius: 100%;
+  background-color: orange;
+  pointer-events: none;
+  position: absolute;
+
+  transform: translate(-50%, -50%);
+  transition: all 0.2 ease;
+  transition-property: background, border, transform;
+  transform-origin: 150% 150%;
+  z-index: 999;
+  @include sm {
+    display: inherit;
+  }
 }
 
 body {
-	height: 100vh;
-	cursor: none !important;
+  height: 100vh;
+  cursor: none !important;
 }
 
 a {
-	cursor: none !important;
+  cursor: none !important;
 }
 a:hover {
-	cursor: none !important;
+  cursor: none !important;
 }
 
 #__next {
-	height: 100%;
+  height: 100%;
 }
 #bg {
-	clip-path: polygon(0 0, 100% 0, 18% 100%, 0% 100%);
-	background-color: map-get($map: $theme_map, $key: bold);
-	height: 100%;
-	width: 100%;
-	position: absolute;
-	z-index: -1;
+  clip-path: polygon(0 0, 100% 0, 18% 100%, 0% 100%);
+  background-color: map-get($map: $theme_map, $key: bold);
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  z-index: -1;
 }
-h1, h2, h3, h4, h5, p {
-	overflow-wrap: break-word;
+h1,
+h2,
+h3,
+h4,
+h5,
+p {
+  overflow-wrap: break-word;
 }
 a {
-	text-decoration: none;
-	color: black;
+  text-decoration: none;
+  color: black;
 }
 main h1 {
-	font-family: 'Dancing Script', cursive;
-	color: orange;
-	font-size: 9vh;
-	text-align: center;
+  font-family: "Dancing Script", cursive;
+  color: orange;
+  font-size: 9vh;
+  text-align: center;
 }
 
 main {
-	display: flex;
-	flex-direction: column;
-	align-items: center;
-	justify-content: start;
-	align-content: center;
-	height: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: start;
+  align-content: center;
+  height: auto;
 }
 
 .home__three_words_container {
-	h2:nth-child(1) {
-		font-size: 5rem;
-		color: white;
-	}
-	h2:nth-child(2) {
-		font-size: 5rem;
-		color: grey;
-	}
-	h2:nth-child(3) {
-		font-size: 5rem;
-		color: white;
-	}
+  h2:nth-child(1) {
+    font-size: 5rem;
+    color: white;
+  }
+  h2:nth-child(2) {
+    font-size: 5rem;
+    color: grey;
+  }
+  h2:nth-child(3) {
+    font-size: 5rem;
+    color: white;
+  }
 }
 
 p {
-	color: black;
-	font-size: 37px;
+  color: black;
+  font-size: 37px;
 
-	@include tiny {
-		// border: 5px solid blue;
-	}
+  @include tiny {
+    // border: 5px solid blue;
+  }
 
-	@include sm {
-		// border: 10px solid red;
-	}
+  @include sm {
+    // border: 10px solid red;
+  }
 
-	@include lg {
-		// border: 5px solid purple;
-	}
+  @include lg {
+    // border: 5px solid purple;
+  }
 }
 
 a:hover {
-	color: rgb(77, 75, 75);
+  color: rgb(77, 75, 75);
 }
 
 .about__page {
-	section:nth-child(1) {
-		height: auto;
-	}
-	@include md {
-		margin-bottom: 56px;
-	}
+  section:nth-child(1) {
+    height: auto;
+  }
+  @include md {
+    margin-bottom: 56px;
+  }
 }
 .about__content {
-	margin-top: 0px;
-	z-index: 1;
-	.about__title_and_picture {
-		display: flex;
-		flex-direction: column;
-		justify-content: center;
-		align-items: center;
-		@include tiny {
-			flex-direction: column-reverse;
-		}
-		@include sm {
-			flex-direction: column;
-		}
-		@include md {
-			justify-content: flex-start;
-		}
-	}
-	@include sm {
-		margin-top: 0px;
-	}
-	@include md {
-		margin-top: 50px;
-	}
-	.img__poly_container {
-		position: relative;
-		.about__polygon_mob {
-			height: 18%;
-			@include tiny {
-				opacity: 0;
-				z-index: -1;
-				position: absolute;
-				height: 107%;
-				top: -22px;
-				left: -22px;
-				width: 117%;
-				-webkit-clip-path: polygon(25% 0%, 100% 0%, 75% 100%, 0% 100%);
-				clip-path: polygon(25% 0%, 100% 0%, 75% 100%, 0% 100%);
-				background: #f8a203;
-			}
-			@include md {
-				display: none;
-			}
-		}
-		img {
-			max-width: 100%;
-			@include tiny {
-				max-width: 100%;
-			}
-			@include sm {
-				max-width: 386px;
-			}
-			@include md {
-				border-radius: 25px;
-			}
-		}
-	}
-	h1 {
-		font-family: 'Dancing Script', cursive;
-		color: orange;
-		@include tiny {
-			margin-top: 30px;
-		}
-		@include sm {
-			margin-top: 0;
-			margin-bottom: 30px;
-		}
-	}
-	p {
-		font-size: 24px;
-		line-height: 1.6;
-		color: dimgrey;
-	}
-	p:nth-child(5) {
-		background: orange;
-		color: white;
-		padding: 20px;
-		transform: skewY(-2deg);
-		strong {
-			color: lightgrey;
-		}
-	}
+  margin-top: 0px;
+  z-index: 1;
+  .about__title_and_picture {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    @include tiny {
+      flex-direction: column-reverse;
+    }
+    @include sm {
+      flex-direction: column;
+    }
+    @include md {
+      justify-content: flex-start;
+    }
+  }
+  @include sm {
+    margin-top: 0px;
+  }
+  @include md {
+    margin-top: 50px;
+  }
+  .img__poly_container {
+    position: relative;
+    .about__polygon_mob {
+      height: 18%;
+      @include tiny {
+        opacity: 0;
+        z-index: -1;
+        position: absolute;
+        height: 107%;
+        top: -22px;
+        left: -22px;
+        width: 117%;
+        -webkit-clip-path: polygon(25% 0%, 100% 0%, 75% 100%, 0% 100%);
+        clip-path: polygon(25% 0%, 100% 0%, 75% 100%, 0% 100%);
+        background: #f8a203;
+      }
+      @include md {
+        display: none;
+      }
+    }
+    img {
+      max-width: 100%;
+      @include tiny {
+        max-width: 100%;
+      }
+      @include sm {
+        max-width: 386px;
+      }
+      @include md {
+        border-radius: 25px;
+      }
+    }
+  }
+  h1 {
+    font-family: "Dancing Script", cursive;
+    color: orange;
+    @include tiny {
+      margin-top: 30px;
+    }
+    @include sm {
+      margin-top: 0;
+      margin-bottom: 30px;
+    }
+  }
+  p {
+    font-size: 24px;
+    line-height: 1.6;
+    color: dimgrey;
+  }
+  p:nth-child(5) {
+    background: orange;
+    color: white;
+    padding: 20px;
+    transform: skewY(-2deg);
+    strong {
+      color: lightgrey;
+    }
+  }
 }
 
 .contact__page {
-	height: auto;
-	width: 100%;
-	margin-bottom: 150px;
-	.contact__content {
-		width: 100%;
-		height: auto;
-		.column {
-			h1 {
-				font-family: 'Dancing Script', cursive;
-				color: orange;
-			}
-		}
-		.contact__svg_container {
-			align-items: center;
-			flex-direction: column;
-			display: flex;
-			justify-content: flex-start;
-			svg {
-				margin-top: 40px;
-			}
-			.svg__line {
-				height: 5px;
-				width: 0;
-				background-color: grey;
-				margin-top: 30px;
-			}
-		}
-	}
+  height: auto;
+  width: 100%;
+  margin-bottom: 150px;
+  .contact__content {
+    width: 100%;
+    height: auto;
+    .column {
+      h1 {
+        font-family: "Dancing Script", cursive;
+        color: orange;
+      }
+    }
+    .contact__svg_container {
+      align-items: center;
+      flex-direction: column;
+      display: flex;
+      justify-content: flex-start;
+      svg {
+        margin-top: 40px;
+      }
+      .svg__line {
+        height: 5px;
+        width: 0;
+        background-color: grey;
+        margin-top: 30px;
+      }
+    }
+  }
 }
 
 .fadeInSpinner {
-	opacity: 0;
+  opacity: 0;
 }
 
 .blog__page {
-	main {
-		section {
-			align-items: center !important;
-		}
-	}
+  main {
+    section {
+      align-items: center !important;
+    }
+  }
 }
 
 .blog__home {
-	main {
-		.blogs__section {
-			display: flex;
-			justify-content: center;
-			width: 100%;
-			height: auto;
+  main {
+    .blogs__section {
+      display: flex;
+      justify-content: center;
+      width: 100%;
+      height: auto;
 
-			.blog__home__top__banner {
-				margin-bottom: 30px;
-			}
+      .blog__home__top__banner {
+        margin-bottom: 30px;
+      }
 
-			.blog__home__blogs__container {
-				display: flex;
-				flex-direction: row;
-				flex-wrap: wrap;
-				justify-content: space-around;
-			}
-			.columns {
-				justify-content: space-evenly;
-			}
-		}
-	}
+      .blog__home__blogs__container {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: space-around;
+      }
+      .columns {
+        justify-content: space-evenly;
+      }
+    }
+  }
 }
 
 .blog__article {
-	.hero {
-		h1 {
-			font-size: 3rem;
-			font-weight: 300;
-			color: white;
-		}
-	}
-	.card {
-		max-width: 100%;
+  .hero {
+    h1 {
+      font-size: 3rem;
+      font-weight: 300;
+      color: white;
+    }
+  }
+  .card {
+    max-width: 100%;
 
-		.media {
-			.blog__main-img {
-				img {
-					max-width: 527px;
-				}
-			}
-		}
-		.block-img {
-			display: flex;
-			justify-content: center;
-			img {
-				box-shadow: 5px 5px 10px;
-				// display: none;
-				@include tiny {
-					width: 89vw;
-					max-width: 89vw;
-					height: auto;
-					padding: 10px;
-				}
-				@include md {
-					width: auto;
-					max-width: 100%;
-					height: auto;
-					padding: 10px;
-				}
-			}
-		}
-		.responsive-card-author {
-			@include tiny {
-				margin-top: 1rem;
-			}
-		}
+    .media {
+      .blog__main-img {
+        img {
+          max-width: 527px;
+        }
+      }
+    }
+    .block-img {
+      display: flex;
+      justify-content: center;
+      img {
+        box-shadow: 5px 5px 10px;
+        @include tiny {
+          width: 332px;
+		  height: 218px;
+		  max-width: none;
+          padding: 10px;
+        }
+        @include md {
+          width: auto;
+          max-width: 100%;
+          height: auto;
+          padding: 10px;
+        }
+      }
+    }
+    .responsive-card-author {
+      @include tiny {
+        margin-top: 1rem;
+      }
+    }
 
-		.article-body {
-			@include tiny {
-				margin: 10px 20px;
-			}
+    .article-body {
+      @include tiny {
+        margin: 10px 20px;
+      }
 
-			.blog__article__svg_container {
-				width: 100%;
-				display: flex;
-				justify-content: center;
-				align-items: center;
-				svg {
-					height: 150px;
-					width: 150px;
-				}
-			}
-		}
+      .blog__article__svg_container {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        svg {
+          height: 150px;
+          width: 150px;
+        }
+      }
+    }
 
-		p {
-			font-size: 20px;
-			margin-bottom: 30px;
-			overflow-wrap: break-word;
-		}
-		p:nth-child(16), p:nth-child(25), p:nth-child(34), p:nth-child(42) {
-			background-color: orange;
-			color: white;
-			transform: skewY(-2deg);
-			padding: 15px;
-			text-align: center;
-		}
-		h2 {
-			margin-bottom: 30px;
-			color: orange;
-		}
-		ol li {
-			@include tiny {
-				overflow-wrap: break-word;
-			}
-		}
-		ul, pre, ol {
-			margin-bottom: 30px;
-		}
-		.article-title:nth-child(1) {
-			// color: red;
-			font-size: 2rem;
-			margin-bottom: 0;
-		}
-	}
+    p {
+      font-size: 20px;
+      margin-bottom: 30px;
+      overflow-wrap: break-word;
+    }
+    p:nth-child(16),
+    p:nth-child(25),
+    p:nth-child(34),
+    p:nth-child(42) {
+      background-color: orange;
+      color: white;
+      transform: skewY(-2deg);
+      padding: 15px;
+      text-align: center;
+    }
+    h2 {
+      margin-bottom: 30px;
+      color: orange;
+    }
+    ol li {
+      @include tiny {
+        overflow-wrap: break-word;
+      }
+    }
+    ul,
+    pre,
+    ol {
+      margin-bottom: 30px;
+    }
+    .article-title:nth-child(1) {
+      // color: red;
+      font-size: 2rem;
+      margin-bottom: 0;
+    }
+  }
 }
 
 .rocket-section {
-	height: 100vh;
+  height: 100vh;
 }
 .portfolio-section {
-	height: auto;
-	padding: 50px 20px;
-	display: flex;
-	align-items: center;
+  height: auto;
+  padding: 50px 20px;
+  display: flex;
+  align-items: center;
 }
 .color-smoke-section {
-	height: auto;
-	padding: 50px 20px;
+  height: auto;
+  padding: 50px 20px;
 }
 
 .contact-section {
-	width: 90%;
+  width: 90%;
 }
 
 .about-section {
-	display: flex;
-	justify-content: center;
+  display: flex;
+  justify-content: center;
 }
