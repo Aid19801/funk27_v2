@@ -17,10 +17,9 @@ STACK:
 
   - Bulma (basic layout, minimal styling)
 
+- 🛳 Containers/Shipping (Docker)
 
 - 🤡 Test (Jest / Enzyme)
-
-- 🛳 Docker (exploring soon)
 
 - 🧳 Kubernetes (exploring soon)
 
