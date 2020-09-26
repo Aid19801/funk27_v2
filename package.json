@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "build": "next build",
+    "build": "echo docker-building && next build",
     "start": "next start",
     "test": "clear && jest",
     "test:watch": "jest --watch",
