@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Merriweather:wght@300&display=swap');
 @import "main.scss";
 
 // name: global.scss
@@ -93,13 +94,17 @@ main {
 p {
   color: black;
   font-size: 37px;
-
+  font-display: swap;
   @include tiny {
-    // border: 5px solid blue;
+    font-family: Merriweather, Arial, sans-serif;
   }
 
   @include sm {
     // border: 10px solid red;
+  }
+
+  @include md {
+	  
   }
 
   @include lg {
@@ -340,6 +345,7 @@ a:hover {
     p:nth-child(25),
     p:nth-child(34),
     p:nth-child(42) {
+	  font-family: Arial;
       background-color: orange;
       color: white;
       transform: skewY(-2deg);
