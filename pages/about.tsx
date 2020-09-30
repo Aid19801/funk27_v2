@@ -1,7 +1,6 @@
-import React, { useState, useEffect, useRef } from 'react';
+import React, { useEffect, useRef } from 'react';
 import Head from 'next/head';
-import Link from 'next/link';
-import gsap, { TimelineMax, Power4, Back } from 'gsap';
+import { TimelineMax, Back } from 'gsap';
 import NProgress from 'nprogress';
 
 function About() {

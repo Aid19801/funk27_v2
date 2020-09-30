@@ -18,9 +18,9 @@ function BlogArticle({ ssrContent }: Props): ReactElement {
   useEffect(() => {
     NProgress.done();
     //@ts-ignore
-	gtag.pageview('blog-foobar');
-	//@ts-ignore
-	// gtag.pageview(content.data["blog-title"][0].text);
+    gtag.pageview(router.query.slug);
+    //@ts-ignore
+    // gtag.pageview(content.data["blog-title"][0].text);
   }, []);
 
   useEffect(() => {
@@ -28,7 +28,7 @@ function BlogArticle({ ssrContent }: Props): ReactElement {
       const { data, isLoading } = useContent("content", router.query.slug);
       //@ts-ignore
       setContent(data);
-	}
+    }
   }, [content]);
 
   if (content) {
@@ -178,7 +178,11 @@ function BlogArticle({ ssrContent }: Props): ReactElement {
 
 export async function getServerSideProps(context: any) {
   const ssrContent = await fetchBlogPageByUID("content", context.params.slug);
-  return { props: { ssrContent } };
+  return {
+    props: {
+      ssrContent,
+    },
+  };
 }
 
 export default BlogArticle;

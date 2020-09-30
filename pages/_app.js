@@ -1,4 +1,4 @@
-import React, { Fragment, useEffect } from "react";
+import React, { Fragment } from "react";
 import { Navbar, Footer } from "../components";
 import Head from "next/head";
 import Router from "next/router";
