@@ -6,7 +6,7 @@ import NProgress from "nprogress";
 import { ContactForm, FunkSpinner } from "../components";
 //@ts-ignore
 import EmailSVG from "../svgs/email.svg";
-import * as gtag from "../lib/gtag";
+// import * as gtag from "../lib/gtag";
 
 function Contact() {
   let spinnerRef = useRef(null);
@@ -27,13 +27,12 @@ function Contact() {
 
   useEffect(() => {
     if (sending) {
-	
-	  //@ts-ignore
-      gtag.event({
-        action: "submit_form",
-        category: "Contact",
-        label: "this is my contact label",
-      });
+      //@ts-ignore
+      // gtag.event({
+      //   action: "submit_form",
+      //   category: "Contact",
+      //   label: "this is my contact label",
+      // });
 
       let spinnerTlIn = new TimelineMax();
       spinnerTlIn.fromTo(
