@@ -1,4 +1,4 @@
-import React, { ReactElement, useEffect, useState } from "react";
+import React, { ReactElement, useEffect, useState, useRef } from "react";
 import Head from "next/head";
 import { useRouter } from "next/router";
 import NProgress from "nprogress";
@@ -7,6 +7,7 @@ import { RichText } from "prismic-reactjs";
 //@ts-ignore
 import AidLegoSVG from "../../svgs/aid_lego.svg";
 import * as gtag from "../../lib/gtag";
+import { SocialsVertical } from "../../components";
 interface Props {
   ssrContent: object;
 }
@@ -14,6 +15,8 @@ interface Props {
 function BlogArticle({ ssrContent }: Props): ReactElement {
   const [content, setContent] = useState(ssrContent);
   const router = useRouter();
+  let articleBodyRef = useRef(null);
+  let bottomLegoHead = useRef(null);
 
   useEffect(() => {
     NProgress.done();
@@ -110,7 +113,10 @@ function BlogArticle({ ssrContent }: Props): ReactElement {
                   </div>
                 </div>
                 <div className="media">
-                  <div className="media-content has-text-centered blog__main-img">
+                  <div
+                    ref={articleBodyRef}
+                    className="media-content has-text-centered blog__main-img"
+                  >
                     <picture>
                       <source
                         // @ts-ignore
@@ -136,6 +142,7 @@ function BlogArticle({ ssrContent }: Props): ReactElement {
                   </div>
                 </div>
                 <div className="content article-body">
+                  <SocialsVertical ref={articleBodyRef} />
                   <RichText
                     //@ts-ignore
                     render={content.data["blog-body"]}
@@ -147,9 +154,11 @@ function BlogArticle({ ssrContent }: Props): ReactElement {
                 </div>
 
                 <div className="media">
-                  <div className="media-center">
+                  <div ref={bottomLegoHead} className="media-center">
                     <AidLegoSVG className="author-image-bottom" />
                   </div>
+
+                  <SocialsVertical ref={bottomLegoHead} />
 
                   <div className="media-content has-text-centered responsive-card-author">
                     <p className="title article-title">Aid Thompson</p>
