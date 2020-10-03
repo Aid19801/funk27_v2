@@ -1,9 +1,13 @@
 import React, { useRef, useEffect, useState } from "react";
 import gsap, { TimelineMax, Power3 } from "gsap";
 import { useIntersection } from "react-use";
+//@ts-ignore
 import FacebookSVG from "../../svgs/facebook.svg";
+//@ts-ignore
 import TwitterSVG from "../../svgs/twitter.svg";
+//@ts-ignore
 import LinkedinSVG from "../../svgs/linkedin.svg";
+//@ts-ignore
 import MessengerSVG from "../../svgs/messenger.svg";
 import styles from "./socials-vertical.module.scss";
 import { useRouter } from "next/router";
