@@ -2,7 +2,7 @@ import React, { ReactElement, useEffect, useState, useRef } from "react";
 import Head from "next/head";
 import { useRouter } from "next/router";
 import NProgress from "nprogress";
-import * as moment from "Moment";
+import * as moment from "moment";
 import { fetchBlogPageByUID, useContent } from "../../api/requests";
 import { RichText } from "prismic-reactjs";
 //@ts-ignore
