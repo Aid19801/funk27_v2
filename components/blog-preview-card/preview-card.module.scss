@@ -1,13 +1,57 @@
-
-@import '../../scss/main';
+@import "../../scss/main";
 
 .cardContainer {
-    margin-right: 30px;
-    margin-bottom: 30px;
-    .card__title {
-        font-size: 155%;
-    }
+  margin-right: 30px;
+  margin-bottom: 30px;
+  .cardDate {
+    position: absolute;
+    bottom: 1px;
+    right: 1px;
+    z-index: 1;
+    background: orange;
+    transform: skewY(-2deg);
+    text-align: center;
+    width: auto;
+    padding: 4px;
+    color: black;
+    font-weight: 300;
+    font-size: 11px;
     @include tiny {
-        margin-right: 0;
+      font-size: 11px;
     }
+    @include sm {
+      font-size: 11px;
+    }
+    @include md {
+      font-size: 11px;
+    }
+  }
+  .cardTag {
+    position: absolute;
+    top: 1px;
+    right: 1px;
+    z-index: 1;
+    background: black;
+    text-align: center;
+    width: auto;
+    padding: 10px;
+    color: white;
+    font-weight: 700;
+    font-size: 16px;
+    @include tiny {
+      font-size: 16px;
+    }
+    @include sm {
+      font-size: 26px;
+    }
+    @include md {
+      font-size: 30px;
+    }
+  }
+  .card__title {
+    font-size: 155%;
+  }
+  @include tiny {
+    margin-right: 0;
+  }
 }

@@ -2,6 +2,7 @@ import React, { ReactElement, useEffect, useState, useRef } from "react";
 import Head from "next/head";
 import { useRouter } from "next/router";
 import NProgress from "nprogress";
+import * as moment from "Moment";
 import { fetchBlogPageByUID, useContent } from "../../api/requests";
 import { RichText } from "prismic-reactjs";
 //@ts-ignore
@@ -22,8 +23,6 @@ function BlogArticle({ ssrContent }: Props): ReactElement {
     NProgress.done();
     //@ts-ignore
     gtag.pageview(router.query.slug);
-    //@ts-ignore
-    // gtag.pageview(content.data["blog-title"][0].text);
   }, []);
 
   useEffect(() => {
@@ -33,6 +32,8 @@ function BlogArticle({ ssrContent }: Props): ReactElement {
       setContent(data);
     }
   }, [content]);
+
+  console.log("blog page content ", content);
 
   if (content) {
     return (
@@ -108,7 +109,14 @@ function BlogArticle({ ssrContent }: Props): ReactElement {
                       >
                         @aidThompsin
                       </a>
-                      <span className="tag is-rounded">May 10, 2019</span>
+                      <span className="tag is-rounded">
+                        {
+                          //@ts-ignore
+                          moment(content.first_publication_date).format(
+                            "DD/MM/YYYY"
+                          )
+                        }
+                      </span>
                     </div>
                   </div>
                 </div>
@@ -172,7 +180,14 @@ function BlogArticle({ ssrContent }: Props): ReactElement {
                       >
                         @aidThompsin
                       </a>
-                      <span className="tag is-rounded">May 10, 2019</span>
+                      <span className="tag is-rounded">
+                        {
+                          //@ts-ignore
+                          moment(content.first_publication_date).format(
+                            "DD/MM/YYYY"
+                          )
+                        }
+                      </span>
                     </div>
                   </div>
                 </div>

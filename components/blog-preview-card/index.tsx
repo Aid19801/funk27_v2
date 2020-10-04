@@ -1,21 +1,31 @@
 import React, { ReactElement, useEffect, useState } from "react";
+import * as moment from "moment";
 import Link from "next/link";
 import { Card, Media, Image, Heading, Content } from "react-bulma-components";
 import styles from "./preview-card.module.scss";
 
 interface Props {
-  data: object;
+  data: any;
   uid: string;
+  tags: object[];
 }
 
-function BlogPreviewCard({ data, uid }: Props): ReactElement {
-  // console.log('data ', data);
-  // console.log('uid ', uid);
+function BlogPreviewCard({ data, uid, tags }: Props): ReactElement {
+  console.log("data ", data);
+  console.log("uid ", uid);
+  console.log("tag ", tags);
   return (
     <React.Fragment>
       <Link href="/blog/[slug]" as={`/blog/${uid}`}>
         <a>
           <Card className={styles.cardContainer}>
+            <h4 className={styles.cardTag}>{tags ? tags[0] : "General"}</h4>
+            <h5 className={styles.cardDate}>
+              {
+                //@ts-ignore
+                moment(data.date).format("DD/MM/YYYY")
+              }
+            </h5>
             <Card.Image size="4by3" src={data["blog-image-1"].url} />
             <Card.Content>
               <Media>
@@ -28,7 +38,11 @@ function BlogPreviewCard({ data, uid }: Props): ReactElement {
                   </Content>
                 </Media.Item>
               </Media>
-              <Content>{data["blog-body"][0].text}</Content>
+              <Content>
+                {data["blog-body"][0].text.length > 140
+                  ? data["blog-body"][0].text.slice(0, 140) + "..."
+                  : data["blog-body"][0].text}
+              </Content>
             </Card.Content>
           </Card>
         </a>
