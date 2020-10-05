@@ -414,3 +414,15 @@ a:hover {
     width: 70vw;
   }
 }
+
+.card-image figure {
+  contain: content;
+}
+.card-image img {
+  transition: 0.5s ease-out;
+}
+
+.card-image img:hover {
+  transform: rotateZ(-2deg);
+  transform: scale(1.2);
+}
