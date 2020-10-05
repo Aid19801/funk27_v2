@@ -197,6 +197,7 @@ function BlogHome({ ssrContent }: Props): ReactElement {
           <section>
             <div className="container is-fluid searchAndFilters__container">
               <Filters
+                //@ts-ignore
                 arrayToFilter={content.data.blogs}
                 handleOldestFirst={handleUpdatedOldestFirst}
                 handleNewestFirst={handleUpdatedNewestFirst}
