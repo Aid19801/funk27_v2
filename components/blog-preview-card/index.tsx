@@ -1,7 +1,7 @@
-import React, { ReactElement, useEffect, useState } from "react";
+import React, { ReactElement } from "react";
 import * as moment from "moment";
 import Link from "next/link";
-import { Card, Media, Image, Heading, Content } from "react-bulma-components";
+import { Card, Media, Image, Content } from "react-bulma-components";
 import styles from "./preview-card.module.scss";
 
 interface Props {
@@ -11,9 +11,6 @@ interface Props {
 }
 
 function BlogPreviewCard({ data, uid, tags }: Props): ReactElement {
-  console.log("data ", data);
-  console.log("uid ", uid);
-  console.log("tag ", tags);
   return (
     <React.Fragment>
       <Link href="/blog/[slug]" as={`/blog/${uid}`}>

@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Merriweather:wght@300&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Merriweather:wght@300&display=swap");
 @import "main.scss";
 
 // name: global.scss
@@ -12,7 +12,7 @@
   height: 30px;
   border-radius: 100%;
   background-color: orange;
-  pointer-events: none;
+  pointer-events: none !important;
   position: absolute;
 
   transform: translate(-50%, -50%);
@@ -104,7 +104,6 @@ p {
   }
 
   @include md {
-	  
   }
 
   @include lg {
@@ -301,8 +300,8 @@ a:hover {
         box-shadow: 5px 5px 10px;
         @include tiny {
           width: 332px;
-		  height: 218px;
-		  max-width: none;
+          height: 218px;
+          max-width: none;
           padding: 10px;
         }
         @include md {
@@ -345,7 +344,7 @@ a:hover {
     p:nth-child(25),
     p:nth-child(34),
     p:nth-child(42) {
-	  font-family: Arial;
+      font-family: Arial;
       background-color: orange;
       color: white;
       transform: skewY(-2deg);
@@ -395,4 +394,23 @@ a:hover {
 .about-section {
   display: flex;
   justify-content: center;
+}
+
+.searchAndFilters__container {
+  margin-top: 30px;
+  width: 80vw;
+  display: flex;
+  flex-direction: column;
+  height: auto;
+  padding: 30px;
+  padding-bottom: 0;
+  @include tiny {
+    width: 80vw;
+  }
+  @include sm {
+    width: 80vw;
+  }
+  @include md {
+    width: 70vw;
+  }
 }

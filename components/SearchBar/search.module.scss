@@ -1,0 +1,35 @@
+@import "../../scss/main";
+
+.searchContainer {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+  flex-direction: column;
+  input {
+    width: 100%;
+    border: 0;
+    font-size: 25px;
+    background: #fffbeb;
+    color: black;
+    padding: 10px;
+    border-radius: 25px;
+    @include md {
+      max-width: 370px;
+    }
+  }
+  ::-webkit-input-placeholder {
+    /* Edge */
+    color: #947600;
+  }
+
+  :-ms-input-placeholder {
+    /* Internet Explorer */
+    color: #947600;
+  }
+
+  ::placeholder {
+    color: #947600;
+  }
+}
