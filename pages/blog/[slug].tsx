@@ -9,7 +9,7 @@ import { RichText } from "prismic-reactjs";
 //@ts-ignore
 import AidLegoSVG from "../../svgs/aid_lego.svg";
 import * as gtag from "../../lib/gtag";
-import { DisqusComments, SocialsVertical } from "../../components";
+import { DisqusComments } from "../../components";
 interface Props {
   ssrContent: object;
 }
@@ -150,7 +150,6 @@ function BlogArticle({ ssrContent }: Props): ReactElement {
                   </div>
                 </div>
                 <div className="content article-body">
-                  <SocialsVertical ref={articleBodyRef} />
                   <RichText
                     //@ts-ignore
                     render={content.data["blog-body"]}
@@ -165,8 +164,6 @@ function BlogArticle({ ssrContent }: Props): ReactElement {
                   <div ref={bottomLegoHead} className="media-center">
                     <AidLegoSVG className="author-image-bottom" />
                   </div>
-
-                  <SocialsVertical ref={bottomLegoHead} />
 
                   <div className="media-content has-text-centered responsive-card-author">
                     <p className="title article-title">Aid Thompson</p>
@@ -195,14 +192,14 @@ function BlogArticle({ ssrContent }: Props): ReactElement {
             </div>
           </div>
         </section>
-        <section>
+        <section className="comments-section">
           <DisqusComments
             //@ts-ignore
             url={`https://funk-27.co.uk/blog/${content.uid}`}
             //@ts-ignore
             identifier={content.id}
             //@ts-ignore
-            title="blah blah title"
+            title={content.data["blog-title"][0].text}
           />
         </section>
       </div>

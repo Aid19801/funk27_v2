@@ -9,8 +9,7 @@ interface Props {
 
 const DisqusComments = ({ url, identifier, title }: Props) => {
   return (
-    <div>
-      yeah
+    <div className={styles.commentsContainer}>
       <DiscussionEmbed
         shortname="funk-27"
         config={{
@@ -19,7 +18,6 @@ const DisqusComments = ({ url, identifier, title }: Props) => {
           title, // Single post title
         }}
       />
-      no
     </div>
   );
 };

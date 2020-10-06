@@ -396,6 +396,12 @@ a:hover {
   justify-content: center;
 }
 
+.comments-section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+}
 .searchAndFilters__container {
   margin-top: 30px;
   width: 80vw;
