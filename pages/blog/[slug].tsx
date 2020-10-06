@@ -1,4 +1,5 @@
 import React, { ReactElement, useEffect, useState, useRef } from "react";
+import { DiscussionEmbed } from "disqus-react";
 import Head from "next/head";
 import { useRouter } from "next/router";
 import NProgress from "nprogress";
@@ -8,7 +9,7 @@ import { RichText } from "prismic-reactjs";
 //@ts-ignore
 import AidLegoSVG from "../../svgs/aid_lego.svg";
 import * as gtag from "../../lib/gtag";
-import { SocialsVertical } from "../../components";
+import { DisqusComments, SocialsVertical } from "../../components";
 interface Props {
   ssrContent: object;
 }
@@ -16,6 +17,7 @@ interface Props {
 function BlogArticle({ ssrContent }: Props): ReactElement {
   const [content, setContent] = useState(ssrContent);
   const router = useRouter();
+
   let articleBodyRef = useRef(null);
   let bottomLegoHead = useRef(null);
 
@@ -32,8 +34,6 @@ function BlogArticle({ ssrContent }: Props): ReactElement {
       setContent(data);
     }
   }, [content]);
-
-  console.log("blog page content ", content);
 
   if (content) {
     return (
@@ -194,6 +194,16 @@ function BlogArticle({ ssrContent }: Props): ReactElement {
               </div>
             </div>
           </div>
+        </section>
+        <section>
+          <DisqusComments
+            //@ts-ignore
+            url={`https://funk-27.co.uk/blog/${content.uid}`}
+            //@ts-ignore
+            identifier={content.id}
+            //@ts-ignore
+            title="blah blah title"
+          />
         </section>
       </div>
     );

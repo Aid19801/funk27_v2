@@ -8,7 +8,6 @@ import {
   SearchBar,
   Filters,
 } from "../../components";
-
 interface Props {
   ssrContent: object;
 }

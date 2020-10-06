@@ -30,6 +30,9 @@ export default ({ Component, pageProps }) => {
           <link rel="shortcut icon" href="/vercel.ico" />
           <script src="../"></script>
           <link rel="stylesheet" href="nprogress.css" />
+          
+          <link rel="stylesheet" type="text/css" href="https://media.disquscdn.com/disqus-install-examples/assets/css/kube.min.css" />
+
         </Head>
         <Navbar />
         <Component {...pageProps} />

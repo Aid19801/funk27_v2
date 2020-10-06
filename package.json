@@ -17,6 +17,7 @@
     "@fortawesome/react-fontawesome": "^0.1.11",
     "@webdeb/next-styles": "^1.1.0",
     "@zeit/next-typescript": "^1.1.1",
+    "disqus-react": "^1.0.10",
     "emailjs-com": "^2.6.3",
     "gsap": "^3.5.0",
     "moment": "^2.29.0",

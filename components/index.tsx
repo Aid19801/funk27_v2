@@ -1,6 +1,7 @@
 import BlogPreviewCard from "./blog-preview-card";
 import Card from "./card";
 import ContactForm from "./contact-form";
+import DisqusComments from "./comments";
 import Filters from "./filters";
 import FunkSpinner from "./funk-spinner";
 import Hero from "./hero";
@@ -18,6 +19,7 @@ export {
   BlogPreviewCard,
   Card,
   ContactForm,
+  DisqusComments,
   Filters,
   FunkSpinner,
   Hero,
