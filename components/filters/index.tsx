@@ -29,7 +29,7 @@ function Filters({
   let fifthRef = useRef(null);
 
   useEffect(() => {
-    let filtersTl = new TimelineMax();
+    let filtersTl: any = new TimelineMax();
     //@ts-ignore
     filtersTl
       .fromTo(firstRef.current, 0.2, { y: 30 }, { y: 0, ease: Power3.easeIn })
