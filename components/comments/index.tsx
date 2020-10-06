@@ -12,7 +12,7 @@ const DisqusComments = ({ url, identifier, title }: Props) => {
     <div>
       yeah
       <DiscussionEmbed
-        shortname="funk-27.disqus.com"
+        shortname="funk-27"
         config={{
           url,
           identifier, // Single post id
