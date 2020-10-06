@@ -15,6 +15,7 @@ interface Props {
 function BlogHome({ ssrContent }: Props): ReactElement {
   const [content, setContent] = useState(ssrContent);
   const [killFilters, toggleKillFilters] = useState(false);
+  const [filtersAreCurrentlyActive, setFiltersAreActive] = useState(false);
 
   const fetchContent = () => {
     const { data, isLoading } = useContent("content", "blog-home-page");
@@ -71,6 +72,7 @@ function BlogHome({ ssrContent }: Props): ReactElement {
         blogs: sorted,
       },
     };
+    setFiltersAreActive(true);
     setContent(updated);
   };
 
@@ -95,6 +97,7 @@ function BlogHome({ ssrContent }: Props): ReactElement {
         blogs: sorted,
       },
     };
+    setFiltersAreActive(true);
     setContent(updated);
   };
 
@@ -114,6 +117,7 @@ function BlogHome({ ssrContent }: Props): ReactElement {
         blogs: justBlogsArray,
       },
     };
+    setFiltersAreActive(true);
     setContent(updated);
   };
 
@@ -133,10 +137,12 @@ function BlogHome({ ssrContent }: Props): ReactElement {
         blogs: justTutorialsArray,
       },
     };
+    setFiltersAreActive(true);
     setContent(updated);
   };
 
   const handleUpdatedResetAll = async () => {
+    setFiltersAreActive(false);
     toggleKillFilters(false);
     const refreshedContent: any = await fetchPageByUID(
       "content",
@@ -204,6 +210,7 @@ function BlogHome({ ssrContent }: Props): ReactElement {
                 handleJustTutorials={handleUpdatedJustTutorials}
                 handleReset={handleUpdatedResetAll}
                 killFilters={killFilters}
+                filtersAreCurrentlyActive={filtersAreCurrentlyActive}
               />
               <SearchBar
                 //@ts-ignore
