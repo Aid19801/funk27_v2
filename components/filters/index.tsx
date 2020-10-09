@@ -47,7 +47,6 @@ function Filters({
         { y: 0, ease: Power3.easeIn }
       )
       .fromTo(fifthRef.current, 0.3, { y: 30 }, { y: 0, ease: Power3.easeIn });
-    return filtersTl;
   }, []);
 
   return (
