@@ -214,6 +214,12 @@ a:hover {
   .contact__content {
     width: 100%;
     height: auto;
+    @include tiny {
+      flex-direction: column;
+    }
+    @include md {
+      flex-direction: row;
+    }
     .column {
       h1 {
         font-family: "Dancing Script", cursive;
@@ -402,6 +408,19 @@ a:hover {
   align-items: center;
   align-content: center;
 }
+
+.signup__title-section,
+.signup__msg-section {
+  height: auto;
+  padding: 30px;
+}
+
+.signup__form-section {
+  @include tiny {
+    width: 100%;
+  }
+}
+
 .searchAndFilters__container {
   // margin-top: 30px;
   width: 80vw;

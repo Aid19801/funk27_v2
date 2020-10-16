@@ -13,6 +13,8 @@ import Navbar from "./navbar";
 import ScrollFadeSection from "./scroll-fade-section";
 import ScrollFadeSmokeBar from "./scroll-fade-bar";
 import SearchBar from "./SearchBar";
+import SignupInput from "./signup-input";
+import SignupForm from "./signup-form";
 import SocialsVertical from "./socials-vertical";
 
 export {
@@ -31,5 +33,7 @@ export {
   ScrollFadeSection,
   ScrollFadeSmokeBar,
   SearchBar,
+  SignupForm,
+  SignupInput,
   SocialsVertical,
 };

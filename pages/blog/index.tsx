@@ -176,7 +176,7 @@ function BlogHome({ ssrContent }: Props): ReactElement {
           <meta
             property="og:description"
             //@ts-ignore
-            content={content.data.first_section[0].text}
+            content={content.data.sub_title[0].text}
             key="description"
           />
 

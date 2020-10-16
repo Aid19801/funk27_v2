@@ -1,0 +1,12 @@
+@import "../../scss/main";
+
+.inputContainer {
+  margin-top: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-width: 340px;
+  .input__LabelAndInputContainer {
+    width: 90%;
+  }
+}

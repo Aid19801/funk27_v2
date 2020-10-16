@@ -1,0 +1,16 @@
+.signupForm__section {
+  //   border: 1px solid red;
+  height: 70vh;
+  width: 90%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  button {
+    margin-top: 30px;
+  }
+}
+.signupForm_title {
+  text-align: center;
+  color: darkgrey;
+}
