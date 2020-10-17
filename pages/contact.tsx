@@ -58,7 +58,6 @@ function Contact() {
     <div className="contact__page container">
       <Head>
         <title>Funk-27 | Contact</title>
-        <link rel="icon" href="/favicon.ico" />
         <link
           href="https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap"
           rel="stylesheet"

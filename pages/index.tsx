@@ -35,7 +35,6 @@ function Home({ ssrContent }: Props): ReactElement {
       <div className="container">
         <Head>
           <title>Funk-27 | Home</title>
-          <link rel="icon" href="/favicon.ico" />
 
           <meta name="twitter:card" content="summary_large_image" />
 

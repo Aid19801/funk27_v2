@@ -37,7 +37,6 @@ function Signup({ ssrContent }: Props): ReactElement {
       <div className="blog__home container">
         <Head>
           <title>Funk-27 | Signup</title>
-          <link rel="icon" href="/favicon.ico" />
 
           <meta name="twitter:card" content="summary_large_image" />
 

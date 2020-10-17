@@ -6,10 +6,9 @@ import gsap from "gsap";
 import "nprogress/nprogress.js";
 import "nprogress/nprogress.css";
 import "react-bulma-components/dist/react-bulma-components.min.css";
+import "../scss/global.scss";
 
 import * as gtag from '../lib/gtag';
-
-import "../scss/global.scss";
 
 gsap.registerPlugin();
 

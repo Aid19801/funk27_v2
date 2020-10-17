@@ -356,6 +356,9 @@ a:hover {
       transform: skewY(-2deg);
       padding: 15px;
       text-align: center;
+      a {
+        color: black;
+      }
     }
     h2 {
       margin-bottom: 30px;
@@ -374,7 +377,8 @@ a:hover {
     .article-title:nth-child(1) {
       // color: red;
       font-size: 2rem;
-      margin-bottom: 0;
+      // margin-bottom: 0;
+      font-weight: 300;
     }
   }
 }
@@ -479,7 +483,7 @@ body::-webkit-scrollbar-thumb {
   background: #ddd;
 }
 
-p > a {
+.blog__article p > a {
   color: orange;
   font-weight: bold;
 }
