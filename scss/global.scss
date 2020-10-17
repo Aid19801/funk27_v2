@@ -478,3 +478,8 @@ body::-webkit-scrollbar-thumb {
   height: 250px;
   background: #ddd;
 }
+
+p > a {
+  color: orange;
+  font-weight: bold;
+}
