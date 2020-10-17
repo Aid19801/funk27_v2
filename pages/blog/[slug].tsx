@@ -14,6 +14,8 @@ interface Props {
   ssrContent: object;
 }
 
+// remove logs
+
 function BlogArticle({ ssrContent }: Props): ReactElement {
   const [content, setContent] = useState(ssrContent);
   const router = useRouter();
