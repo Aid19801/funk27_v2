@@ -1,5 +1,4 @@
 import React, { ReactElement, useEffect, useState, useRef } from "react";
-import { DiscussionEmbed } from "disqus-react";
 import Head from "next/head";
 import { useRouter } from "next/router";
 import NProgress from "nprogress";

@@ -1,0 +1,42 @@
+
+      <?xml version="1.0" encoding="UTF-8"?>
+      <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+          
+                      <url>
+                          <loc>https://funk-27.co.uk</loc>
+                      </url>
+                  
+                      <url>
+                          <loc>https://funk-27.co.uk/about</loc>
+                      </url>
+
+                      <url>
+                          <loc>https://funk-27.co.uk/contact</loc>
+                      </url>
+                  
+                      <url>
+                          <loc>https://funk-27.co.uk/blog/remembering-my-commute</loc>
+                      </url>
+                  
+                      <url>
+                          <loc>https://funk-27.co.uk/blog/deepfake</loc>
+                      </url>
+
+                      <url>
+                          <loc>https://funk-27.co.uk/blog/prismic-react</loc>
+                      </url>
+                  
+                      <url>
+                          <loc>https://funk-27.co.uk/blog/optional-chaining</loc>
+                      </url>
+                  
+                      <url>
+                          <loc>https://funk-27.co.uk/blog/unit-textinput-react-native</loc>
+                      </url>
+                  
+                      <url>
+                          <loc>https://funk-27.co.uk/signup</loc>
+                      </url>
+                  
+      </urlset>
+  
