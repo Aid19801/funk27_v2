@@ -325,8 +325,26 @@ a:hover {
     }
 
     .article-body {
+      ul {
+        margin-left: 0;
+        li {
+          font-family: Merriweather, Arial, sans-serif;
+          strong {
+            font-weight: normal;
+            color: grey;
+            font-family: monospace;
+            background: #ffa5005c;
+          }
+          @include tiny {
+            margin-bottom: 16px;
+          }
+          @include md {
+            margin-bottom: 5px;
+          }
+        }
+      }
       @include tiny {
-        margin: 10px 20px;
+        margin: 5px 10px;
       }
 
       .blog__article__svg_container {
@@ -345,6 +363,14 @@ a:hover {
       font-size: 20px;
       margin-bottom: 30px;
       overflow-wrap: break-word;
+      strong {
+        font-weight: normal;
+        color: grey;
+        font-family: monospace;
+        background: #ffa5005c;
+        padding-left: 5px;
+        padding-right: 5px;
+      }
     }
     p:nth-child(16),
     p:nth-child(25),
