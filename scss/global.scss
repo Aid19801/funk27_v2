@@ -126,6 +126,15 @@ a:hover {
 .about__content {
   margin-top: 0px;
   z-index: 1;
+  display: flex;
+  justify-content: center;
+  flex-direction: column !important;
+  // border: 3px solid blue;
+  @include md {
+    flex-direction: row !important;
+    // border: 3px solid red;
+    justify-content: center;
+  }
   .about__title_and_picture {
     display: flex;
     flex-direction: column;
