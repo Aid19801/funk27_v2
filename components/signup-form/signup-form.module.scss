@@ -1,0 +1,58 @@
+@import "../../scss/main";
+
+.signup__formSection {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  min-height: 610px;
+  padding: 0 20px;
+  // border: 1px solid red;
+  @include tiny {
+    width: 90%;
+  }
+  @include md {
+    width: 50%;
+  }
+  .signup__headingsContainer {
+    margin-top: 30px;
+    .signup__formHeading {
+      text-align: center;
+    }
+    .signup__formSubheading {
+      font-size: 25px;
+      text-align: center;
+      color: grey;
+    }
+  }
+  .signup__formBtn {
+    // background: orange;
+    // position: absolute;
+    // bottom: 0px;
+    width: auto;
+    // border-radius: 25px;
+    text-align: center;
+    padding: 10px 30px;
+    margin-top: 30px;
+    margin-bottom: 30px;
+
+    align-items: center;
+    background: #ffdd57;
+    border: 1px solid transparent;
+    border-radius: 4px;
+    box-shadow: none;
+    display: inline-flex;
+    font-size: 1rem;
+    height: 2.5em;
+  }
+  .signup__backBtn {
+    background: grey;
+    color: white;
+    width: 10%;
+    border-radius: 25px;
+    text-align: center;
+    padding: 5px;
+    margin-top: 30px;
+    margin-bottom: 30px;
+  }
+}

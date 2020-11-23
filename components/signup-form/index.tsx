@@ -1,25 +1,50 @@
-import { useEffect, useRef, createRef, forwardRef } from "react";
-import { Button } from "react-bulma-components/dist";
-import SignupInput from "../signup-input";
-import styles from "./signupform.module.scss";
+import React, {
+  useRef,
+  createRef,
+  useState,
+  ReactElement,
+  useEffect,
+} from "react";
+import { SignupInput } from "../index";
+import styles from "./signup-form.module.scss";
 
-function SignupForm({ urlSlug, questions }) {
-  const elementsRef = useRef(questions.map(() => createRef()));
+function SignupForm({
+  url,
+  heading,
+  subheading,
+  questions,
+  buttonText,
+  onSubmit: handleSubmitParent,
+}): ReactElement {
+  const allRefs = useRef(questions && questions.map(() => createRef()));
 
-  const handleSubmit = () => {};
+  const handleSubmitLocal = () => {
+    let obj = {};
+    allRefs.current.forEach(({ current }) => {
+      if (current?.name) {
+        obj = {
+          ...obj,
+          [current.name]: current.value,
+        };
+      }
+    });
+    handleSubmitParent(url, obj);
+  };
   return (
-    <section className={styles.signupForm__section}>
-      <h5 className={styles.signupForm_title}>Enter your creds here</h5>
-      {questions
-        .filter((eachPage: any) => eachPage.uid === urlSlug)[0]
-        .questions.map((each, i) => {
-          return <SignupInput key={i} ref={elementsRef.current[i]} {...each} />;
+    <div className={styles.signup__formSection}>
+      <div className={styles.signup__headingsContainer}>
+        <p className={styles.signup__formHeading}>{heading}</p>
+        <p className={styles.signup__formSubheading}>{subheading}</p>
+      </div>
+      {questions &&
+        questions.length &&
+        questions.map((each, i) => {
+          return <SignupInput ref={allRefs.current[i]} key={i} {...each} />;
         })}
-
-      <Button onClick={handleSubmit} color="warning">
-        Submit
-      </Button>
-    </section>
+      <div className={styles.signup__formBtn} onClick={handleSubmitLocal}>
+        {buttonText}
+      </div>
+    </div>
   );
 }
 

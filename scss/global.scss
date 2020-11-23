@@ -5,6 +5,9 @@
 // contains: top level all app styling eg. no margin on <ul> or <p> tags.
 // imports: main.scss [and all other module stylings]
 // goes to: App.tsx
+* {
+  cursor: none;
+}
 
 .cursor {
   display: none;
@@ -60,6 +63,28 @@ a {
   text-decoration: none;
   color: black;
 }
+label {
+  margin-bottom: 0;
+}
+
+.flex-row {
+  display: flex;
+  flex-direction: row !important;
+}
+
+.flex-col {
+  display: flex;
+  flex-direction: column !important;
+}
+
+.flex-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+  text-align: center;
+}
+
 main h1 {
   font-family: "Dancing Script", cursive;
   color: orange;
@@ -452,12 +477,6 @@ a:hover {
 .signup__msg-section {
   height: auto;
   padding: 30px;
-}
-
-.signup__form-section {
-  @include tiny {
-    width: 100%;
-  }
 }
 
 .searchAndFilters__container {

@@ -1,0 +1,51 @@
+.signupInput {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  margin-top: 30px;
+  justify-content: flex-start;
+  align-items: center;
+  // border: 1px solid green;
+
+  h5 {
+    width: 100%;
+    text-align: start;
+  }
+
+  .inputCheckbox {
+    -webkit-appearance: none;
+    background-color: #fafafa;
+    border: 1px solid #cacece;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05),
+      inset 0px -15px 10px -12px rgba(0, 0, 0, 0.05);
+    padding: 12px !important;
+    border-radius: 3px;
+    display: inline-block;
+    position: relative;
+    margin-right: 20px;
+  }
+
+  .inputCheckbox:active,
+  .inputCheckbox:checked:active {
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05),
+      inset 0px 1px 3px rgba(0, 0, 0, 0.1);
+  }
+
+  .inputCheckbox:checked {
+    background-color: #e28e49;
+    border: 1px solid rgb(89, 233, 89);
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05),
+      inset 0px -15px 10px -12px rgba(0, 0, 0, 0.05),
+      inset 15px 10px -12px rgba(255, 255, 255, 0.1);
+    color: #99a1a7;
+  }
+
+  .inputCheckbox:checked:after {
+    content: "\2714";
+    font-size: 14px;
+    position: absolute;
+    top: 13%;
+    left: 28%;
+    color: white;
+  }
+}
