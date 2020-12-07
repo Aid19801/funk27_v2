@@ -541,3 +541,69 @@ body::-webkit-scrollbar-thumb {
   color: orange;
   font-weight: bold;
 }
+
+.page__wrapper {
+  height: 100vh;
+  width: 100vw;
+  max-width: 100vw;
+  display: flex;
+  overflow: none;
+  // border: 1px solid red;
+  flex-direction: column;
+  align-items: center;
+}
+
+.mt-50 {
+  margin-top: 50px;
+}
+
+.podcast__image {
+  width: 95%;
+  @include md {
+    width: 45%;
+  }
+}
+
+.carousel__container {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  @include md {
+    flex-direction: row;
+  }
+
+  .panel {
+    position: relative;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    width: 90vw;
+    margin: 10px;
+    color: white;
+    border-radius: 50px;
+    flex: 0.5;
+    transition: flex 0.3s ease-in;
+    h3 {
+      position: absolute;
+      font-size: 24px;
+      bottom: 20px;
+      left: 20px;
+      margin: 0;
+      opacity: 0;
+    }
+  }
+  .panel.active {
+    flex: 5;
+    h3 {
+      opacity: 1;
+      color: white;
+      transition: opacity 0.3s ease-in 0.4s;
+    }
+  }
+  .panel:nth-of-type(4),
+  .panel:nth-of-type(5) {
+    @include md {
+      display: none !important;
+    }
+  }
+}

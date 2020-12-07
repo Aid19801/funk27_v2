@@ -171,13 +171,25 @@ function Navbar({}: Props): ReactElement {
                 </a>
               </div>
             </div>
-            <div className="navbar-item has-dropdown is-hoverable">
-              <a ref={podsRef} className={`navbar-link bounceIn `}>
-                Podcast
-              </a>
 
+            <div className="navbar-item has-dropdown is-hoverable">
+              <div
+                ref={podsRef}
+                className="navbar-item"
+                onClick={() => handleNavClick("/podcast")}
+              >
+                Podcast
+              </div>
               <div className="navbar-dropdown">
-                <a className="navbar-item">[coming soon]</a>
+                <Link href={"/podcast/[slug]"} as="/podcast/emmett-short">
+                  <a className="navbar-item">#1 Emmett Short</a>
+                </Link>
+                <Link href={"/podcast/[slug]"} as="/podcast/ashley-haden">
+                  <a className="navbar-item">#2 Ashley Haden</a>
+                </Link>
+                <Link href={"/podcast/[slug]"} as="/podcast">
+                  <a className="navbar-item">All</a>
+                </Link>
               </div>
             </div>
           </div>
