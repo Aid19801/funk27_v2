@@ -1,9 +1,11 @@
 import React, { ReactElement, useEffect, useState } from "react";
 import Head from "next/head";
+import Link from "next/link";
 import NProgress from "nprogress";
 import { fetchPageByUID, useContent } from "../../api/requests";
 import { FunkSpinner } from "../../components";
-
+import PodcastCard from "../../components/card-podcast";
+// import pod from "../../public/";
 interface Props {
   ssrContent: object;
 }
@@ -35,6 +37,7 @@ function PodcastHome({ ssrContent }: Props): ReactElement {
   };
 
   useEffect(() => {
+    sessionStorage.removeItem("selectedPodcast");
     NProgress.done();
     setupCarousel();
   }, []);
@@ -46,7 +49,6 @@ function PodcastHome({ ssrContent }: Props): ReactElement {
   }, [content]);
 
   if (content) {
-    console.log("content ", content);
     return (
       <div className="page__wrapper container">
         <Head>
@@ -90,44 +92,115 @@ function PodcastHome({ ssrContent }: Props): ReactElement {
               <div
                 className="panel active"
                 style={{
+                  backgroundImage: `url('pod_me_with_desk.JPG')`,
+                }}
+              >
+                <h3>Tech // Politics // Comedy</h3>
+              </div>
+
+              <div
+                className="panel"
+                style={{
+                  backgroundImage: `url('pod_me_emmett3.png')`,
+                }}
+              >
+                <h3>Insightful Guests</h3>
+              </div>
+
+              <div
+                className="panel"
+                style={{
+                  backgroundImage: `url('pod_ur_what_ulisten_to.jpg')`,
+                }}
+              >
+                <h3>Every Thursday</h3>
+              </div>
+
+              <div
+                className="panel"
+                style={{
+                  backgroundImage: `url('pod_pro_shot.jpg')`,
+                }}
+              >
+                <h3>On all platforms.</h3>
+              </div>
+            </div>
+          </section>
+
+          <section className="podcast__shows_section mt-50">
+            <div className="podcast__shows__container">
+              <ul>
+                {
                   //@ts-ignore
-                  backgroundImage: `url('${content.data.hero_image.url}')`,
-                }}
-              >
-                <h3>Aid Thompsin & Other Disappointments</h3>
-              </div>
-              <div
-                className="panel"
-                style={{
-                  backgroundImage: `url('https://images.unsplash.com/photo-1607286942757-d24fa3d66afb?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=671&q=80')`,
-                }}
-              >
-                <h3>#1 Emmett Short</h3>
-              </div>
-              <div
-                className="panel"
-                style={{
-                  backgroundImage: `url('https://images.unsplash.com/photo-1607038523484-203fe00e2465?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1050&q=80')`,
-                }}
-              >
-                <h3>#2 Ashley Haden</h3>
-              </div>
-              <div
-                className="panel"
-                style={{
-                  backgroundImage: `url('https://images.unsplash.com/photo-1607292976966-c2a9aa8cbc28?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=634&q=80')`,
-                }}
-              >
-                <h3>#3 Dapper Laughs</h3>
-              </div>
-              <div
-                className="panel"
-                style={{
-                  backgroundImage: `url('https://images.unsplash.com/photo-1607293861433-5d03a3e9fdd5?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1050&q=80')`,
-                }}
-              >
-                <h3>#4 Tom Pontin</h3>
-              </div>
+                  content.data.body[0].items.map((each, i) => {
+                    return (
+                      <li className="show__card" key={i}>
+                        <PodcastCard
+                          title={each.title1[0].text}
+                          description={each.description[0].text}
+                          routeName={`/podcast/${each.episode_slug[0].text}`}
+                          guestPhoto={each.guest_photo.url}
+                          guestPhotoAlt={each.guest_photo.alt}
+                          podcastAppLink={each.podcast_app_link}
+                          spotifyLink={each.spotify_link}
+                          youtubeLink={each.youtube_link}
+                          video={each.video}
+                        />
+                      </li>
+                    );
+                  })
+                }
+
+                <li className="show__card">
+                  <img
+                    className="podcast__guest_photo grayscale"
+                    src="pod_dapper_headshot.jpg"
+                    alt="podcast guest"
+                  />
+                  <p className="podcast__shows_title">
+                    #2 Dapper Laughs [soon]
+                  </p>
+                  <div className="podcast__shows_descr_container">
+                    <p className="podcast__shows_descr">
+                      From 6-second Vines to being hauled onto Newsnight, Dapper
+                      Laughs went on quite the journey. Here he talks about
+                      Social Media and pivoting to live promotions.
+                    </p>
+                  </div>
+                </li>
+                <li className="show__card">
+                  <img
+                    className="podcast__guest_photo grayscale"
+                    src="pod_tom_headshot.jpg"
+                    alt="podcast guest"
+                  />
+                  <p className="podcast__shows_title">#3 Tom Pontin [soon]</p>
+                  <div className="podcast__shows_descr_container">
+                    <p className="podcast__shows_descr">
+                      Tom Pontin is a Financier with a decade of investment
+                      behind him. On this episode we discuss how money is
+                      created, how it moves, the threat & opportunities of
+                      crypto-currency and more.
+                    </p>
+                  </div>
+                </li>
+                <li className="show__card">
+                  <img
+                    className="podcast__guest_photo grayscale"
+                    src="pod_ashley_headshot.jpg"
+                    alt="podcast guest"
+                  />
+                  <p className="podcast__shows_title">#4 Ashley Haden [soon]</p>
+
+                  <div className="podcast__shows_descr_container">
+                    <p className="podcast__shows_descr">
+                      Ashley Haden is a stand-up comic and aspiring playwright.
+                      On this episode, we discuss if Politics has gotten worse
+                      and the benefits of being a dark comic.
+                    </p>
+                  </div>
+                </li>
+              </ul>
             </div>
           </section>
         </main>

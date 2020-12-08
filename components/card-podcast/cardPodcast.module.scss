@@ -1,0 +1,24 @@
+@import "../../scss/main";
+
+.podcast__socials {
+  width: 80%;
+  margin-top: 20px;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: row;
+  a {
+    // border: 1px solid red;
+    height: 40px;
+    width: 40px !important;
+    img {
+      height: 40px;
+      //   border: 1px solid red;
+    }
+  }
+  a:nth-child(3) {
+    // border: 8px solid blue;
+    img {
+      width: 70px;
+    }
+  }
+}
