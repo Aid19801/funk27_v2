@@ -33,6 +33,7 @@ async function fetchBlogPageByUID(key, uid) {
 }
 
 const useContent = (key, uid) => {
+  //@ts-ignore
   return useQuery([key, uid], fetchPageByUID, {
     enabled: uid,
     // initialData: props.ssrContent

@@ -2,19 +2,11 @@ import React, { ReactElement, useEffect, useState } from "react";
 import { useRouter } from "next/router";
 import Head from "next/head";
 import Link from "next/link";
-//@ts-ignore
-import PodcastAppSVG from "../../svgs/podcast_app.svg";
-//@ts-ignore
-import SpotifySVG from "../../svgs/spotify_svg.svg";
-//@ts-ignore
-import PinecastSVG from "../../svgs/pinecast.svg";
-//@ts-ignore
 
 import styles from "./cardPodcast.module.scss";
 interface Props {
   title: string;
   description: string;
-  routeName: string;
   guestPhoto: string;
   guestPhotoAlt: string;
 
@@ -22,6 +14,8 @@ interface Props {
   spotifyLink: object;
   youtubeLink: object;
   video: object;
+  episodeSlug: string;
+  // seoImage: string;
 }
 
 function PodcastCard({
@@ -29,6 +23,7 @@ function PodcastCard({
   description,
   guestPhoto,
   guestPhotoAlt,
+  episodeSlug,
 
   //@ts-ignore
   podcastAppLink: { url: appleUrl },
@@ -38,10 +33,16 @@ function PodcastCard({
   youtubeLink: { url: youtubeUrl },
   video,
 }: Props): ReactElement {
+  const router = useRouter();
+
+  const handleRoute = () => {
+    return router.push(`/podcast/${episodeSlug}`);
+  };
   return (
     <>
       <div className="flex-center flex-col">
         <img
+          onClick={() => handleRoute()}
           className="podcast__guest_photo"
           src={guestPhoto}
           alt={guestPhotoAlt}

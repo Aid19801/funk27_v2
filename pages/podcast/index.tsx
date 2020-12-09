@@ -5,7 +5,7 @@ import NProgress from "nprogress";
 import { fetchPageByUID, useContent } from "../../api/requests";
 import { FunkSpinner } from "../../components";
 import PodcastCard from "../../components/card-podcast";
-// import pod from "../../public/";
+
 interface Props {
   ssrContent: object;
 }
@@ -138,13 +138,13 @@ function PodcastHome({ ssrContent }: Props): ReactElement {
                         <PodcastCard
                           title={each.title1[0].text}
                           description={each.description[0].text}
-                          routeName={`/podcast/${each.episode_slug[0].text}`}
                           guestPhoto={each.guest_photo.url}
                           guestPhotoAlt={each.guest_photo.alt}
                           podcastAppLink={each.podcast_app_link}
                           spotifyLink={each.spotify_link}
                           youtubeLink={each.youtube_link}
                           video={each.video}
+                          episodeSlug={each.episode_slug[0].text}
                         />
                       </li>
                     );
