@@ -158,7 +158,7 @@ function PodcastHome({ ssrContent }: Props): ReactElement {
                     alt="podcast guest"
                   />
                   <p className="podcast__shows_title">
-                    #2 Dapper Laughs [soon]
+                    #3 Dapper Laughs [soon]
                   </p>
                   <div className="podcast__shows_descr_container">
                     <p className="podcast__shows_descr">
@@ -174,29 +174,13 @@ function PodcastHome({ ssrContent }: Props): ReactElement {
                     src="pod_tom_headshot.jpg"
                     alt="podcast guest"
                   />
-                  <p className="podcast__shows_title">#3 Tom Pontin [soon]</p>
+                  <p className="podcast__shows_title">#4 Tom Pontin [soon]</p>
                   <div className="podcast__shows_descr_container">
                     <p className="podcast__shows_descr">
                       Tom Pontin is a Financier with a decade of investment
                       behind him. On this episode we discuss how money is
                       created, how it moves, the threat & opportunities of
                       crypto-currency and more.
-                    </p>
-                  </div>
-                </li>
-                <li className="show__card">
-                  <img
-                    className="podcast__guest_photo grayscale"
-                    src="pod_ashley_headshot.jpg"
-                    alt="podcast guest"
-                  />
-                  <p className="podcast__shows_title">#4 Ashley Haden [soon]</p>
-
-                  <div className="podcast__shows_descr_container">
-                    <p className="podcast__shows_descr">
-                      Ashley Haden is a stand-up comic and aspiring playwright.
-                      On this episode, we discuss if Politics has gotten worse
-                      and the benefits of being a dark comic.
                     </p>
                   </div>
                 </li>

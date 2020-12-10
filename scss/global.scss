@@ -764,6 +764,10 @@ body::-webkit-scrollbar-thumb {
   border: 2px solid grey;
 }
 
+.w-100 {
+  width: 100vw;
+}
+
 .podcast__show_page {
   width: 90vw;
   max-width: 90vw;
@@ -780,6 +784,15 @@ body::-webkit-scrollbar-thumb {
   p:nth-child(1) {
     color: grey;
     font-size: 16px;
+    @include md {
+      font-size: 20px;
+      max-width: 60%;
+    }
+  }
+  p:nth-child(3) {
+    color: orange;
+    font-size: 16px;
+    opacity: 0.6;
     @include md {
       font-size: 20px;
       max-width: 60%;

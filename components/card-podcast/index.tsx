@@ -36,7 +36,7 @@ function PodcastCard({
   const router = useRouter();
 
   const handleRoute = () => {
-    return router.push(`/podcast/${episodeSlug}`);
+    return router.push("/podcast/[slug]", `/podcast/${episodeSlug}`);
   };
   return (
     <>

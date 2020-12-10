@@ -74,6 +74,7 @@ function PodcastEpisode({ ssrContent }: Props): ReactElement {
               alt="podcast guest"
             />
             <p className="mt-50">{content.title1[0].text}</p>
+            <p>Aid Thompsin & Other Disappointments</p>
             <div className="flex-center mt-50">
               <p>{content.description[0].text}</p>
             </div>
@@ -97,6 +98,17 @@ function PodcastEpisode({ ssrContent }: Props): ReactElement {
               }}
             ></div>
           </div>
+        </section>
+
+        <section className="comments-section w-100 mt-50">
+          <DisqusComments
+            //@ts-ignore
+            url={`https://funk-27.co.uk/podcast/${content.episode_slug[0].text}`}
+            //@ts-ignore
+            identifier={content.episode_slug[0].text}
+            //@ts-ignore
+            title={content.title1[0].text}
+          />
         </section>
       </main>
     </div>
