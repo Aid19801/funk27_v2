@@ -18,7 +18,7 @@ interface Props {
   // seoImage: string;
 }
 
-function PodcastCard({
+function PodcastCardSmall({
   title,
   description,
   guestPhoto,
@@ -68,4 +68,4 @@ function PodcastCard({
   );
 }
 
-export default PodcastCard;
+export default PodcastCardSmall;

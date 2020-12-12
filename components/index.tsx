@@ -1,5 +1,7 @@
 import BlogPreviewCard from "./blog-preview-card";
 import Card from "./card";
+import CardPodcastLarge from "./card-podcast-large";
+import CardPodcastSmall from "./card-podcast-small";
 import ContactForm from "./contact-form";
 import DisqusComments from "./comments";
 import Filters from "./filters";
@@ -20,6 +22,8 @@ import SocialsVertical from "./socials-vertical";
 export {
   BlogPreviewCard,
   Card,
+  CardPodcastLarge,
+  CardPodcastSmall,
   ContactForm,
   DisqusComments,
   Filters,

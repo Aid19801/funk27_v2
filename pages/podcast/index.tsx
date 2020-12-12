@@ -3,8 +3,7 @@ import Head from "next/head";
 import Link from "next/link";
 import NProgress from "nprogress";
 import { fetchPageByUID, useContent } from "../../api/requests";
-import { FunkSpinner } from "../../components";
-import PodcastCard from "../../components/card-podcast";
+import { FunkSpinner, CardPodcastSmall } from "../../components";
 
 interface Props {
   ssrContent: object;
@@ -135,7 +134,7 @@ function PodcastHome({ ssrContent }: Props): ReactElement {
                   content.data.body[0].items.map((each, i) => {
                     return (
                       <li className="show__card" key={i}>
-                        <PodcastCard
+                        <CardPodcastSmall
                           title={each.title1[0].text}
                           description={each.description[0].text}
                           guestPhoto={each.guest_photo.url}

@@ -8,7 +8,7 @@ import { RichText } from "prismic-reactjs";
 //@ts-ignore
 import AidLegoSVG from "../../svgs/aid_lego.svg";
 import * as gtag from "../../lib/gtag";
-import { DisqusComments } from "../../components";
+import { DisqusComments, CardPodcastLarge } from "../../components";
 
 interface Props {
   ssrContent: object;
@@ -26,9 +26,6 @@ function PodcastEpisode({ ssrContent }: Props): ReactElement {
     // gtag.pageview(router.query.slug);
   }, []);
 
-  useEffect(() => {
-    console.log("content", content);
-  }, [content]);
   return (
     <div className="page__wrapper container">
       <Head>
@@ -67,37 +64,15 @@ function PodcastEpisode({ ssrContent }: Props): ReactElement {
 
       <main>
         <section>
-          <div className="podcast__show_page card flex-center flex-col mt-50">
-            <img
-              className="rounded border-orange mt-50"
-              src={content.guest_photo.url}
-              alt="podcast guest"
-            />
-            <p className="mt-50">{content.title1[0].text}</p>
-            <p>Aid Thompsin & Other Disappointments</p>
-            <div className="flex-center mt-50">
-              <p>{content.description[0].text}</p>
-            </div>
-
-            <div className="podcast__show__socials">
-              <a href={content.podcast_app_link.url} target="_blank">
-                <img src="../podcast_app.png" alt="apple podcasts" />
-              </a>
-              <a href={content.spotify_link.url} target="_blank">
-                <img src="../spotify.png" alt="spotify podcasts" />
-              </a>
-              <a href={content.youtube_link.url} target="_blank">
-                <img src="../youtube.png" alt="youtube podcasts" />
-              </a>
-            </div>
-
-            <div
-              className="podcast__show__youtube mt-50"
-              dangerouslySetInnerHTML={{
-                __html: content.video.html,
-              }}
-            ></div>
-          </div>
+          <CardPodcastLarge
+            guestPhoto={content.guest_photo.url}
+            title={content.title1[0].text}
+            description={content.description[0].text}
+            appleLink={content.podcast_app_link.url}
+            spotifyLink={content.spotify_link.url}
+            youtubeLink={content.youtube_link.url}
+            video={content.video.html}
+          />
         </section>
 
         <section className="comments-section w-100 mt-50">
@@ -117,10 +92,11 @@ function PodcastEpisode({ ssrContent }: Props): ReactElement {
 
 export async function getServerSideProps(context: any) {
   const ssrContent: any = await fetchPageByUID("content", "podcast");
+  console.log("1111111", ssrContent);
   const thisEpisode = ssrContent.data.body[0].items.filter(
     (each) => each.episode_slug[0].text === context.params.slug
   )[0];
-
+  console.log("2222222", thisEpisode);
   return {
     props: { ssrContent: thisEpisode },
   };

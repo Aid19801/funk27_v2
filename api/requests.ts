@@ -21,8 +21,11 @@ async function fetchPageByUID(key, uid) {
         ],
       })
     )
-    .then((response) => response)
-    .catch((err) => console.log("page fetch error: ", err));
+    .then((response) => {
+      console.log("response is ", response);
+      return response;
+    })
+    .catch((err) => console.log("page fetch error =====>>> : ", err));
 }
 
 async function fetchBlogPageByUID(key, uid) {
