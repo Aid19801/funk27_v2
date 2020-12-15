@@ -153,33 +153,34 @@ function PodcastHome({ ssrContent }: Props): ReactElement {
                 <li className="show__card">
                   <img
                     className="podcast__guest_photo grayscale"
+                    src="pod_tom_headshot.jpg"
+                    alt="podcast guest"
+                  />
+                  <p className="podcast__shows_title">#3 Tom Pontin [soon]</p>
+                  <div className="podcast__shows_descr_container">
+                    <p className="podcast__shows_descr">
+                      Tom Pontin is a Hedge Fund Financier with a decade of
+                      investment behind him. On this episode we discuss what
+                      Short Selling is, Cryptocurrencies and how he thinks the
+                      next decade might look. Pour yourself a stiff drink.
+                    </p>
+                  </div>
+                </li>
+
+                <li className="show__card">
+                  <img
+                    className="podcast__guest_photo grayscale"
                     src="pod_dapper_headshot.jpg"
                     alt="podcast guest"
                   />
                   <p className="podcast__shows_title">
-                    #3 Dapper Laughs [soon]
+                    #4 Dapper Laughs [soon]
                   </p>
                   <div className="podcast__shows_descr_container">
                     <p className="podcast__shows_descr">
                       From 6-second Vines to being hauled onto Newsnight, Dapper
                       Laughs went on quite the journey. Here he talks about
                       Social Media and pivoting to live promotions.
-                    </p>
-                  </div>
-                </li>
-                <li className="show__card">
-                  <img
-                    className="podcast__guest_photo grayscale"
-                    src="pod_tom_headshot.jpg"
-                    alt="podcast guest"
-                  />
-                  <p className="podcast__shows_title">#4 Tom Pontin [soon]</p>
-                  <div className="podcast__shows_descr_container">
-                    <p className="podcast__shows_descr">
-                      Tom Pontin is a Financier with a decade of investment
-                      behind him. On this episode we discuss how money is
-                      created, how it moves, the threat & opportunities of
-                      crypto-currency and more.
                     </p>
                   </div>
                 </li>
