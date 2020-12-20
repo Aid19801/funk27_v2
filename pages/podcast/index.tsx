@@ -153,17 +153,18 @@ function PodcastHome({ ssrContent }: Props): ReactElement {
                 <li className="show__card">
                   <img
                     className="podcast__guest_photo grayscale"
-                    src="pod_dapper_headshot.jpg"
+                    src="pod_maxine_headshot.jpeg"
                     alt="podcast guest"
                   />
                   <p className="podcast__shows_title">
-                    #4 Dapper Laughs [soon]
+                    #4 // Maxine Penney [soon]
                   </p>
                   <div className="podcast__shows_descr_container">
                     <p className="podcast__shows_descr">
-                      From 6-second Vines to being hauled onto Newsnight, Dapper
-                      Laughs went on quite the journey. Here he talks about
-                      Social Media and pivoting to live promotions.
+                      Founder & CEO of FreshhhConnections, host of The Matt &
+                      Maxine Show - my old friend Maxine Penney steps in for a
+                      catch-up about Tech Recruitment, Amsterdam, our
+                      backgrounds and the horror show that was 2020.
                     </p>
                   </div>
                 </li>
