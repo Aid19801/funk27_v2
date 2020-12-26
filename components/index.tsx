@@ -11,7 +11,7 @@ import HeroSection from "./hero-section";
 import Image from "./image";
 import ImagesAndActionPoints from "./images-actions-points";
 import Footer from "./footer";
-import MarketStream from "./market-stream";
+// import MarketStream from "./market-stream";
 import Navbar from "./navbar";
 import ScrollFadeSection from "./scroll-fade-section";
 import ScrollFadeSmokeBar from "./scroll-fade-bar";
@@ -34,7 +34,7 @@ export {
   Image,
   ImagesAndActionPoints,
   Footer,
-  MarketStream,
+  // MarketStream,
   Navbar,
   ScrollFadeSection,
   ScrollFadeSmokeBar,
