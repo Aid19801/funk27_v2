@@ -149,25 +149,6 @@ function PodcastHome({ ssrContent }: Props): ReactElement {
                     );
                   })
                 }
-
-                <li className="show__card">
-                  <img
-                    className="podcast__guest_photo grayscale"
-                    src="pod_maxine_headshot.jpeg"
-                    alt="podcast guest"
-                  />
-                  <p className="podcast__shows_title">
-                    #4 // Maxine Penney [soon]
-                  </p>
-                  <div className="podcast__shows_descr_container">
-                    <p className="podcast__shows_descr">
-                      Founder & CEO of FreshhhConnections, host of The Matt &
-                      Maxine Show - my old friend Maxine Penney steps in for a
-                      catch-up about Tech Recruitment, Amsterdam, our
-                      backgrounds and the horror show that was 2020.
-                    </p>
-                  </div>
-                </li>
               </ul>
             </div>
           </section>

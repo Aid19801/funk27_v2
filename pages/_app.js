@@ -26,6 +26,12 @@ export default ({ Component, pageProps }) => {
       <div onMouseMove={(e) => mouseMove(e)}>
         <div className="cursor" />
         <Head>
+        <script
+          async
+          src="https://platform.twitter.com/widgets.js"
+          charSet="utf-8"
+        />
+        
           <link rel="shortcut icon" href="/vercel.ico" />
           <script src="../"></script>
           <link rel="stylesheet" href="nprogress.css" />

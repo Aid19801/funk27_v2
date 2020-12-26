@@ -85,6 +85,15 @@ label {
   text-align: center;
 }
 
+.space-evenly {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.product-ctas {
+  max-width: 500px;
+}
+
 main h1 {
   font-family: "Dancing Script", cursive;
   color: orange;
@@ -766,4 +775,10 @@ body::-webkit-scrollbar-thumb {
 
 .w-100 {
   width: 100vw;
+}
+
+.product__wrapper {
+  img {
+    max-width: 95vw;
+  }
 }

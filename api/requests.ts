@@ -22,7 +22,7 @@ async function fetchPageByUID(key, uid) {
       })
     )
     .then((response) => {
-      console.log("response is ", response);
+      // console.log("response is ", response);
       return response;
     })
     .catch((err) => console.log("page fetch error =====>>> : ", err));
@@ -43,4 +43,27 @@ const useContent = (key, uid) => {
   });
 };
 
-export { useContent, fetchPageByUID, fetchBlogPageByUID };
+const fetchTweets = async () => {
+  const myHeaders = new Headers();
+
+  myHeaders.append("tweet.fields", "Bearer AAAAAAAAAAAAAAAAAAAAAK9iKwEAAAAAR0RawpJ67cnyn01rB%2BLLpwQ%2FRqc%3DFYclz6ESj9IZxzs3wRZjQOPNd27UBPIDAFA1XOktUj6L95dlmc");
+  myHeaders.append("Authorization", "Bearer AAAAAAAAAAAAAAAAAAAAAK9iKwEAAAAAR0RawpJ67cnyn01rB%2BLLpwQ%2FRqc%3DFYclz6ESj9IZxzs3wRZjQOPNd27UBPIDAFA1XOktUj6L95dlmc");
+  myHeaders.append("Cookie", "personalization_id=\"v1_uCzGQMbDZ7rr7RnwgtF2vQ==\"; guest_id=v1%3A160853653158928814");
+  myHeaders.append("Cors", "personalization_id=\"v1_uCzGQMbDZ7rr7RnwgtF2vQ==\"; guest_id=v1%3A160853653158928814");
+  
+  // const twitterUrl = "https://api.twitter.com/2/users/69620713/tweets?tweet.fields=attachments,conversation_id,entities,referenced_tweets,source&expansions=attachments.media_keys&media.fields=media_key";
+
+  try {
+    const proxyurl = "https://cors-anywhere.herokuapp.com/";
+    const res = await fetch("https://thingproxy.freeboard.io/fetch/https://api.twitter.com/2/users/69620713/tweets?tweet.fields=attachments,created_at,conversation_id,entities,referenced_tweets,source&expansions=attachments.media_keys&media.fields=media_key", {
+      method: 'GET',
+      headers: myHeaders,
+    });
+    const json = await res.json();
+    return json;
+  } catch (error) { 
+    return error;
+  }
+}
+
+export { useContent, fetchPageByUID, fetchBlogPageByUID, fetchTweets };

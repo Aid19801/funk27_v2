@@ -1,0 +1,163 @@
+@import "../../scss/main";
+
+.marketStreamContainer {
+  position: fixed;
+  top: 75px;
+  border-radius: 25px;
+  right: 10px;
+  border: 3px solid orange;
+  height: 80vh;
+  width: 380px;
+  padding: 20px 10px;
+  background: rgba(0, 0, 0, 0.8);
+  z-index: 2;
+  overflow: scroll;
+  transition: 0.5s;
+
+  @include sm {
+    display: none;
+  }
+  @include md {
+    display: block;
+    height: 800px;
+  }
+
+  .titleBorderDotContainer {
+    height: 100px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: space-between;
+    margin-bottom: 20px;
+    .title {
+      color: white;
+      font-size: 28px;
+      text-align: center;
+      font-family: Merriweather, Arial, sans-serif;
+    }
+    .titleBorderBottom {
+      width: 100%;
+      height: 5px;
+      background: grey;
+      border-radius: 25px;
+    }
+    .flashingDotContainer {
+      width: 100%;
+      height: 30px;
+      display: flex;
+      align-items: center;
+      .flashingDot {
+        width: 20px;
+        height: 20px;
+        border-radius: 50px;
+        background-color: grey;
+        margin-left: 0px;
+        animation: flash 0.5s ease-in-out infinite;
+      }
+    }
+  }
+  li {
+    margin-bottom: 20px;
+    min-height: 140px;
+    position: relative;
+
+    .authorAndTimestampContainer {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-direction: row;
+      .author {
+        color: orange;
+      }
+      .timestamp {
+        color: lightgrey;
+        font-family: "Source Sans Pro", sans-serif;
+        font-size: 14px;
+        text-align: end;
+      }
+    }
+
+    .tweet {
+      color: white;
+      font-family: "Source Sans Pro", sans-serif;
+      font-size: 15px;
+      text-align: start;
+      span {
+        div {
+          p {
+            font-size: 20px;
+            span {
+              color: white;
+              font-size: 20px;
+            }
+          }
+        }
+      }
+    }
+  }
+  .separator {
+    // padding-bottom: 20px;
+    padding-top: 20px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    position: absolute;
+    left: 0%;
+    bottom: 20px;
+    width: 100%;
+
+    .dotOne,
+    .dotTwo,
+    .dotThree {
+      width: 10px;
+      height: 10px;
+      border-radius: 50px;
+      background-color: orange;
+      margin-left: 10px;
+    }
+    .dotOne {
+      margin-left: 0;
+    }
+  }
+  .error {
+    color: red;
+    font-size: 20px;
+    text-align: center;
+    width: 100%;
+  }
+}
+
+.fadeIn {
+  animation: fadeElementIn 0.2s ease-in;
+}
+
+.fadeOut {
+  animation: fadeElementOut 0.2s ease-in;
+}
+
+@keyframes fadeElementOut {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+
+@keyframes fadeElementIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes flash {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
