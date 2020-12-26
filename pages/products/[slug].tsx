@@ -2,13 +2,13 @@ import React, { ReactElement, useState } from "react";
 import Head from "next/head";
 import { fetchPageByUID, useContent } from "../../api/requests";
 import { Button } from "react-bulma-components/dist";
-// import { MarketStream } from "../../components";
+import { MarketStream } from "../../components";
 import dynamic from "next/dynamic";
 
 // const DynamicMarketStream = dynamic(import("../../components/market-stream"));
-const DynamicMarketStream = dynamic(
-  () => import("../../components/market-stream")
-);
+// const DynamicMarketStream = dynamic(
+//   () => import("../../components/market-stream")
+// );
 
 interface Props {
   ssrContent: object;
@@ -21,7 +21,7 @@ function Product({ ssrContent }: Props): ReactElement {
   const toggleMarketData = () => toggleDemo(!demo);
 
   if (content) {
-    console.log("FUCK OFF ===> ", content);
+    console.log("Product Page Content: ", content);
     return (
       <div className="page__wrapper container">
         <Head>
@@ -50,7 +50,7 @@ function Product({ ssrContent }: Props): ReactElement {
               </Button>
             </div>
           </section>
-          {demo && <DynamicMarketStream show={demo} />}
+          {demo && <MarketStream show={demo} />}
         </main>
       </div>
     );
