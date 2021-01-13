@@ -54,8 +54,10 @@ const fetchTweets = async () => {
   // const twitterUrl = "https://api.twitter.com/2/users/69620713/tweets?tweet.fields=attachments,conversation_id,entities,referenced_tweets,source&expansions=attachments.media_keys&media.fields=media_key";
 
   try {
-    const proxyurl = "https://cors-anywhere.herokuapp.com/";
-    const res = await fetch("https://thingproxy.freeboard.io/fetch/https://api.twitter.com/2/users/69620713/tweets?tweet.fields=attachments,created_at,conversation_id,entities,referenced_tweets,source&expansions=attachments.media_keys&media.fields=media_key", {
+    const proxyurl = "https://cors-anywhere.herokuapp.com";
+    // const res = await fetch("https://api.twitter.com/2/users/69620713/tweets?tweet.fields=attachments,created_at,conversation_id,entities,referenced_tweets,source&expansions=attachments.media_keys&media.fields=media_key", {
+    // const res = await fetch("https://thingproxy.freeboard.io/fetch/https://api.twitter.com/2/users/69620713/tweets?tweet.fields=attachments,created_at,conversation_id,entities,referenced_tweets,source&expansions=attachments.media_keys&media.fields=media_key", {
+    const res = await fetch(`${proxyurl}/https://api.twitter.com/2/users/69620713/tweets?tweet.fields=attachments,created_at,conversation_id,entities,referenced_tweets,source&expansions=attachments.media_keys&media.fields=media_key`, {
       method: 'GET',
       headers: myHeaders,
     });
