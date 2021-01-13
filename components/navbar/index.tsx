@@ -132,6 +132,13 @@ function Navbar({}: Props): ReactElement {
             >
               Contact
             </div>
+            <div
+              ref={contactRef}
+              className="navbar-item"
+              onClick={() => handleNavClick("/products")}
+            >
+              Products
+            </div>
             <div className="navbar-item has-dropdown is-hoverable">
               <div
                 ref={blogsRef}

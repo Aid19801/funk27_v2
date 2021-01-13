@@ -105,8 +105,6 @@ function MarketStream({ show }) {
           )}
         </ul>
       </div>
-
-      <p>mini footer</p>
     </div>
   );
 }
