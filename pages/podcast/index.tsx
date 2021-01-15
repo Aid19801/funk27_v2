@@ -9,6 +9,7 @@ interface Props {
   ssrContent: object;
 }
 
+// updated.
 function PodcastHome({ ssrContent }: Props): ReactElement {
   const [content, setContent] = useState(ssrContent);
 
