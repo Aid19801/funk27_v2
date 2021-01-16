@@ -188,11 +188,41 @@ function Navbar({}: Props): ReactElement {
                 Podcast
               </div>
               <div className="navbar-dropdown">
-                <Link href={"/podcast/[slug]"} as="/podcast/emmett-short">
+                <Link
+                  href={"/podcast/[slug]"}
+                  as="/podcast/episode-1-emmett-short"
+                >
                   <a className="navbar-item">#1 Emmett Short</a>
                 </Link>
-                <Link href={"/podcast/[slug]"} as="/podcast/ashley-haden">
+                <Link
+                  href={"/podcast/[slug]"}
+                  as="/podcast/episode-2-ashley-haden"
+                >
                   <a className="navbar-item">#2 Ashley Haden</a>
+                </Link>
+                <Link
+                  href={"/podcast/[slug]"}
+                  as="/podcast/episode-3-tom-pontin"
+                >
+                  <a className="navbar-item">#3 Tom Pontin</a>
+                </Link>
+                <Link
+                  href={"/podcast/[slug]"}
+                  as="/podcast/episode-4-maxine-penney"
+                >
+                  <a className="navbar-item">#4 Maxine Penney</a>
+                </Link>
+                <Link
+                  href={"/podcast/[slug]"}
+                  as="/podcast/episode-4-richard-brice"
+                >
+                  <a className="navbar-item">#5 Richard Brice</a>
+                </Link>
+                <Link
+                  href={"/podcast/[slug]"}
+                  as="/podcast/episode-6-lisa-cross"
+                >
+                  <a className="navbar-item">#6 Dr Lisa Cross</a>
                 </Link>
                 <Link href={"/podcast/[slug]"} as="/podcast">
                   <a className="navbar-item">All</a>

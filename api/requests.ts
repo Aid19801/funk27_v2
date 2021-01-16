@@ -50,14 +50,19 @@ const fetchTweets = async () => {
   myHeaders.append("Authorization", "Bearer AAAAAAAAAAAAAAAAAAAAAK9iKwEAAAAAR0RawpJ67cnyn01rB%2BLLpwQ%2FRqc%3DFYclz6ESj9IZxzs3wRZjQOPNd27UBPIDAFA1XOktUj6L95dlmc");
   myHeaders.append("Cookie", "personalization_id=\"v1_uCzGQMbDZ7rr7RnwgtF2vQ==\"; guest_id=v1%3A160853653158928814");
   myHeaders.append("Cors", "personalization_id=\"v1_uCzGQMbDZ7rr7RnwgtF2vQ==\"; guest_id=v1%3A160853653158928814");
-  
-  // const twitterUrl = "https://api.twitter.com/2/users/69620713/tweets?tweet.fields=attachments,conversation_id,entities,referenced_tweets,source&expansions=attachments.media_keys&media.fields=media_key";
+
+  const user_data = `user.fields=description,name,username`;
+  const expand = 'expansions=author_id';
+  const tweet_data = `tweet.fields=author_id,created_at,geo,lang,possibly_sensitive,referenced_tweets,source`;
+  const query = `query=forex`;
 
   try {
     const proxyurl = "https://cors-anywhere.herokuapp.com";
+    const otherProxy = "https://thingproxy.freeboard.io/fetch";
     // const res = await fetch("https://api.twitter.com/2/users/69620713/tweets?tweet.fields=attachments,created_at,conversation_id,entities,referenced_tweets,source&expansions=attachments.media_keys&media.fields=media_key", {
     // const res = await fetch("https://thingproxy.freeboard.io/fetch/https://api.twitter.com/2/users/69620713/tweets?tweet.fields=attachments,created_at,conversation_id,entities,referenced_tweets,source&expansions=attachments.media_keys&media.fields=media_key", {
-    const res = await fetch(`${proxyurl}/https://api.twitter.com/2/users/69620713/tweets?tweet.fields=attachments,created_at,conversation_id,entities,referenced_tweets,source&expansions=attachments.media_keys&media.fields=media_key`, {
+    // const res = await fetch(`${proxyurl}/https://api.twitter.com/2/users/69620713/tweets?tweet.fields=attachments,created_at,conversation_id,entities,referenced_tweets,source&expansions=attachments.media_keys&media.fields=media_key`, {
+      const res = await fetch(`${otherProxy}/https://api.twitter.com/2/tweets/search/recent?${query}&${user_data}&${tweet_data}&${expand}`, {
       method: 'GET',
       headers: myHeaders,
     });

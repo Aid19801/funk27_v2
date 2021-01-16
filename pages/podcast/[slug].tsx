@@ -26,6 +26,13 @@ function PodcastEpisode({ ssrContent }: Props): ReactElement {
     // gtag.pageview(router.query.slug);
   }, []);
 
+  useEffect(() => {
+    setContent(ssrContent);
+    if (window && window.scrollTo) {
+      window.scrollTo(0, 0);
+    }
+  }, [ssrContent]);
+
   return (
     <div className="page__wrapper container">
       <Head>
@@ -92,11 +99,9 @@ function PodcastEpisode({ ssrContent }: Props): ReactElement {
 
 export async function getServerSideProps(context: any) {
   const ssrContent: any = await fetchPageByUID("content", "podcast");
-  console.log("1111111", ssrContent);
   const thisEpisode = ssrContent.data.body[0].items.filter(
     (each) => each.episode_slug[0].text === context.params.slug
   )[0];
-  console.log("2222222", thisEpisode);
   return {
     props: { ssrContent: thisEpisode },
   };

@@ -6,6 +6,8 @@ import { fetchTweets } from "../../api/requests";
 import { mockTweets } from "./mocks";
 import styles from "./market-stream.module.scss";
 
+const trimLength = (str) =>
+  str.length > 110 ? `${str.slice(0, 110)}...` : str;
 //@ts-ignore
 const MyCursor = () => <h5>⬜️</h5>;
 
@@ -23,11 +25,11 @@ function MarketStream({ show }) {
     // check every minute after
     setInterval(async () => {
       setLoading(true);
-      console.log("refetching");
+      console.log("refetching market data");
       const { data } = await fetchTweets();
       setTweets(data);
       setLoading(false);
-    }, 60000);
+    }, 600000);
   };
   useEffect(() => {
     getTweets();
@@ -36,6 +38,10 @@ function MarketStream({ show }) {
   useEffect(() => {
     show ? setShowStream(true) : setShowStream(false);
   }, [show]);
+
+  if (tweets && tweets.length) {
+    // console.log("tweets are now ", tweets);
+  }
 
   return (
     <div
@@ -81,10 +87,14 @@ function MarketStream({ show }) {
                             cursor={<MyCursor />}
                             hideCursor={false}
                           >
-                            <p className={styles.tweet}>{each.text}</p>
+                            <p className={styles.tweet}>
+                              {trimLength(each.text)}
+                            </p>
                           </Typing>
                         ) : (
-                          <p className={styles.tweet}>{each.text}</p>
+                          <p className={styles.tweet}>
+                            {trimLength(each.text)}
+                          </p>
                         )}
                         {/* <p className={styles.tweet}>{ssrTypedContent(each.text)}</p> */}
                       </a>
