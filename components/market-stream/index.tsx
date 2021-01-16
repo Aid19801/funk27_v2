@@ -69,7 +69,7 @@ function MarketStream({ show }) {
                         target="_blank"
                       >
                         <div className={styles.authorAndTimestampContainer}>
-                          <h6 className={styles.author}>Bloomberg Markets</h6>
+                          <h6 className={styles.author}>#Forex</h6>
                           <p className={styles.timestamp}>
                             {each.created_at
                               .slice(
