@@ -8,7 +8,7 @@ import dynamic from "next/dynamic";
 // const DynamicMarketStream = dynamic(import("../../components/market-stream"));
 // const DynamicMarketStream = dynamic(
 //   () => import("../../components/market-stream")
-// );
+// ); killed
 
 interface Props {
   ssrContent: object;
