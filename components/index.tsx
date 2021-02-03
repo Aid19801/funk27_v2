@@ -13,6 +13,7 @@ import ImagesAndActionPoints from "./images-actions-points";
 import Footer from "./footer";
 import MarketStream from "./market-stream";
 import Navbar from "./navbar";
+import PodcastPlayer from "./podcast-player";
 import ScrollFadeSection from "./scroll-fade-section";
 import ScrollFadeSmokeBar from "./scroll-fade-bar";
 import SearchBar from "./SearchBar";
@@ -36,6 +37,7 @@ export {
   Footer,
   MarketStream,
   Navbar,
+  PodcastPlayer,
   ScrollFadeSection,
   ScrollFadeSmokeBar,
   SearchBar,

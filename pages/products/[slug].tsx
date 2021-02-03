@@ -1,8 +1,8 @@
-import React, { ReactElement, useState } from "react";
+import React, { ReactElement, useState, useEffect } from "react";
 import Head from "next/head";
 import { fetchPageByUID, useContent } from "../../api/requests";
 import { Button } from "react-bulma-components/dist";
-import { MarketStream } from "../../components";
+import { MarketStream, PodcastPlayer } from "../../components";
 import dynamic from "next/dynamic";
 
 // const DynamicMarketStream = dynamic(import("../../components/market-stream"));
@@ -17,8 +17,24 @@ interface Props {
 function Product({ ssrContent }: Props): ReactElement {
   const [content, setContent]: any = useState(ssrContent);
   const [demo, toggleDemo] = useState(false);
+  const [productToDemo, setProductToDemo] = useState("");
 
-  const toggleMarketData = () => toggleDemo(!demo);
+  const handleDemoClick = () => toggleDemo(!demo);
+
+  const whichProduct = () => {
+    switch (content.product_slug[0].text) {
+      case "products/podcast-player":
+        setProductToDemo("PodcastPlayer");
+        break;
+      case "products/market-stream":
+        setProductToDemo("MarketStream");
+      default:
+        setProductToDemo("MarketStream");
+    }
+  };
+  useEffect(() => {
+    whichProduct();
+  }, []);
 
   if (content) {
     console.log("Product Page Content: ", content);
@@ -42,7 +58,7 @@ function Product({ ssrContent }: Props): ReactElement {
           </section>
           <section className="mt-50 mb-50">
             <div className="w-100 space-evenly flex-row product-ctas">
-              <Button onClick={toggleMarketData} color="warning">
+              <Button onClick={handleDemoClick} color="warning">
                 Demo
               </Button>
               <Button onClick={() => null} color="danger">
@@ -50,7 +66,21 @@ function Product({ ssrContent }: Props): ReactElement {
               </Button>
             </div>
           </section>
-          {demo && <MarketStream show={demo} />}
+          {demo && productToDemo === "MarketStream" && (
+            <MarketStream show={demo} />
+          )}
+          {demo && productToDemo === "PodcastPlayer" && (
+            <PodcastPlayer
+              episodeNumber="7"
+              episodeGuest="Matthew James"
+              episodeDescription="Here is a thing with some ipsum lorem. Today we discuss most of other things and i hope it's all good."
+              episodeAudio="https://storage.pinecast.net/podcasts/e6552ddb-4376-43d5-9698-320f4c2e9098/audio/ab46af78-d1d4-4827-9bcd-2838a767be62/siodbiouads.mp3"
+              directUrl="https://funk-27.co.uk/podcast/episode-7-matthew-james"
+              episodeTitle="#7 // Matthew James"
+              podcastTitle="Aid Thompsin & Other Disappointments"
+              podcastDescription="Science, Tech & Comedy - each week Aid Thompsin & a guest attempt to find the funny in the modern world."
+            />
+          )}
         </main>
       </div>
     );

@@ -7,6 +7,7 @@
 // goes to: App.tsx
 * {
   cursor: none;
+  // border: 1px solid red;
 }
 
 .cursor {
@@ -782,3 +783,15 @@ body::-webkit-scrollbar-thumb {
     max-width: 95vw;
   }
 }
+.products__stackable_cubes {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+// @media screen and (max-width: 600px) {
+//   .products__stackable_cubes {
+//     flex-direction: column;
+//   }
+// }

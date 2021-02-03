@@ -1,0 +1,373 @@
+@import "../../scss/main";
+
+.podcast_player__container {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  contain: content;
+  box-shadow: 0 5px 20px rgba(105, 108, 109, 0.3),
+    0 0 8px 5px rgba(208, 223, 226, 0.4) inset;
+  background: white;
+  width: 95vw;
+  min-width: 95vw;
+  max-width: 95vw;
+  height: 180px;
+  opacity: 0.8;
+  transition: 0.4s;
+
+  &:hover {
+    opacity: 1;
+  }
+  @include md {
+    width: 800px;
+    min-width: 800px;
+    max-width: 800px;
+  }
+
+  .podcast_player__bg {
+    border: 1px solid grey;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    z-index: 3;
+  }
+  .podcast_player__playContainer {
+    width: 90px;
+    height: 90px;
+    position: absolute;
+    left: 38%;
+    color: white;
+    top: 25%;
+    z-index: 4;
+    transition: 0.3s;
+    opacity: 1;
+    @include md {
+      left: 43%;
+    }
+  }
+  .podcast_player__skipFwd,
+  .podcast_player__skipBack {
+    font-size: 12px;
+    position: absolute;
+    z-index: 10;
+    bottom: 34%;
+    width: 50px;
+    height: 50px;
+    background: grey;
+    border-radius: 50%;
+    opacity: 1;
+    animation: fadeIn 0.3s ease-in-out;
+
+    @include md {
+      bottom: 8%;
+    }
+  }
+
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+
+  .podcast_player__skipBack {
+    left: 15%;
+    animation: slideInLeft 0.5s ease-out;
+    @include md {
+      left: 36%;
+    }
+  }
+  .podcast_player__skipFwd {
+    left: 72%;
+    animation: slideInRight 0.3s ease-in-out;
+    @include md {
+      left: 55%;
+    }
+  }
+
+  @keyframes slideInLeft {
+    0% {
+      left: 96%;
+    }
+    10% {
+      left: 83%;
+    }
+    55% {
+      left: 70%;
+    }
+    86% {
+      left: 33%;
+    }
+    100% {
+      left: 36%;
+    }
+  }
+
+  @keyframes slideInRight {
+    from {
+      left: 100%;
+    }
+    to {
+      left: 55%;
+    }
+  }
+
+  .podcast_player__podcastTitleContainer {
+    position: absolute;
+    width: 170px;
+    z-index: 3;
+    top: 8px;
+    left: 6px;
+    padding: 5px 10px;
+    background: grey;
+
+    @include md {
+      padding: 5px 20px;
+      width: 194px;
+    }
+    h4 {
+      color: white;
+      line-height: 1.2;
+      font-size: 12px;
+      margin-top: 0;
+      font-family: BlinkMacSystemFont, -apple-system, Segoe UI, Roboto, Oxygen,
+        Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, Helvetica,
+        Arial, sans-serif;
+      display: none;
+      @include md {
+        display: flex;
+      }
+    }
+    p {
+      color: white;
+      font-weight: bold;
+      font-size: 12px;
+      font-family: BlinkMacSystemFont, -apple-system, Segoe UI, Roboto, Oxygen,
+        Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, Helvetica,
+        Arial, sans-serif;
+    }
+  }
+
+  .podcast_imageContainer {
+    height: 60px;
+    width: 60px;
+    contain: content;
+    position: absolute;
+    bottom: 2%;
+    left: 1%;
+    border-radius: 50px;
+    border: 4px solid black;
+    z-index: 4;
+    .podcast_player__image {
+      width: 100%;
+      height: auto;
+      background: grey;
+    }
+  }
+
+  .podcast_wavImageContainer {
+    border: 0;
+    position: absolute;
+    width: 100%;
+    bottom: -31px;
+    @include md {
+      bottom: -138px;
+    }
+    img {
+      width: 100%;
+    }
+
+    .podcast_wavImageVignette {
+      width: 100%;
+      height: 180px;
+      position: absolute;
+      z-index: 1;
+      top: 138px;
+      background: radial-gradient(
+        ellipse at center,
+        white,
+        0%,
+        black,
+        70%,
+        grey,
+        100%
+      );
+      // transform: skewY(-4deg);
+      background: radial-gradient(
+        ellipse at center,
+        rgba(255, 255, 255, 0) 0%,
+        rgba(255, 255, 255, 1) 70%,
+        rgba(255, 255, 255, 1) 100%
+      );
+    }
+  }
+
+  .socialsContainer {
+    position: absolute;
+    display: flex;
+    flex-direction: row;
+    z-index: 4;
+    bottom: 1px;
+    right: 11px;
+
+    @include md {
+      bottom: 0;
+    }
+    div {
+      margin-right: 4px;
+      svg {
+        height: 30px;
+        width: 30px;
+        border-radius: 50%;
+        // margin-right: 4px;
+        // border: 1px solid orange;
+      }
+    }
+  }
+  @keyframes loadingWaves {
+    from {
+      background-position-x: 800px;
+    }
+    to {
+      background-position-x: 0px;
+    }
+  }
+}
+
+.noSidePanel {
+  padding: 0px;
+  width: 0px;
+  height: 140px;
+  // background-color: rgba(0, 0, 0, 0.9);
+  transition: 0.3s;
+  // transition-delay: 1s;
+  position: absolute;
+  top: 25px;
+  right: 0;
+  z-index: 3;
+  display: hidden;
+  @include md {
+    display: flex;
+  }
+  p {
+    font-size: 12px;
+    color: white;
+    opacity: 0;
+    transition-delay: 0s;
+    transition: 0.3s;
+  }
+}
+
+.sidePanel {
+  padding: 10px;
+  width: 300px;
+  height: 140px;
+  background-color: grey;
+  transition: 0.3s;
+  transition-delay: 0.7s;
+  position: absolute;
+  top: 19px;
+  right: 10px;
+  z-index: 3;
+
+  display: none;
+  @include md {
+    display: flex;
+    flex-direction: column;
+  }
+
+  p {
+    font-size: 12px;
+    color: white;
+    opacity: 1;
+    transition-delay: 1s;
+    font-family: BlinkMacSystemFont, -apple-system, Segoe UI, Roboto, Oxygen,
+      Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, Helvetica, Arial,
+      sans-serif;
+    strong {
+      color: white;
+      font-size: 15px;
+    }
+  }
+}
+.noOrangeLineTop {
+  width: 0px;
+  height: 5px;
+  background-color: orange;
+  transition: 0.3s;
+  transition-delay: 1s;
+  position: absolute;
+  top: 10px;
+  z-index: 3;
+}
+
+.orangeLineTop {
+  width: 400px;
+  height: 5px;
+  background-color: orange;
+  // transform: skewY(2deg);
+  transition: 0.3s;
+  position: absolute;
+  top: 10px;
+  z-index: 3;
+}
+.noOrangeLine {
+  width: 0px;
+  height: 5px;
+  background-color: orange;
+  transition: 0.3s;
+  transition-delay: 1s;
+  position: absolute;
+  bottom: 0;
+  z-index: 3;
+}
+
+.orangeLine {
+  width: 400px;
+  height: 5px;
+  background-color: orange;
+  transition: 0.3s;
+  position: absolute;
+  bottom: 12px;
+  z-index: 3;
+}
+
+.fadeOut {
+  transition: 0.3s !important;
+  opacity: 0 !important;
+}
+
+.audioLevelsContainer {
+  // width: 100px;
+  height: 100px;
+  // border: 2px solid red;
+  position: absolute;
+  z-index: 5;
+  right: 0px;
+  top: 0px;
+
+  .rowOfThreeBars {
+    display: flex;
+    flex-direction: row;
+    justify-content: right;
+    span {
+      width: 4px;
+      height: 55px;
+      transition: 0.3s ease-out;
+    }
+    .barOne {
+      background-color: orange;
+    }
+    .barTwo {
+      background-color: rgb(248, 184, 64);
+    }
+    .barThree {
+      background-color: orange;
+    }
+  }
+}

@@ -3,7 +3,7 @@ import Head from "next/head";
 import NProgress from "nprogress";
 import { RichText } from "prismic-reactjs";
 import { fetchPageByUID, useContent } from "../../api/requests";
-import { Card, FunkSpinner } from "../../components";
+import { Card, FunkSpinner, PodcastPlayer } from "../../components";
 
 interface Props {
   ssrContent: object;
@@ -44,6 +44,7 @@ function Products({ ssrContent }: Props): ReactElement {
               />
             </div>
           </section>
+
           <section className="signup__msg-section">
             <div className="container is-fluid blog__home__top__banner">
               <div className="notification">
@@ -55,24 +56,26 @@ function Products({ ssrContent }: Props): ReactElement {
             </div>
           </section>
           <section>
-            {
-              //@ts-ignore
-              content &&
+            <div className="products__stackable_cubes">
+              {
                 //@ts-ignore
-                content.data.body[0].items.map((each, i) => {
-                  return (
-                    <Card
-                      key={i}
-                      title={each.product_name[0].text}
-                      text={each.product_description[0].text}
-                      link={`/${each.product_slug[0].text}`}
-                      techs={["react", "scss"]}
-                      imageOne={each.product_image.url}
-                      imageTwo={each.product_image.url}
-                    />
-                  );
-                })
-            }
+                content &&
+                  //@ts-ignore
+                  content.data.body[0].items.map((each, i) => {
+                    return (
+                      <Card
+                        key={i}
+                        title={each.product_name[0].text}
+                        text={each.product_description[0].text}
+                        link={`/${each.product_slug[0].text}`}
+                        techs={["react", "scss"]}
+                        imageOne={each.product_image.url}
+                        imageTwo={each.product_image.url}
+                      />
+                    );
+                  })
+              }
+            </div>
           </section>
         </main>
       </div>
