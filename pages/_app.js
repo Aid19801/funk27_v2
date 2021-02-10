@@ -26,6 +26,7 @@ export default ({ Component, pageProps }) => {
       <div onMouseMove={(e) => mouseMove(e)}>
         <div className="cursor" />
         <Head>
+        <script src="https://www.googleoptimize.com/optimize.js?id=OPT-MBP8MB8"></script>
         <script
           async
           src="https://platform.twitter.com/widgets.js"

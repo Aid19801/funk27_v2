@@ -1,0 +1,57 @@
+@import "../../scss//main";
+
+.podcast_player__titleDescription {
+  width: auto;
+  position: absolute;
+  z-index: 5;
+  top: -4px;
+  left: -15px;
+  display: flex;
+  flex-direction: column;
+  transition: 0.3s ease-in-out;
+  @include sm {
+    left: 20%;
+  }
+  @include md {
+    max-width: 30%;
+    height: 110px;
+    // border: 1px solid red;
+    position: absolute;
+    z-index: 5;
+    top: -4px;
+    left: -65px;
+    display: flex;
+    justify-content: space-around;
+    flex-direction: column;
+  }
+  h4 {
+    font-weight: bold;
+    line-height: 0.9;
+    background: grey;
+    padding: 10px;
+    border-radius: 12px;
+    font-family: Arial;
+    color: white;
+  }
+  h5 {
+    display: none;
+    @include md {
+      display: flex;
+      line-height: 0.9;
+      background: grey;
+      padding: 10px;
+      border-radius: 12px;
+      font-family: Arial;
+      color: orange;
+      font-size: 12px;
+    }
+  }
+}
+
+.showInfo {
+  opacity: 1;
+}
+
+.hideInfo {
+  opacity: 0;
+}

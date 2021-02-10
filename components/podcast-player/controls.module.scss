@@ -1,0 +1,60 @@
+@import "../../scss/main";
+
+.podcast_player__buttons_container {
+  // border: 2px solid red;
+  position: absolute;
+  left: 6%;
+  z-index: 5;
+  width: 88%;
+  height: 87%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-direction: row;
+
+  @include sm {
+    // border: 2px solid blue;
+    width: 80%;
+    left: 10%;
+  }
+
+  @include md {
+    // border: 2px solid green;
+    width: 55%;
+    left: 22%;
+  }
+  div {
+    width: 60px;
+    height: 60px;
+    background: #ebc175;
+    border-radius: 50%;
+    opacity: 0.9;
+    transition: 0.3s;
+    &:hover {
+      opacity: 1;
+    }
+    @include sm {
+      width: 90px;
+      height: 90px;
+    }
+    svg {
+      // border: 2px solid red;
+      width: 60px;
+      height: 60px;
+      @include sm {
+        // border: 2px solid blue;
+        width: 90px;
+        height: 90px;
+      }
+
+      @include md {
+        // border: 2px solid green;
+      }
+    }
+  }
+}
+
+// .fadeOut {
+//   transition: 0.3s !important;
+//   opacity: 0 !important;
+// }

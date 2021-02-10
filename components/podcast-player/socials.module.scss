@@ -1,0 +1,14 @@
+.socialsContainer {
+  width: 320px;
+  justify-content: space-around;
+  display: flex;
+  flex-direction: row;
+  div {
+    margin-right: 4px;
+    svg {
+      height: 30px;
+      width: 30px;
+      border-radius: 50%;
+    }
+  }
+}

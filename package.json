@@ -7,6 +7,7 @@
     "build": "next build",
     "start": "next start -p $PORT",
     "test": "clear && jest",
+    "test:component": "clear && jest components/playground/playground.test.tsx",
     "test:watch": "jest --watch",
     "test:coverage": "jest --coverage"
   },

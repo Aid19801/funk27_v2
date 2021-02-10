@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import styles from "./podcast_player.module.scss";
 
-function AudioLevels({ audioUrl }) {
+function AudioLevels() {
   const [barOneHeight, setBarOneHeight] = useState(0);
   const [barTwoHeight, setBarTwoHeight] = useState(0);
   const [barThreeHeight, setBarThreeHeight] = useState(0);

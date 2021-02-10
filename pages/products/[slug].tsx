@@ -4,6 +4,7 @@ import { fetchPageByUID, useContent } from "../../api/requests";
 import { Button } from "react-bulma-components/dist";
 import { MarketStream, PodcastPlayer } from "../../components";
 import dynamic from "next/dynamic";
+import ShowCurrentTime from "../../components/playground";
 
 // const DynamicMarketStream = dynamic(import("../../components/market-stream"));
 // const DynamicMarketStream = dynamic(
@@ -16,7 +17,7 @@ interface Props {
 
 function Product({ ssrContent }: Props): ReactElement {
   const [content, setContent]: any = useState(ssrContent);
-  const [demo, toggleDemo] = useState(false);
+  const [demo, toggleDemo] = useState(true);
   const [productToDemo, setProductToDemo] = useState("");
 
   const handleDemoClick = () => toggleDemo(!demo);
@@ -70,16 +71,19 @@ function Product({ ssrContent }: Props): ReactElement {
             <MarketStream show={demo} />
           )}
           {demo && productToDemo === "PodcastPlayer" && (
-            <PodcastPlayer
-              episodeNumber="7"
-              episodeGuest="Matthew James"
-              episodeDescription="Here is a thing with some ipsum lorem. Today we discuss most of other things and i hope it's all good."
-              episodeAudio="https://storage.pinecast.net/podcasts/e6552ddb-4376-43d5-9698-320f4c2e9098/audio/ab46af78-d1d4-4827-9bcd-2838a767be62/siodbiouads.mp3"
-              directUrl="https://funk-27.co.uk/podcast/episode-7-matthew-james"
-              episodeTitle="#7 // Matthew James"
-              podcastTitle="Aid Thompsin & Other Disappointments"
-              podcastDescription="Science, Tech & Comedy - each week Aid Thompsin & a guest attempt to find the funny in the modern world."
-            />
+            <>
+              <PodcastPlayer
+                episodeNumber="7"
+                episodeGuest="Matthew James"
+                episodeDescription="Here is a thing with some ipsum lorem. Today we discuss most of other things and i hope it's all good."
+                episodeAudio="https://storage.pinecast.net/podcasts/e6552ddb-4376-43d5-9698-320f4c2e9098/audio/ab46af78-d1d4-4827-9bcd-2838a767be62/siodbiouads.mp3"
+                directUrl="https://funk-27.co.uk/podcast/episode-7-matthew-james"
+                episodeTitle="#7 // Matthew James"
+                podcastTitle="Aid Thompsin & Other Disappointments"
+                podcastDescription="Science, Tech & Comedy - each week Aid Thompsin & a guest attempt to find the funny in the modern world."
+              />
+              <div style={{ marginBottom: 300 }}></div>
+            </>
           )}
         </main>
       </div>
