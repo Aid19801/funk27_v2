@@ -17,7 +17,7 @@ interface Props {
 
 function Product({ ssrContent }: Props): ReactElement {
   const [content, setContent]: any = useState(ssrContent);
-  const [demo, toggleDemo] = useState(true);
+  const [demo, toggleDemo] = useState(false);
   const [productToDemo, setProductToDemo] = useState("");
 
   const handleDemoClick = () => toggleDemo(!demo);
