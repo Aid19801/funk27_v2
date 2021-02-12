@@ -10,7 +10,6 @@ import SkipFwd from "./fwd.svg";
 
 import styles from "./controls.module.scss";
 
-// Audio Controls for Podcast Player //
 function AudioControls({ skipBack, skipFwd, pauseAudio, playAudio }) {
   const [playing, setPlaying] = useState(false);
 
