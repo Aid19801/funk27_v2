@@ -1,4 +1,5 @@
 import React, { ReactElement, useEffect, useState, useRef } from "react";
+import { PodcastPlayer } from "..";
 import styles from "./cardPodcastLarge.module.scss";
 interface Props {
   guestPhoto: string;

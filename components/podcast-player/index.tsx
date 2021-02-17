@@ -8,9 +8,16 @@ import styles from "./podcast_player.module.scss";
 import Socials from "./socials";
 import AudioControls from "./audio-controls";
 
-function PodcastPlayer({
-  episodeNumber,
-  episodeGuest,
+export interface PodcastPlayerProps {
+  episodeTitle: string;
+  podcastDescription: string;
+  episodeDescription: string;
+  podcastTitle: string;
+  directUrl: string;
+  episodeAudio: string;
+}
+
+export function PodcastPlayer({
   episodeTitle,
   podcastDescription,
   episodeDescription,
@@ -38,12 +45,9 @@ function PodcastPlayer({
   };
 
   const skipBack = () => {
-    // console.log("skip back");
-    // aud.pause();
     if (aud.HAVE_FUTURE_DATA === 3) {
       aud.currentTime = aud.currentTime - 10;
     }
-    // console.log("BACK | aud current time is now ", aud.currentTime);
   };
 
   const handleMouseOver = () => {
