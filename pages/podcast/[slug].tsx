@@ -86,7 +86,7 @@ function PodcastEpisode({ ssrContent }: Props): ReactElement {
           />
         </section>
 
-        <section>
+        {/* <section>
           <div className="mt-50"></div>
           <PodcastPlayer
             episodeTitle={content.title1[0].text}
@@ -97,7 +97,7 @@ function PodcastEpisode({ ssrContent }: Props): ReactElement {
             episodeAudio="https://storage.pinecast.net/podcasts/e6552ddb-4376-43d5-9698-320f4c2e9098/audio/ab46af78-d1d4-4827-9bcd-2838a767be62/siodbiouads.mp3"
           />
           <div className="mt-50"></div>
-        </section>
+        </section> */}
 
         <section className="comments-section w-100 mt-50">
           <DisqusComments
