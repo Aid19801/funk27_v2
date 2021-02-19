@@ -86,19 +86,6 @@ function PodcastEpisode({ ssrContent }: Props): ReactElement {
           />
         </section>
 
-        {/* <section>
-          <div className="mt-50"></div>
-          <PodcastPlayer
-            episodeTitle={content.title1[0].text}
-            podcastDescription="Lonely Father and 40 year-old failed comedian, Aid Thompsin, speaks to Techy/Science types to fuel his unhealthy interest in dystopia. Paul Giamatti stars."
-            episodeDescription={content.description[0].text}
-            podcastTitle="Aid Thompsin & Other Disappointments"
-            directUrl="https://funk-27.co.uk/podcast/episode-7-matthew-james"
-            episodeAudio="https://storage.pinecast.net/podcasts/e6552ddb-4376-43d5-9698-320f4c2e9098/audio/ab46af78-d1d4-4827-9bcd-2838a767be62/siodbiouads.mp3"
-          />
-          <div className="mt-50"></div>
-        </section> */}
-
         <section className="comments-section w-100 mt-50">
           <DisqusComments
             //@ts-ignore
