@@ -16,7 +16,12 @@
     "moduleResolution": "node",
     "resolveJsonModule": true,
     "isolatedModules": true,
+    "noImplicitAny": false,
     "jsx": "preserve",
+    "baseUrl": "./",
+    "paths": {
+      "@components/*": ["./components/*"]
+    },
     "allowSyntheticDefaultImports": true,
     "typeRoots": [
       "./node_modules/@types",
@@ -31,4 +36,5 @@
     "**/*.ts",
     "**/*.tsx", "pages/_app.js", "pages/_document.js"
   ]
+  
 }

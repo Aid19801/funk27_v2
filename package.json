@@ -10,7 +10,7 @@
     "test:component": "clear && jest components/playground/playground.test.tsx",
     "test:watch": "jest --watch",
     "test:coverage": "jest --coverage",
-    "storybook": "start-storybook -p 6006",
+    "storybook": "start-storybook -p 6006 -c .storybook",
     "build-storybook": "build-storybook"
   },
   "dependencies": {
@@ -40,10 +40,12 @@
     "react-use": "^15.3.3"
   },
   "devDependencies": {
+    "@babel/core": "^7.12.16",
     "@storybook/addon-actions": "^6.1.18",
     "@storybook/addon-essentials": "^6.1.18",
     "@storybook/addon-links": "^6.1.18",
     "@storybook/preset-scss": "^1.0.3",
+    "@storybook/preset-typescript": "^3.0.0",
     "@storybook/react": "^6.1.18",
     "@testing-library/jest-dom": "^5.11.2",
     "@testing-library/react": "^10.4.7",
@@ -54,9 +56,10 @@
     "@types/react": "^16.9.43",
     "babel-core": "^6.26.3",
     "babel-jest": "^26.1.0",
-    "babel-loader": "^7.1.5",
+    "babel-loader": "^8.2.2",
     "babel-preset-env": "^1.7.0",
     "babel-preset-react": "^6.24.1",
+    "babel-preset-react-app": "^10.0.0",
     "core-js": "^3.8.3",
     "css-loader": "^5.0.2",
     "enzyme": "^3.11.0",
@@ -65,7 +68,7 @@
     "jest": "^26.1.0",
     "jest-transform-stub": "^2.0.0",
     "sass": "^1.32.7",
-    "sass-loader": "10.1.1",
+    "sass-loader": "10.0.0",
     "style-loader": "^2.0.0",
     "ts-jest": "^26.1.3",
     "typescript": "^3.9.7"

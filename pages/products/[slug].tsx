@@ -73,8 +73,6 @@ function Product({ ssrContent }: Props): ReactElement {
           {demo && productToDemo === "PodcastPlayer" && (
             <>
               <PodcastPlayer
-                episodeNumber="7"
-                episodeGuest="Matthew James"
                 episodeDescription="Here is a thing with some ipsum lorem. Today we discuss most of other things and i hope it's all good."
                 episodeAudio="https://storage.pinecast.net/podcasts/e6552ddb-4376-43d5-9698-320f4c2e9098/audio/ab46af78-d1d4-4827-9bcd-2838a767be62/siodbiouads.mp3"
                 directUrl="https://funk-27.co.uk/podcast/episode-7-matthew-james"
