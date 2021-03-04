@@ -16,15 +16,15 @@ Router.events.on("routeChangeComplete", (url) => gtag.pageview(url));
 
 export default ({ Component, pageProps }) => {
   const mouseMove = (e) => {
-    const cursor = document.querySelector(".cursor");
-    cursor.style.top = `${e.pageY - 10}px`;
-    cursor.style.left = `${e.pageX - 0}px`;
+    // const cursor = document.querySelector(".cursor");
+    // cursor.style.top = `${e.pageY - 10}px`;
+    // cursor.style.left = `${e.pageX - 0}px`;
   };
 
   return (
     <Fragment>
       <div onMouseMove={(e) => mouseMove(e)}>
-        <div className="cursor" />
+        {/* <div className="cursor" /> */}
         <Head>
         <script src="https://www.googleoptimize.com/optimize.js?id=OPT-MBP8MB8"></script>
         <script

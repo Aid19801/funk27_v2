@@ -1,6 +1,15 @@
-import { storiesOf } from "@storybook/react";
-import Footer from "./";
+import { Footer } from "./index";
+import "react-bulma-components/dist/react-bulma-components.min.css";
 
-storiesOf("Footer", module).add("with no props", () => {
-  return <Footer />;
-});
+export default {
+  title: "Footer Title Here",
+  component: Footer,
+  argTypes: {
+    darkMode: "boolean",
+  },
+};
+
+// Template is the wrapper for your component
+export const Template = ({ darkMode, ...args }) => {
+  return <Footer {...args} darkMode={darkMode} />;
+};

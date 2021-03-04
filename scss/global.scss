@@ -10,35 +10,35 @@
   // border: 1px solid red;
 }
 
-.cursor {
-  // display: none;
-  width: 30px;
-  height: 30px;
-  border-radius: 100%;
-  background-color: orange;
-  pointer-events: none !important;
-  position: absolute;
+// .cursor {
+//   // display: none;
+//   width: 30px;
+//   height: 30px;
+//   border-radius: 100%;
+//   background-color: orange;
+//   pointer-events: none !important;
+//   position: absolute;
 
-  transform: translate(-50%, -50%);
-  transition: all 0.2 ease;
-  transition-property: background, border, transform;
-  transform-origin: 150% 150%;
-  z-index: 999;
-  @include sm {
-    display: inherit;
-  }
-}
+//   transform: translate(-50%, -50%);
+//   transition: all 0.2 ease;
+//   transition-property: background, border, transform;
+//   transform-origin: 150% 150%;
+//   z-index: 999;
+//   @include sm {
+//     display: inherit;
+//   }
+// }
 
 body {
   height: 100vh;
-  cursor: none !important;
+  // cursor: none !important;
 }
 
 a {
-  cursor: none !important;
+  // cursor: none !important;
 }
 a:hover {
-  cursor: none !important;
+  // cursor: none !important;
 }
 
 #__next {
@@ -601,7 +601,7 @@ body::-webkit-scrollbar-thumb {
     border: 1px solid grey;
     border-radius: 50px;
     flex: 0.5;
-    cursor: pointer;
+    // cursor: pointer;
     transition: flex 0.3s ease-out;
     @include md {
       width: 20vw;

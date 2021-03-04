@@ -10,10 +10,12 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import styles from "./footer.module.scss";
 import Link from "next/link";
 
-interface Props {}
+export interface Props {
+  darkMode: boolean;
+}
 // Footer with ts
 
-function Footer({}: Props): ReactElement {
+export function Footer({ darkMode }: Props): ReactElement {
   const handleClick = (location: string) => {
     let str = "";
 
@@ -43,11 +45,14 @@ function Footer({}: Props): ReactElement {
   };
   return (
     <React.Fragment>
-      <div className="footer">
+      <div
+        className="footer"
+        style={darkMode ? { backgroundColor: "grey" } : null}
+      >
         <div className="content has-text-centered">
           <div className="navbar-brand">
             <Link href="/">
-              <a className="navbar-item">
+              <a className="navbar-item flex-row">
                 <h1
                   style={{
                     fontSize: "5vh",
