@@ -2,14 +2,22 @@ import { Footer } from "./index";
 import "react-bulma-components/dist/react-bulma-components.min.css";
 
 export default {
-  title: "Footer Title Here",
+  title: "Footer",
   component: Footer,
   argTypes: {
     darkMode: "boolean",
   },
 };
 
-// Template is the wrapper for your component
-export const Template = ({ darkMode, ...args }) => {
+interface FooterProps {
+  darkMode: boolean;
+}
+
+const Template: React.FC<FooterProps> = ({
+  darkMode,
+  ...args
+}: FooterProps) => {
   return <Footer {...args} darkMode={darkMode} />;
 };
+
+export { Template };

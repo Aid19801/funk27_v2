@@ -6,7 +6,7 @@ import NProgress from "nprogress";
 
 interface Props {}
 
-function Navbar({}: Props): ReactElement {
+export function Navbar({}: Props): ReactElement {
   const router = useRouter();
   const [showMobNav, toggleshowMobNav] = useState(false);
 
@@ -16,6 +16,7 @@ function Navbar({}: Props): ReactElement {
   let homeRef = useRef(null);
   let aboutRef = useRef(null);
   let contactRef = useRef(null);
+  let productsRef = useRef(null);
   let podsRef = useRef(null);
   let blogsRef = useRef(null);
 
@@ -25,6 +26,7 @@ function Navbar({}: Props): ReactElement {
       .set(homeRef.current, { autoAlpha: 0 })
       .set(aboutRef.current, { autoAlpha: 0 })
       .set(contactRef.current, { autoAlpha: 0 })
+      .set(productsRef.current, { autoAlpha: 0 })
       .set(podsRef.current, { autoAlpha: 0 })
       .set(blogsRef.current, { autoAlpha: 0 })
       .set(slamIn.current, { autoAlpha: 0, onComplete: beginAnimations });
@@ -39,6 +41,7 @@ function Navbar({}: Props): ReactElement {
           homeRef.current,
           aboutRef.current,
           contactRef.current,
+          productsRef.current,
           blogsRef.current,
           podsRef.current,
         ],
@@ -133,7 +136,7 @@ function Navbar({}: Props): ReactElement {
               Contact
             </div>
             <div
-              ref={contactRef}
+              ref={productsRef}
               className="navbar-item"
               onClick={() => handleNavClick("/products")}
             >

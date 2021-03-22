@@ -73,7 +73,7 @@ function Card({ title, link, techs, imageOne, imageTwo, text }: Props) {
             </a>
           ) : (
             <Link href="/products/[slug]" as={link}>
-              <a>Take a Look internal</a>
+              <a>Take a look ▶️</a>
             </Link>
           )}
         </div>

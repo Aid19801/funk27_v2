@@ -58,7 +58,7 @@ export function Footer({ darkMode }: Props): ReactElement {
                     fontSize: "5vh",
                     marginLeft: 0,
                     marginBottom: 0,
-                    color: "grey",
+                    color: darkMode ? "white" : "grey",
                     fontWeight: 400,
                   }}
                 >
