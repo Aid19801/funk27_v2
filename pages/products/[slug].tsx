@@ -15,7 +15,12 @@ function Product({ ssrContent }: Props): ReactElement {
   const [productToDemo, setProductToDemo] = useState("");
   const router = useRouter();
 
-  const handleDemoClick = () => toggleDemo(!demo);
+  const handleDemoClick = () => {
+    if (productToDemo === "SignupApp") {
+      return router.push("/signup");
+    }
+    toggleDemo(!demo);
+  };
   const handleOrder = () => {
     return router.push(`/contact?product=${productToDemo}`);
   };
@@ -23,6 +28,9 @@ function Product({ ssrContent }: Props): ReactElement {
     switch (content.product_slug[0].text) {
       case "products/podcast-player":
         setProductToDemo("PodcastPlayer");
+        break;
+      case "products/signup-app":
+        setProductToDemo("SignupApp");
         break;
       case "products/market-stream":
         setProductToDemo("MarketStream");

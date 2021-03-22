@@ -18,8 +18,6 @@ import CSSLogo from "../../svgs/css.svg";
 //@ts-ignore
 import FirebaseLogo from "../../svgs/firebase.svg";
 
-import { TimelineMax, Power3 } from "gsap";
-
 import styles from "./card.module.scss";
 
 const SVGs = {

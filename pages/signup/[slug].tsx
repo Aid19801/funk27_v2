@@ -45,8 +45,15 @@ function SignupStepsPage(): ReactElement {
           subheading={signupFlow[pageIndex].subheading}
           questions={signupFlow[pageIndex].questions}
           onSubmit={pageIndex < 4 ? handleSubmit : bounceToLogin}
-          buttonText={pageIndex < 4 ? "Submit" : "Login?"}
+          buttonText={pageIndex < 4 ? "Submit" : "Login"}
         />
+
+        <div
+          className="signup-form_signup__formBtn button is-danger mb-50"
+          onClick={() => router.push("/products")}
+        >
+          Back to Products
+        </div>
       </main>
     </div>
   );

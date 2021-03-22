@@ -1,11 +1,11 @@
 .signupInput {
   width: 100%;
+  max-width: 380px;
   display: flex;
   flex-direction: column;
   margin-top: 30px;
   justify-content: flex-start;
   align-items: center;
-  // border: 1px solid green;
 
   h5 {
     width: 100%;

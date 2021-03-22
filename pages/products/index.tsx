@@ -23,8 +23,6 @@ function Products({ ssrContent }: Props): ReactElement {
       fetchContent();
     }
     NProgress.done();
-
-    console.log("content ", content);
   }, [content]);
 
   //@ts-ignore

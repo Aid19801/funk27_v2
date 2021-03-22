@@ -1,13 +1,24 @@
-import React, { forwardRef, useState } from "react";
+import React, { forwardRef, useState, useEffect } from "react";
+import { TimelineMax, Power3 } from "gsap";
 import styles from "./signup-input.module.scss";
 
 function SignupInput({ name, type, text, placeholder, options }, forwardedRef) {
   const [checked, setChecked] = useState(false);
 
+  useEffect(() => {
+    let inputTl: any = new TimelineMax();
+
+    inputTl.fromTo(
+      forwardedRef.current,
+      0.2,
+      { x: 40 },
+      { x: 0, ease: Power3.easeIn }
+    );
+  }, []);
   switch (type) {
     case "text":
       return (
-        <div className={styles.signupInput}>
+        <div className={`${styles.signupInput} fade-in`}>
           <h5>{text}</h5>
           <input
             name={name}
@@ -20,7 +31,7 @@ function SignupInput({ name, type, text, placeholder, options }, forwardedRef) {
       );
     case "select":
       return (
-        <div className={styles.signupInput}>
+        <div className={`${styles.signupInput} fade-in`}>
           <h5>{text}</h5>
           <select
             ref={forwardedRef}
@@ -38,7 +49,7 @@ function SignupInput({ name, type, text, placeholder, options }, forwardedRef) {
       );
     case "checkbox":
       return (
-        <div className={`${styles.signupInput} flex-row`}>
+        <div className={`${styles.signupInput} fade-in flex-row`}>
           <input
             name={name}
             className={`input__${name} ${styles.inputCheckbox}`}

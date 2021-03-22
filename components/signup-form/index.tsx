@@ -30,6 +30,7 @@ function SignupForm({
     });
     handleSubmitParent(url, obj);
   };
+  console.log("allrefs", allRefs);
   return (
     <div className={styles.signup__formSection}>
       <div className={styles.signup__headingsContainer}>
