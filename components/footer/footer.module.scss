@@ -14,6 +14,7 @@
   height: auto;
   transition: 0.2s;
   opacity: 1;
+  // border: 3px solid red;
   @include bounce(rotate(-1deg));
 
   p {

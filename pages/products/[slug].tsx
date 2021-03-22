@@ -3,13 +3,7 @@ import Head from "next/head";
 import { fetchPageByUID, useContent } from "../../api/requests";
 import { Button } from "react-bulma-components/dist";
 import { MarketStream, PodcastPlayer } from "../../components";
-import dynamic from "next/dynamic";
-import ShowCurrentTime from "../../components/playground";
-
-// const DynamicMarketStream = dynamic(import("../../components/market-stream"));
-// const DynamicMarketStream = dynamic(
-//   () => import("../../components/market-stream")
-// ); killed
+import { useRouter } from "next/router";
 
 interface Props {
   ssrContent: object;
@@ -19,9 +13,12 @@ function Product({ ssrContent }: Props): ReactElement {
   const [content, setContent]: any = useState(ssrContent);
   const [demo, toggleDemo] = useState(false);
   const [productToDemo, setProductToDemo] = useState("");
+  const router = useRouter();
 
   const handleDemoClick = () => toggleDemo(!demo);
-
+  const handleOrder = () => {
+    return router.push(`/contact?product=${productToDemo}`);
+  };
   const whichProduct = () => {
     switch (content.product_slug[0].text) {
       case "products/podcast-player":
@@ -62,7 +59,7 @@ function Product({ ssrContent }: Props): ReactElement {
               <Button onClick={handleDemoClick} color="warning">
                 Demo
               </Button>
-              <Button onClick={() => null} color="danger">
+              <Button onClick={handleOrder} color="danger">
                 Order
               </Button>
             </div>
@@ -73,8 +70,6 @@ function Product({ ssrContent }: Props): ReactElement {
           {demo && productToDemo === "PodcastPlayer" && (
             <>
               <PodcastPlayer
-                episodeNumber="7"
-                episodeGuest="Matthew James"
                 episodeDescription="Here is a thing with some ipsum lorem. Today we discuss most of other things and i hope it's all good."
                 episodeAudio="https://storage.pinecast.net/podcasts/e6552ddb-4376-43d5-9698-320f4c2e9098/audio/ab46af78-d1d4-4827-9bcd-2838a767be62/siodbiouads.mp3"
                 directUrl="https://funk-27.co.uk/podcast/episode-7-matthew-james"

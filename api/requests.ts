@@ -62,7 +62,7 @@ const fetchTweets = async () => {
     // const res = await fetch("https://api.twitter.com/2/users/69620713/tweets?tweet.fields=attachments,created_at,conversation_id,entities,referenced_tweets,source&expansions=attachments.media_keys&media.fields=media_key", {
     // const res = await fetch("https://thingproxy.freeboard.io/fetch/https://api.twitter.com/2/users/69620713/tweets?tweet.fields=attachments,created_at,conversation_id,entities,referenced_tweets,source&expansions=attachments.media_keys&media.fields=media_key", {
     // const res = await fetch(`${proxyurl}/https://api.twitter.com/2/users/69620713/tweets?tweet.fields=attachments,created_at,conversation_id,entities,referenced_tweets,source&expansions=attachments.media_keys&media.fields=media_key`, {
-      const res = await fetch(`${proxyurl}/https://api.twitter.com/2/tweets/search/recent?${query}&${user_data}&${tweet_data}&${expand}`, {
+      const res = await fetch(`${otherProxy}/https://api.twitter.com/2/tweets/search/recent?${query}&${user_data}&${tweet_data}&${expand}`, {
       method: 'GET',
       headers: myHeaders,
     });

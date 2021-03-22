@@ -11,7 +11,7 @@ const trimLength = (str) =>
 //@ts-ignore
 const MyCursor = () => <h5>⬜️</h5>;
 
-function MarketStream({ show }) {
+export function MarketStream({ show }) {
   const [tweets, setTweets] = useState(null);
   const [loading, setLoading] = useState(true);
   const [showStream, setShowStream] = useState(false);
@@ -25,7 +25,6 @@ function MarketStream({ show }) {
     // check every minute after
     setInterval(async () => {
       setLoading(true);
-      console.log("refetching market data");
       const { data } = await fetchTweets();
       setTweets(data);
       setLoading(false);

@@ -14,15 +14,34 @@ function Contact() {
   const [sending, setSending] = useState(false);
   const [sendError, setSendError] = useState("");
   const [sendSuccess, setSendSuccess] = useState("");
+  const [productToOrder, setProductToOrder] = useState("");
 
   const toggleSending = (bool) => {
     setSending(bool);
+  };
+
+  const checkIfProductOrder = () => {
+    if (process.browser) {
+      let productName = "";
+      let hasProduct = window.location.search.includes("?product");
+      if (hasProduct) {
+        let i = window.location.search.indexOf("=");
+        productName = window.location.search.slice(
+          i + 1,
+          window.location.search.length
+        );
+      }
+      setProductToOrder(productName);
+    } else {
+      return;
+    }
   };
 
   useEffect(() => {
     NProgress.done();
     let svgTimeline = new TimelineMax();
     svgTimeline.to(svgRef.current, 0.6, { width: 100, ease: Power4.easeIn });
+    checkIfProductOrder();
   }, []);
 
   useEffect(() => {
@@ -79,6 +98,7 @@ function Contact() {
                     toggleSending={toggleSending}
                     setSendError={setSendError}
                     setSendSuccess={setSendSuccess}
+                    product={productToOrder}
                   />
                 </div>
               </React.Fragment>
