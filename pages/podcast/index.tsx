@@ -1,6 +1,6 @@
 import React, { ReactElement, useEffect, useState } from "react";
 import Head from "next/head";
-import Link from "next/link";
+import Fade from "react-reveal/Fade";
 import NProgress from "nprogress";
 import { fetchPageByUID, useContent } from "../../api/requests";
 import { FunkSpinner, CardPodcastSmall } from "../../components";
@@ -134,19 +134,23 @@ function PodcastHome({ ssrContent }: Props): ReactElement {
                   //@ts-ignore
                   content.data.body[0].items.map((each, i) => {
                     return (
-                      <li className="show__card" key={i}>
-                        <CardPodcastSmall
-                          title={each.title1[0].text}
-                          description={each.description[0].text}
-                          guestPhoto={each.guest_photo.url}
-                          guestPhotoAlt={each.guest_photo.alt}
-                          podcastAppLink={each.podcast_app_link}
-                          spotifyLink={each.spotify_link}
-                          youtubeLink={each.youtube_link}
-                          video={each.video}
-                          episodeSlug={each.episode_slug[0].text}
-                        />
-                      </li>
+                      <>
+                        <Fade>
+                          <li className="show__card" key={i}>
+                            <CardPodcastSmall
+                              title={each.title1[0].text}
+                              description={each.description[0].text}
+                              guestPhoto={each.guest_photo.url}
+                              guestPhotoAlt={each.guest_photo.alt}
+                              podcastAppLink={each.podcast_app_link}
+                              spotifyLink={each.spotify_link}
+                              youtubeLink={each.youtube_link}
+                              video={each.video}
+                              episodeSlug={each.episode_slug[0].text}
+                            />
+                          </li>
+                        </Fade>
+                      </>
                     );
                   })
                 }
