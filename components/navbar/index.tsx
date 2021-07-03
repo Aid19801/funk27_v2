@@ -242,7 +242,7 @@ export function Navbar({}: Props): ReactElement {
                     <strong>Sign up</strong>
                   </a>
                 </Link>
-                <a className="button is-warning is-light">Log in</a>
+                {/* <a className="button is-warning is-light">Log in</a> */}
               </div>
             </div>
           </div>

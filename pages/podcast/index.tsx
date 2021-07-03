@@ -113,7 +113,7 @@ function PodcastHome({ ssrContent }: Props): ReactElement {
                   backgroundImage: `url('pod_ur_what_ulisten_to.jpg')`,
                 }}
               >
-                <h3>Every Thursday</h3>
+                <h3>Every Friday</h3>
               </div>
 
               <div
@@ -129,10 +129,58 @@ function PodcastHome({ ssrContent }: Props): ReactElement {
 
           <section className="podcast__shows_section mt-50">
             <div className="podcast__shows__container">
+              <h4
+                style={{
+                  color: "white",
+                  fontWeight: 700,
+                  background: "lightgrey",
+                  padding: 10,
+                  marginBottom: 20,
+                }}
+              >
+                Season 2
+              </h4>
               <ul>
                 {
                   //@ts-ignore
                   content.data.body[0].items.map((each, i) => {
+                    return (
+                      <>
+                        <Fade>
+                          <li className="show__card" key={i}>
+                            <CardPodcastSmall
+                              title={each.title1[0].text}
+                              description={each.description[0].text}
+                              guestPhoto={each.guest_photo.url}
+                              guestPhotoAlt={each.guest_photo.alt}
+                              podcastAppLink={each.podcast_app_link}
+                              spotifyLink={each.spotify_link}
+                              youtubeLink={each.youtube_link}
+                              video={each.video}
+                              episodeSlug={each.episode_slug[0].text}
+                            />
+                          </li>
+                        </Fade>
+                      </>
+                    );
+                  })
+                }
+              </ul>
+              <h4
+                style={{
+                  color: "white",
+                  fontWeight: 700,
+                  background: "lightgrey",
+                  padding: 10,
+                  marginBottom: 20,
+                }}
+              >
+                Season 1
+              </h4>
+              <ul>
+                {
+                  //@ts-ignore
+                  content.data.body[1].items.map((each, i) => {
                     return (
                       <>
                         <Fade>
