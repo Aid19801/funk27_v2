@@ -657,6 +657,7 @@ body::-webkit-scrollbar-thumb {
   justify-content: center;
   .podcast__shows__container {
     display: flex;
+    flex-direction: column;
     width: 95%;
     // border: 1px solid red;
     justify-content: center;
