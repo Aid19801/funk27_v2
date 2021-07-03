@@ -49,7 +49,11 @@ function PodcastCardSmall({
         />
         <p className="podcast__shows_title">{title}</p>
         <div className="podcast__shows_descr_container">
-          <p className="podcast__shows_descr">{description}</p>
+          <p className="podcast__shows_descr">
+            {description && description.length > 250
+              ? description.slice(0, 210) + "..."
+              : description}
+          </p>
         </div>
 
         <div className={styles.podcast__socials}>
