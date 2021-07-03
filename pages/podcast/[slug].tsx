@@ -103,9 +103,14 @@ function PodcastEpisode({ ssrContent }: Props): ReactElement {
 
 export async function getServerSideProps(context: any) {
   const ssrContent: any = await fetchPageByUID("content", "podcast");
-  const thisEpisode = ssrContent.data.body[0].items.filter(
+  let thisEpisode = ssrContent.data.body[0].items.filter(
     (each) => each.episode_slug[0].text === context.params.slug
   )[0];
+  if (!thisEpisode) {
+    thisEpisode = ssrContent.data.body[1].items.filter(
+      (each) => each.episode_slug[0].text === context.params.slug
+    )[0];
+  }
   return {
     props: { ssrContent: thisEpisode },
   };
