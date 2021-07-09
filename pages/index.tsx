@@ -43,7 +43,7 @@ function Home({ ssrContent }: Props): ReactElement {
             content={content.data["twitter_image"].url}
           />
           <meta name="twitter:creator" content="@aidThompsin" />
-          <meta name="twitter:site" content="@funkTwentySeven" />
+          <meta name="twitter:site" content="@aidThompsin" />
 
           <meta
             property="og:title"

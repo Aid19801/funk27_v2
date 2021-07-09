@@ -25,7 +25,7 @@ export function Footer({ darkMode }: Props): ReactElement {
         break;
 
       case "twitter":
-        str = "https://www.twitter.com/funkTwentySeven/";
+        str = "https://www.twitter.com/aidThompsin";
         break;
 
       case "linkedin":

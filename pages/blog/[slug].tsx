@@ -54,7 +54,7 @@ function BlogArticle({ ssrContent }: Props): ReactElement {
             content={content.data["blog-image-1"].twitter.url}
           />
           <meta name="twitter:creator" content="@aidThompsin" />
-          <meta name="twitter:site" content="@funkTwentySeven" />
+          <meta name="twitter:site" content="@aidThompsin" />
 
           <meta
             property="og:title"

@@ -174,7 +174,7 @@ export function Navbar({}: Props): ReactElement {
                 </a>
                 <hr className="navbar-divider" />
                 <a
-                  href="https://twitter.com/funkTwentySeven"
+                  href="https://twitter.com/aidThompsin"
                   className="navbar-item"
                 >
                   Request a blog

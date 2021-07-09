@@ -49,7 +49,7 @@ function PodcastEpisode({ ssrContent }: Props): ReactElement {
           content={content.podc_ep_twitter_img.url}
         />
         <meta name="twitter:creator" content="@aidThompsin" />
-        <meta name="twitter:site" content="@funkTwentySeven" />
+        <meta name="twitter:site" content="@aidThompsin" />
 
         <meta
           property="og:title"
